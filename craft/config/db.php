@@ -10,7 +10,7 @@
  return array(
    '*' => array(
      'server' => 'localhost',
-     'database' => 'PUT DATABASE NAME HERE',
+     'database' => 'careertech',
      'tablePrefix' => 'craft',
      'user' => 'PUT USER NAME HERE',
      'password' => 'PUT PASSWORD HERE',
