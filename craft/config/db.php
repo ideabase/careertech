@@ -16,7 +16,7 @@
      'password' => 'PUT PASSWORD HERE',
    ),
 
-   'LOCALURL.web' => array(
+   'careertech.web' => array(
      'user' => 'root',
      'password' => 'root',
    ),

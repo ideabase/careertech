@@ -19,12 +19,12 @@ return array(
            'baseUrl'  => 'PRODUCTION URL',
         )
 	),
-	'test.web' => array(
+	'careertech.web' => array(
 	    'devMode' => true,
-      'siteUrl' => 'DEV URL',
+      'siteUrl' => 'http://careertech.web',
       'environmentVariables' => array(
         'basePath' => '',
-        'baseUrl'  => 'DEV URL',
+        'baseUrl'  => 'http://careertech.web',
       )
 	)
 );
