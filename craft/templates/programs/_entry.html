@@ -1,0 +1,14 @@
+{% extends "_layout" %}
+{% block content %}
+<h1>{{ entry.title }}</h1>
+{% for entry in entry.admissionsLink %}
+	<a href="{{ entry.url }}">Apply Now</a>
+{% endfor %}
+<p>Grade Level: {{ entry.gradeLevel }}</p>
+<p>School: {{ entry.school }}</p>
+<p>Length: {{ entry.length }}</p>
+<p>Credit at Kent: {{ entry.creditAtKent }}</p>
+<p>{{ entry.body }}</p>
+
+
+{% endblock %}
