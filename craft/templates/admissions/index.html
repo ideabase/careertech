@@ -1,4 +1,23 @@
 {% extends "_layout" %}
 {% block content %}
+<h1>Admissios Criteria</h1>
+
+<h2>General</h2>
+{{ entry.generalText }}
+
+<p>Enrollment Status: 
+{% if entry.applicationLightSwitch %}
+	Open
+{% else %}
+	Closed
+{% endif %} 
+</p>
+
+
+
+<h3>Specific 1</h3>
+{{ entry.specific1 }}
+<h3>Specific 2</h3>
+{{ entry.specific2 }}
 
 {% endblock %}

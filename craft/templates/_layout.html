@@ -22,7 +22,12 @@
   	 {% include '_includes/critical.css' %}
     </style>
 
-  {{ craft.amNav.getNav("mainMenu") }}
+
+{% for asset in header.logo %}
+  <img src="{{ asset.url('featureImage') }}">
+{% endfor %}
+<a href="{{ siteUrl }}"><h1>{{ header.footerTitle }}</h1></a>
+{{ craft.amNav.getNav("mainMenu") }}
 </head>
 
 <body>
@@ -38,7 +43,6 @@
 
 		<header role="banner">
       <a id="skip-to-content" href="#content">skip to main content</a>
-			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
 		</header>
 
 		<main role="main">
@@ -49,7 +53,7 @@
 		</main>
 
 		<footer role="contentinfo">
-			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://craftcms.com">Craft</a>
+    {% include '_includes/_footer.html' %}
 		</footer>
 
   <link href="{{ siteUrl }}assets/css/style.css" type="text/css" rel="stylesheet" media="screen"/>

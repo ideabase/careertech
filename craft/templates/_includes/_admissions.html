@@ -1,0 +1,5 @@
+{% for entry in craft.entries.section('homepage') %}
+	{% if entry.generalAdmissionsLightSwitch %}
+		<p><a href="{{ url('admissions') }}">Apply Now</a></p>
+	{% endif %}
+{% endfor %}

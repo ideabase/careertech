@@ -24,15 +24,20 @@
 	<h2>{{ entry.welcomeTitle }}</h2>
 	<p>{{ entry.body }}</p>
 	<h2>{{ entry.pathwayTitle }}</h2>
+	
+	{% include '_includes/_feature.html' %}
+
+	{% for category in craft.categories.group('pathways') %}
+		<h3><a href="{{ 'programs' }}">{{ category.title }}</a></h3>
+	{% endfor %}
+	
 	{% for entry in entry.programsLink %}
 		<a href="{{ entry.url }}">Full List</a>
 	{% endfor %}
 
 	<h3>{{ entry.admissionsTitle }}</h3>
 	{{ entry.admissionsText }}
-	{% if entry.generalAdmissionsLightSwitch %}
-		<a href="{{ url('admissions') }}">Apply Now</a>
-	{% endif %}
+	{% include '_includes/_admissions.html' %}
 
 	<h2>News | Upcoming Events</h2>
 	<a href="{{ url('calendars') }}">Full Calendar</a>
