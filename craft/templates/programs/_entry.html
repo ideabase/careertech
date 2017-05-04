@@ -11,15 +11,24 @@
 <h2>Program Description</h2>
 <p>{{ entry.body }}</p>
 
-<h2>Program Overview</h2>
-{% for block in entry.programsMatrix %}
-	<h3>{{ block.heading }}</h3>
-	{% for row in block.text %}
-		<ul>
-			<li>{{ row.bulletpoint }}</li>
-		</ul>
-	{% endfor %}
+{% set program = entry %}
+{% for entry in craft.entries.section('classes').relatedTo(program) %}
+	<a href="{{ entry.url }}">{{ entry.title }}</a>
 {% endfor %}
+
+
+<hr>
+{% if entry.programsMatrix | length %}
+	<h2>Program Overview</h2>
+	{% for block in entry.programsMatrix %}
+		<h3>{{ block.heading }}</h3>
+		{% for row in block.text %}
+			<ul>
+				<li>{{ row.bulletpoint }}</li>
+			</ul>
+		{% endfor %}
+	{% endfor %}
+{% endif %}
 
 
 {% endblock %}

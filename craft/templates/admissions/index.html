@@ -1,5 +1,10 @@
 {% extends "_layout" %}
 {% block content %}
+
+{% if entry.featureImage | length %}
+	{% include '_includes/_feature.html' %}
+{% endif %}
+
 <h1>Admissios Criteria</h1>
 
 <h2>General</h2>
@@ -14,10 +19,39 @@
 </p>
 
 
+{% for block in entry.admissionsMatrix %}
+	<h3>{{ block.courseTitle }}</h3>
+	<p>{{ block.description }}</p>
+	
+	{#{% if block.martixLightswitch == "1" %}
+		<p>Enrollment Status: Open</p>
+	{% else %}
+		<p>Enrollment Status: Closed</p>
+	{% endif %}#}
+{% endfor %}
 
-<h3>Specific 1</h3>
-{{ entry.specific1 }}
-<h3>Specific 2</h3>
-{{ entry.specific2 }}
+
+
+<style>
+table, th {
+	border: 1px solid black;
+}
+</style>
+
+{% if entry.applicationDeadlines | length %}
+	<h1>Application Deadlines</h1>
+		{% for row in entry.applicationDeadlines %}
+			<table>
+				<th>{{ row.program }}</th>  
+				<th>{{ row.fall }}</th>  
+				<th>{{ row.spring }}</th>
+			</table>
+		{% endfor %}	
+
+{% endif %}
+
+<h1>Admission Dates & Events</h1>
+{{ entry.admissionsDates }}
+<a href="{{ 'calendars' }}">Admissions Calendar</a>
 
 {% endblock %}

@@ -6,18 +6,49 @@
 {% include '_includes/_admissions.html' %}
 {% include '_includes/_feature.html' %}
 
-{% for category in craft.categories.group('pathways') %}
-	<h4>{{ category.title }}</h4>
-	{% for entry in craft.entries.section('programs').relatedTo(category) %}
-		<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
+<button onclick="myFunction()">A-Z</button>
+<button onclick="myFunction2()">Pathways</button>
+
+<div id="list">
+	{% for category in craft.categories.group('pathways') %}
+		<h4>{{ category.title }}</h4>
+		{% for entry in craft.entries.section('programs').relatedTo(category) %}
+			<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
+		{% endfor %}
 	{% endfor %}
-{% endfor %}
+</div>
 
 {# alphabetical #}
-{% for category in craft.categories.group('pathways').order('title asc') %}
-	<h4>{{ category.title }}</h4>
-	{% for entry in craft.entries.section('programs').relatedTo(category).order('title asc') %}
-		<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
+
+
+
+<div id="alphabeticalList">
+	<hr>
+	{% for category in craft.categories.group('pathways').order('title asc') %}
+		<h4>{{ category.title }}</h4>
+		{% for entry in craft.entries.section('programs').relatedTo(category).order('title asc') %}
+			<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
+		{% endfor %}
 	{% endfor %}
-{% endfor %}
+</div>
+
+<script>
+function myFunction() {
+	var x = document.getElementById('alphabeticalList');
+	if (x.style.display === 'none') {
+		x.style.display = 'block';
+	} else {
+			x.style.display = 'none';
+	}
+}
+
+function myFunction2() {
+	var x = document.getElementById('list');
+	if (x.style.display === 'none') {
+		x.style.display = 'block';
+	} else {
+			x.style.display = 'none';
+	}
+}
+</script>
 {% endblock %}
