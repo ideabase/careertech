@@ -23,9 +23,10 @@
 	<h1>{{ entry.title }}</h1>
 	<h2>{{ entry.welcomeTitle }}</h2>
 	<p>{{ entry.body }}</p>
-	<h2>{{ entry.pathwayTitle }}</h2>
 	
 	{% include '_includes/_feature.html' %}
+	
+	<h2>{{ entry.pathwayTitle }}</h2>
 
 	{% for category in craft.categories.group('pathways') %}
 		<h3><a href="{{ 'programs' }}">{{ category.title }}</a></h3>

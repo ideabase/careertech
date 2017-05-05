@@ -23,9 +23,10 @@
     </style>
 
 
+<a href="{{ siteUrl }}">
 {% for asset in header.logo %}
   <img src="{{ asset.url('featureImage') }}">
-{% endfor %}
+{% endfor %}</a>
 <a href="{{ siteUrl }}"><h1>{{ header.footerTitle }}</h1></a>
 {{ craft.amNav.getNav("mainMenu") }}
 </head>
