@@ -1,6 +1,8 @@
 {% extends "_layout" %}
 {% block content %}
 
+{% include '_includes/_feature.html' %}
+
 <div id="about">
 <h1>{{ entry.title }}</h1>
 {% for entry in entry.admissionsLink %}
@@ -14,10 +16,12 @@
 <h2>Program Description</h2>
 <p>{{ entry.body }}</p>
 
+<ul>
 {% set program = entry %}
 {% for entry in craft.entries.section('classes').relatedTo(program) %}
-	<a href="{{ entry.url }}">{{ entry.title }}</a>
+	<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
 {% endfor %}
+</ul>
 
 
 <hr>
