@@ -1,4 +1,44 @@
 {% extends "_layout" %}
 {% block content %}
 
+<button onclick="myFunction()">News</button>
+<button onclick="myFunction2()">Events</button>
+
+<div id="news">
+	{% for entry in craft.entries.section('news').limit('2') %}
+		<h3>{{ entry.title }}</h3>
+		<p>{{ entry.postDate.format('F d, Y') }}
+		{{ entry.body }}</p>
+	{% endfor %}
+</div>
+
+<div id="events">
+	{% for entry in craft.entries.section('events') %}
+		<h3>{{ entry.title }}</h3>
+		<p>{{ entry.dateTime.format('F d, Y') }}</p>
+	{% endfor %}
+</div>
+
+<script>
+function myFunction() {
+	var x = document.getElementById('news');
+	if (x.style.display === 'none') {
+		x.style.display = 'block';
+	} else {
+			x.style.display = 'none';
+	}
+}
+
+function myFunction2() {
+	var x = document.getElementById('events');
+	if (x.style.display === 'none') {
+		x.style.display = 'block';
+	} else {
+			x.style.display = 'none';
+	}
+}
+</script>
+
+
+
 {% endblock %}

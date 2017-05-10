@@ -28,7 +28,7 @@
 	
 	<h2>{{ entry.pathwayTitle }}</h2>
 
-	{% for category in craft.categories.group('pathways') %}
+	{% for category in craft.categories.group('pathways').limit(6) %}
 		<h3><a href="{{ 'programs' }}">{{ category.title }}</a></h3>
 	{% endfor %}
 	
