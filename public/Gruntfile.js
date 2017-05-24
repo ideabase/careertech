@@ -82,6 +82,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
 
   // Tasks
-  grunt.registerTask('default', ['watch', 'shell:patternlab']);
+  grunt.registerTask('default', ['watch']);
   grunt.registerTask('critical', ['criticalcss']);
 };
