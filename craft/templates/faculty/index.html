@@ -3,7 +3,7 @@
 
 {% for category in craft.categories.group('facultyType') %}
 		<h4>{{ category.title }}</h4>
-		{% for entry in craft.entries.section('facultyStaff').relatedTo(category) %}
+		{% for entry in craft.entries.section('faculty').relatedTo(category) %}
 			<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
 		{% endfor %}
 
