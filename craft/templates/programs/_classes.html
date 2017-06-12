@@ -2,5 +2,10 @@
 {% block content %}
 
 <h1>{{ entry.title }}</h1>
+{% for instructor in entry.instructor %}
+    <p>{{ instructor.title }} </p>
+    <p>{{ instructor.body }}</p>
+
+{% endfor %}
 
 {% endblock %}

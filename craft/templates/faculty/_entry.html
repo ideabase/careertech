@@ -1,19 +1,21 @@
 {% extends "_layout" %}
 {% block content %}
   <div>
-    {% for entry in craft.entries.section('faculty')%}
+
       <h3>{{entry.title}}</h3>
       <p>{{ entry.body }}</p>
 
-      {% for asset in craft.entries.section('faculty').relatedTo(entry) %}
-        <img style="text-align:center; height:200px; width:200px"src="{{ asset.url('featureImage') }}">
+      {% for asset in entry.featureImage %}
+        <img src="{{ asset.url('featureImage') }}">
       {% endfor %}
 
       <p style="text-align: center">{{ entry.emailAddress }}</p>
 
       <p style="text-align: center">{{ entry.phoneNumber }}</p>
 
-    {% endfor %}
+  {% for class in craft.entries.section('classes').relatedTo(entry) %}
+    <a href='{{class.url}}'>{{class.title}}</a>
+  {% endfor %}
   </div>
 
 
