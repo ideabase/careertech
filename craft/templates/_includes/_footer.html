@@ -4,12 +4,17 @@
 	<tr>
 		<td>{{ footer.footerAddress }}</td>
 		<td>(P) {{ footer.phoneNumber }}</td>
+		{% for social in footer.footerMatrix %}
+			<td><a href="{{social.socialNetworkUrl}}">{{social.socialNetworkName}}</a>
+			</td>
+		{% endfor %}
 	</tr>
 	<tr>
 		<td>
 		</td>
 		<td>(F) {{ footer.faxNumber }}</td>
 	</tr>
+
 </table>
 
 {{ footer.footerText }}

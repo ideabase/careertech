@@ -5,9 +5,15 @@
 
 <div id="about">
 <h1>{{ entry.title }}</h1>
-{% for entry in entry.admissionsLink %}
-	<a href="{{ entry.url }}">Apply Now</a>
-{% endfor %}
+
+<!--apply onf and off -->
+{% if entry.applicationLightSwitch %}
+	{% for apply in apply.admissions %}
+		<a href="{{ apply.url }}">Apply Now</a>
+	{% endfor %}
+{% else %}
+	<p>Applications closed for this period </p>
+{% endif %}
 
 <p>Grade Level: {{ entry.gradeLevel }}</p>
 <p>School: {{ entry.school }}</p>
@@ -17,6 +23,7 @@
 <p>{{ entry.body }}</p>
 
 <ul>
+
 {% set program = entry %}
 {% for entry in craft.entries.section('classes').relatedTo(program) %}
 	<li><a href="{{ entry.courseAccessLink }}">{{ entry.title }}</a></li>
@@ -62,6 +69,8 @@
 		{% endfor %}
 </div>
 
+
+<!-- stories and the projects of a specific class-->
 <div>
 	<h2> Stories</h2>
 	{% for projects in craft.entries.section('projects').relatedTo(program) %}
