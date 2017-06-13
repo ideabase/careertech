@@ -37,10 +37,39 @@
 	{% endfor %}
 {% endif %}
 </div>
+
+<!-- meet the instructor -->
+<!-- variable repeat along with the if statement so that we dont get repeated results-->
 <div>
 		<h2> meet the instructor</h2>
-		
+		{% set repeat="\n" %}
+		{% for classes in craft.entries.section('classes').relatedTo(program) %}
+
+				{% for instructor in classes.instructor %}
+
+					{% if repeat != instructor.title %}
+						<p>{{ instructor.title }}</p>
+						<p>{{ instructor.body}}</p>
+
+						{% for asset in instructor.featureImage %}
+							<img src="{{ asset.url('featureImage') }}"/>
+						{% endfor %}
+
+					{% endif %}
+
+					{% set repeat = instructor.title %}
+				{% endfor %}
+		{% endfor %}
 </div>
+
+<div>
+	<h2> Stories</h2>
+	{% for projects in craft.entries.section('projects').relatedTo(program) %}
+		<p>{{ projects.title}}</p>
+		<p>{{ projects.body}}</p>
+	{% endfor %}
+</div>
+
 
 
 
