@@ -1,20 +1,66 @@
-<hr>
-{{ footer.footerTitle }}
-<table>
-	<tr>
-		<td>{{ footer.footerAddress }}</td>
-		<td>(P) {{ footer.phoneNumber }}</td>
-		{% for social in footer.footerMatrix %}
-			<td><a href="{{social.socialNetworkUrl}}">{{social.socialNetworkName}}</a>
-			</td>
-		{% endfor %}
-	</tr>
-	<tr>
-		<td>
-		</td>
-		<td>(F) {{ footer.faxNumber }}</td>
-	</tr>
+<footer class="section-relative section-top-66 section-bottom-34 page-footer bg-gray-base context-dark">
+	<div class="shell">
+		<div class="range range-sm-center text-lg-left">
+			<div class-"cell-sm8 cell-md-12">
+				<div class="range range-xs-center">
+					<div class="cell-xs-7 text-xs-left cell-md-4 cell-lg-3 cell-lg-push-4">
+						<h6 class="text-uppercase text-spacing-60">Latest News</h6>
+					</div>
 
-</table>
 
-{{ footer.footerText }}
+					<div class="cell-xs-5 offset-top-41 offset-xs-top-0 text-xs-left cell-md-3 cell-lg-2 cell-lg-push-3">
+						<h6 class="text-uppercase text-spacing-60">Contact us</h6>
+							<div class="reveal-block">
+								<div class="reveal-inline-block">
+									<ul class="list list-marked">
+										<li>{{ footer.footerTitle }}</li>
+										<li>(P) {{ footer.phoneNumber }}</li>
+										<li>(F) {{ footer.faxNumber }}</li>
+										<li>{{ footer.footerAddress }}</li>
+									</ul>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="cell-xs-12 offset-top-41 cell-md-5 offset-md-top-0 text-md-left cell-lg-4 cell-lg-push-2">
+						<h6 class="text-uppercase text-spacing-60">Newsletter</h6>
+							<p></p>
+
+					</div>
+
+
+					<div class="cell-xs-12 offset-top-66 cell-lg-3 cell-lg-push-1 offset-lg-top-0">
+						<div class="footer-brand">
+							<a href="{{ siteUrl }}">
+								{% for asset in header.logo %}
+								<img alt="{{asset.title}}"  src="{{ asset.url('featureImage') }}">
+								{% endfor %}
+							</a>
+							<p> ajkndskajnd </p>
+							<ul class="list-inline">
+								{% for social in footer.footerMatrix %}
+									<li>
+									<a class"icon fa fa-facebook incon-xxs incon-circle incon-darkest-filled" href="{{social.socialNetworkUrl}}">{{social.socialNetworkName}}</a>
+								</li>
+								{% endfor %}
+
+								<li>
+									<a  href
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+</footer>

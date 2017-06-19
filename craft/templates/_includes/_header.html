@@ -1,0 +1,87 @@
+{% set nav = craft.amNav.getNavRaw("mainMenu") %}
+				{% macro addNodeToNavigation(node, index) %}
+				    {%- set nodeClasses = ['nav-list'] -%}
+				    {%- if node.hasChildren -%}
+				        {%- set nodeClasses = nodeClasses|merge(['has-children']) -%}
+				    {%- endif -%}
+				    {%- if node.active or node.hasActiveChild -%}
+				        {%- set nodeClasses = nodeClasses|merge(['active']) -%}
+				    {%- endif -%}
+				    {%- if node.level == 1 and index == 1 -%}
+				        {%- set nodeClasses = nodeClasses|merge(['first']) -%}
+				    {%- endif -%}
+				    {%- if node.listClass|length -%}
+				        {%- set nodeClasses = nodeClasses|merge([node.listClass]) -%}
+				    {%- endif -%}
+
+				    <li{% if nodeClasses|length %} class="{{ nodeClasses|join(' ') }}"{% endif %}>
+				        <a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
+				        {% if node.hasChildren %}
+				            <ul class="nav__level{{ (node.level + 1) }}">
+				                {% for subnode in node.children %}
+				                    {{ _self.addNodeToNavigation(subnode, loop.index) }}
+				                {% endfor %}
+				            </ul>
+				        {% endif %}
+				    </li>
+				{% endmacro %}
+
+<header class="page-head slider-menu-position" >
+  <div class="rd-navbar-wrap">
+      <nav class="rd-navbar rd-navbar-default rd-navbar-transparent rd-navbar--is-stuck rd-navbar-static">
+        <div class="rd-navbar-inner">
+
+          <!-- panel -->
+            <div class="rd-navbar-panel">
+              <button class="rd-navbar-toggle">
+                <span></span>
+              </button>
+              <div class="rd-navbar-brand">
+                <a href="{{ siteUrl }}">
+                  {% for asset in header.logo %}
+                  <img alt="{{asset.title}}" src="{{ asset.url('featureImage') }}">
+                  {% endfor %}</a>
+
+              </div>
+            </div>
+
+
+            <div class="rd-navbar-menu-wrap">
+
+              <div class="rd-navbar-nav-wrap">
+                <div class="rd-navbar-mobile-scroll">
+                  <div class="rd-navbar-mobile-brand"><a href="#"><img style="margin-top: -5px;margin-left: -15px;" width="138" height="31" src="images/logos/1.white-red-condensed.png" alt=""></a></div>
+                  <div class="form-search-wrap">
+                    <!-- RD Search Form-->
+                    <form class="form-search rd-search" action="search-results.html" method="GET">
+                      <div class="form-group">
+                        <label class="form-label form-search-label form-label-sm" for="rd-navbar-form-search-widget">Search</label>
+                        <input class="form-search-input input-sm form-control form-control-gray-lightest input-sm" id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off">
+                      </div>
+                      <button class="form-search-submit" type="submit"><span class="mdi mdi-magnify"></span></button>
+                    </form>
+                  </div>
+                  <ul class="rd-navbar-nav">
+                    {% for node in nav %}
+                    {{ _self.addNodeToNavigation(node, loop.index) }}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              <div class="rd-navbar-search">
+                <a class="rd-navbar-search-toggle mdi">
+                  <span>
+                  </span>
+                </a>
+                <form class="rd-navbar-search-form search-form-icon-right rd-search">
+                  <div class="form-group">
+                    <label class="form-label rd-input-label"> ENTER </label>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+        </div>
+      </nav>
+</div>
+</header>

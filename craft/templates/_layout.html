@@ -23,15 +23,10 @@
     </style>
 
 
-<a href="{{ siteUrl }}">
-{% for asset in header.logo %}
-  <img src="{{ asset.url('featureImage') }}">
-{% endfor %}</a>
-<a href="{{ siteUrl }}"><h1>{{ header.footerTitle }}</h1></a>
-{{ craft.amNav.getNav("mainMenu") }}
 </head>
 
 <body>
+  <div class="page text-center">
   <!-- Helper code for the Admin toolbar, only shown when logged in -->
     {#
       {% if entry is defined %}
@@ -42,22 +37,21 @@
     {% endif %}-->
     #}
 
-		<header role="banner">
-  
-		</header>
+		  {% include '_includes/_header.html' %}
 
-		<main role="main">
+		<main class="page-content" role="main">
 			{% block content %}
 				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
 			{% endblock %}
 		</main>
 
-		<footer role="contentinfo">
+
     {% include '_includes/_footer.html' %}
-		</footer>
 
   <link href="{{ siteUrl }}assets/css/style.css" type="text/css" rel="stylesheet" media="screen"/>
+  <link href="{{ siteUrl }}assets/css/theme.css" type="text/css" rel="stylesheet" media="screen"/>
+  <link href="{{ siteUrl }}assets/css/theme-style-sunset.css" type="text/css" rel="stylesheet" media="screen"/>
   <script type="text/javascript" src="{{ siteUrl }}assets/js/min/scripts-min.js"></script>
   <!-- Google Analytics Code - don't forget to change the UA ID -->
   <script>
@@ -72,5 +66,7 @@
   <!-- Live Reload - For local environment only -->
   <script src="//localhost:35729/livereload.js"></script>
   {% endif %}
+  <script src="{{siteUrl}}assets/js/core.min.js"></script>
+</div>
 </body>
 </html>
