@@ -10,13 +10,13 @@
 return array(
   '*' => array(
 	       'extraAllowedFileExtensions' => 'eps',
-         'siteUrl' => 'PRODUCTION URL',
+         'siteUrl' => 'https://cte.ideabasekent.com/public',
          'enableCsrfProtection' => true,
          'omitScriptNameInUrls' => true,
          'cpTrigger' => 'admin',
          'environmentVariables' => array(
            'basePath' => '',
-           'baseUrl'  => 'PRODUCTION URL',
+           'baseUrl'  => 'https://cte.ideabasekent.com/public',
         )
 	),
 	'careertech.web' => array(
