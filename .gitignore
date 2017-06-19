@@ -1,4 +1,5 @@
 /public/node_modules
 .sass-cache
 .DS_Store
+/craft/config/db.php
 /public/assets/.DS_Store

@@ -22,7 +22,7 @@
    ),
 
 	 /* Don't commit the production user name and password - change on server instead */
-   'cte.ideabasekent.com' => array(
+   'PRODUCTIONURL.com' => array(
      'user' => 'PUT USER NAME HERE',
      'password' => 'PUT PASSWORD HERE',
    )
