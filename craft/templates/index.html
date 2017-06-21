@@ -20,31 +20,107 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<h1>{{ entry.title }}</h1>
-	<h2>{{ entry.welcomeTitle }}</h2>
-	<p>{{ entry.body }}</p>
-	
-	{% include '_includes/_feature.html' %}
-	
-	<h2>{{ entry.pathwayTitle }}</h2>
 
-	{% for category in craft.categories.group('pathways').limit(6) %}
-		<h3><a href="{{ 'programs' }}">{{ category.title }}</a></h3>
-	{% endfor %}
-	
-	{% for entry in entry.programsLink %}
-		<a href="{{ entry.url }}">Full List</a>
-	{% endfor %}
+<div id="home" data-type="anchor">
+  <!--Swiper-->
+  <div class="rd-parallax rd-parallax-swiper">
+    <div class="rd-parallax-layer" data-speed="0.3" data-sm-speed="1" data-type="html">
+      <div class="swiper-container swiper-slider" data-loop="true" data-height="100vh" data-dragable="false" data-min-height="480px">
+        <div class="swiper-wrapper text-center">
+          <div class="swiper-slide" id="page-loader" data-slide-bg="images/intros/intro-new-08.jpg" data-preview-bg="images/intros/intro-new-108.jpg">
+            <div class="swiper-caption swiper-parallax" data-speed="0.5" data-fade="true">
+              <div class="swiper-slide-caption">
+                <div class="shell">
+                  <div class="range range-lg-center">
+                    <div class="cell-lg-12">
+                      <h1><span data-caption-animate="fadeInUp" data-caption-delay="700">{{ entry.welcomeTitle }}</h1>
+                      <h1><span class="big text-uppercase" data-caption-animate="fadeInUp" data-caption-delay="700">{{ entry.welcomeTitle }}</span></h1>
+                    </div>
+                    <div class="cell-lg-10 offset-top-30">
+                      <h4 class="hidden reveal-sm-block text-light" data-caption-animate="fadeInUp" data-caption-delay="900">{{ entry.body }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- after welcome picture -->
+  <!-- Page Contents-->
 
-	<h3>{{ entry.admissionsTitle }}</h3>
-	{{ entry.admissionsText }}
+  <main class="page-content">
+    <h3>{{ entry.pathwayTitle }}</h3>
+    <div>
+      <hr class="divider bg-red">
+    </div>
+
+    <div class="group group-xl offset-top-20 offset-xs-top-50">
+      <a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ 'programs' }}">
+      <span class="btn-text">View full list of programs</span></a>
+    </div>
+    <br />
+    <h3>{{ entry.admissionsTitle }}</h3>
+    <div>
+      <hr class="divider bg-red">
+    </div>
+
+    <p>{{entry.admissionsText}}</p>
+  </main>
+
+
 	{% include '_includes/_admissions.html' %}
 
-	<h2>News | Upcoming Events</h2>
-	<a href="{{ url('calendars') }}">Full Calendar</a>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul>
+  <h3>News | Upcoming Events</h3>
+  <div>
+    <hr class="divider bg-red">
+  </div>
+  <div class="group group-xl offset-top-20 offset-xs-top-50">
+    <a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('calendars') }}">
+    <span class="btn-text">Full calendar</span></a>
+  </div>
+  <br/>
+    <br/>
+      <br/>  <br/>
+        <br/>
+          <br/>
+
+          <div class="snackbars" id="form-output-global"></div>
+          <!-- PhotoSwipe Gallery-->
+          <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap">
+              <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+              </div>
+              <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                  <div class="pswp__counter"></div>
+                  <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                  <button class="pswp__button pswp__button--share" title="Share"></button>
+                  <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                  <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                  <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                  <div class="pswp__caption__center"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 {% endblock %}
