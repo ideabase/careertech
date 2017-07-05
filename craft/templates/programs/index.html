@@ -10,12 +10,14 @@
 <button onclick="myFunction2()">Pathways</button>#}
 
 {#<div id="list">
+
 	{% for category in craft.categories.group('pathways') %}
 		<h4>{{ category.title }}</h4>
 		{% for entry in craft.entries.section('programs').relatedTo(category) %}
 			<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
 		{% endfor %}
 	{% endfor %}
+
 </div>#}
 
 {# alphabetical #}
@@ -30,6 +32,7 @@
 			<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
 		{% endfor %}
 	{% endfor %}
+	<h4><a href="{{ 'electives' }}">Electives</a></h4>
 </div>
 
 <script>

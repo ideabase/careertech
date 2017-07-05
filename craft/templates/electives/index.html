@@ -1,0 +1,10 @@
+{% extends "_layout" %}
+{% block content %}
+    {% for category in craft.categories.group('electives') %}
+    <div>
+      <h4> {{category.title}}</h4>
+      <p> {{category.body}}</p>
+    </div>
+    {% endfor %}
+
+{% endblock %}
