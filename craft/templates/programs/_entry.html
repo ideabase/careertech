@@ -29,22 +29,32 @@
 	<li><a href="{{ entry.courseAccessLink }}">{{ entry.title }}</a></li>
 {% endfor %}
 </ul>
-
-
-<hr>
-{% if entry.programsMatrix | length %}
-	<h2>Program Overview</h2>
-	{% for block in entry.programsMatrix %}
-		<h3>{{ block.heading }}</h3>
-		{% for row in block.text %}
-			<ul>
-				<li>{{ row.bulletpoint }}</li>
-			</ul>
+{% if entry.admissionsCriteria | length %}
+	<h3>Program Criteria</h3>
+	<ul>
+		{% for row in entry.admissionsCriteria %}
+			<li>{{ row.criteria}}</li>
 		{% endfor %}
-	{% endfor %}
-{% endif %}
-</div>
+	</ul>
+	{%  endif %}
 
+
+</div>
+<hr>
+<div>
+	{% if entry.programsMatrix | length %}
+		<h2>Program Overview</h2>
+		{% for block in entry.programsMatrix %}
+			<h3>{{ block.heading }}</h3>
+			{% for row in block.text %}
+				<ul>
+					<li>{{ row.bulletpoint }}</li>
+				</ul>
+			{% endfor %}
+		{% endfor %}
+	{% endif %}
+</div>
+<hr>
 <!-- meet the instructor -->
 <!-- variable repeat along with the if statement so that we dont get repeated results-->
 <div>
