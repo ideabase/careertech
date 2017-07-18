@@ -12,8 +12,7 @@
     <link rel="icon" href="theme_files/site/images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="ext/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CLato:300,300italic,400,700,900%7CYesteryear">
-    <link rel="stylesheet" href="../assets/css/theme.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="theme_files/site/css/style.css">
 		<!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
@@ -21,7 +20,7 @@
   </head>
   <body>
     <!-- Page-->
-    <div class="page">
+    <div class="page text-center">
       <!-- Page Header-->
       <header class="page-head">
         <!-- RD Navbar Transparent-->
@@ -82,52 +81,63 @@
       <section class="breadcrumb-classic">
         <div class="shell section-34 section-sm-50">
           <div class="range range-lg-middle">
-            <div class="cell-lg-5 reveal-lg-block cell-lg-push-1 text-lg-left">
-              <h2><span class="big">Explore Programs</span></h2>
+            <div class="cell-lg-2 veil reveal-sm-block cell-lg-push-2"><span class="mdi mdi-calendar icon icon-white"></span></div>
+            <div class="cell-lg-5 veil reveal-lg-block cell-lg-push-1 text-lg-left">
+              <h2><span class="big">Programs</span></h2>
             </div>
-            <a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="//www.">
-            <span class="btn-text">Apply Now</span></a>
+            <div class="offset-top-0 offset-sm-top-10 cell-lg-5 offset-lg-top-0 small cell-lg-push-3 text-lg-right">
+              <ul class="list-inline list-inline-dashed p">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Programs</a></li>
+              </ul>
+            </div>
           </div>
         </div>
+        <svg class="svg-triangle-bottom" xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#{startColor};stop-opacity:1;"></stop>
+              <stop offset="100%" style="stop-color:#{endColor};stop-opacity:1;"></stop>
+            </lineargradient>
+          </defs>
+          <polyline points="0,0 60,0 29,29" fill="url(##{id})"></polyline>
+        </svg>
       </section>
 
       <!-- Page Contents-->
       <main class="page-content">
-        <h3>Career Path | A-Z</h3>
-        <section class="program-listing">
-        <h4>Agriculture & Environmental Services</h4>
-        <ul>
-          <li>Forestry and Landscape Management</li>
-        </ul>
-        <h4>Business & Marketing</h4>
-        <ul>
-          <li>Business and Sports Management</li>
-          <li>Marketing Management</li>
-        </ul>
-        <h4>Construction</h4>
-        <ul>
-          <li>Construction Technologies</li>
-        </ul>
-        <h4>Education & Training</h4>
-        <ul>
-          <li>Teacing Professions</li>
-        </ul>
-        <h4>Engineering & Science Technologies</h4>
-        <ul>
-          <li>Electronics, Robotics, and Programming</li>
-          <li>Engineering Academy</li>
-          <li>Computer Aided Design & Engineering</li>
-        </ul>
-        <h4>Health Science</h4>
-        <ul>
-          <li>Athletic Healthcare and Fitness</li>
-          <li>Healthcare and Technologies</li>
-        </ul>
-        <h4>Human Services</h4>
-        <ul>
-          <li>Cosmetology</li>
-        </ul>
-      </section>
+
+        <section>
+          <div class="shell">
+            <div class="offset-sm-top-66 text-left">
+              <!-- Responsive-tabs-->
+              <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
+                <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
+                  <li>Tab 1</li>
+                  <li>Tab 2</li>
+                  <li>Tab 3</li>
+                  <li>Tab 4</li>
+                </ul>
+                <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
+                  <div>
+                    Tab 1 Content
+                  </div>
+                  <div>
+                    Tab 2 Content
+                  </div>
+                  <div>
+                    Tab 3 Content
+                  </div>
+                  <div>
+                    Tab 4 Content
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        This is a program page.
       </main>
 
 
