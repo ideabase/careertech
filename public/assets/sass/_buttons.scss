@@ -4,6 +4,10 @@
 }
 
 .btn-anis-effect.btn-primary:hover {
-  background-color: darkred;
-  border-color: darkred;
+  background-color: gray;
+  border-color: gray;
+}
+
+.btn-anis-effect.btn-primary:before, .btn-anis-effect.btn-primary:after {
+  background-color: gray;
 }
