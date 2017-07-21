@@ -6,7 +6,7 @@
  #}
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<html class="wide wow-animation smoothscroll scrollTo" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 	<meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +21,8 @@
     <style type="text/css">
   	 {% include '_includes/critical.css' %}
     </style>
-
+    <link href="{{ siteUrl }}assets/css/theme.css" type="text/css" rel="stylesheet" media="screen"/>
+    <link href="{{ siteUrl }}assets/css/style.css" type="text/css" rel="stylesheet" media="screen"/>
 
 </head>
 
@@ -37,17 +38,23 @@
     {% endif %}-->
     #}
 
-		  {% include '_includes/_header.html' %}
+	{% include '_includes/_header.html' %}
 
+  {% block whiteHeader %}
+    {% include '_includes/_whiteHeader.html' %}
+  {% endblock %}
+
+  {% block header %}
+  {% endblock %}
 		<main class="page-content" role="main">
 			{% block content %}
 				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
 			{% endblock %}
 		</main>
-    {% include '_includes/_footer.html' %}
-    <link href="{{ siteUrl }}assets/css/theme.css" type="text/css" rel="stylesheet" media="screen"/>
-    <link href="{{ siteUrl }}assets/css/style.css" type="text/css" rel="stylesheet" media="screen"/>
+
+  {% include '_includes/_footer.html' %}
+
   <!-- Google Analytics Code - don't forget to change the UA ID -->
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -61,8 +68,9 @@
   <!-- Live Reload - For local environment only -->
   <script src="//localhost:35729/livereload.js"></script>
   {% endif %}
-  <script src="{{siteUrl}}assets/js/script.js"></script>
+
   <script src="{{siteUrl}}assets/js/core.min.js"></script>
+  <script src="{{siteUrl}}assets/js/script.js"></script>
   <script type="text/javascript" src="{{ siteUrl }}assets/js/min/scripts-min.js"></script>
 </div>
 </body>

@@ -1,5 +1,229 @@
 {% extends "_layout" %}
+
+{% set title = "News" %}
+
 {% block content %}
+
+<section class="breadcrumb-classic">
+  <div class="shell section-34 section-sm-50">
+    <div class="range range-lg-middle">
+      <div class="cell-lg-2 veil reveal-sm-block cell-lg-push-2"><span class="mdi mdi-calendar icon icon-white"></span></div>
+      <div class="cell-lg-5 veil reveal-lg-block cell-lg-push-1 text-lg-left">
+        <h2><span class="big">News & Calendars</span></h2>
+      </div>
+      <div class="offset-top-0 offset-sm-top-10 cell-lg-5 offset-lg-top-0 small cell-lg-push-3 text-lg-right">
+        <ul class="list-inline list-inline-dashed p">
+          <li><a href="{{'site.url'}}">Home</a></li>
+          <li><a href="{{'news'}}">News & Calendars</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <svg class="svg-triangle-bottom" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#{startColor};stop-opacity:1;"></stop>
+        <stop offset="100%" style="stop-color:#{endColor};stop-opacity:1;"></stop>
+      </lineargradient>
+    </defs>
+    <polyline points="0,0 60,0 29,29" fill="url(##{id})"></polyline>
+  </svg>
+</section>
+<!-- Page Content-->
+<main class="page-content section-98 section-sm-top-110 section-sm-bottom-124">
+  <div class="shell">
+    <div class="range range-sm-center range-lg-left">
+      <div class="cell-md-8 cell-md-push-2 cel-lg-9">
+        <div class="inset-md-left-20">
+          <!-- Blog Events-->
+          <section>
+
+                            <!-- Post Event-->
+                            <article class="post post-event post-event-right">
+                              <!-- Post media-->
+                              <header class="post-media">
+                                <div data-photo-swipe="gallery">
+                                  <a class="thumbnail-classic" href="events-list-single-left-sidebar.html" target="_self">
+                                  </a>
+                                </div>
+                              </header>
+                              <!-- Post content-->
+                              <section class="post-content text-left offset-top-41">
+                                <!-- Post Title-->
+                                {% for entry in craft.entries.section('news').find() %}
+                                <!-- Post Body-->
+                                <div class="post-body">
+                                  <div class="inset-md-right-115">
+                                    <h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }} on {{ entry.postDate.format('F d, Y') }}</a></h3>
+                                    <p>{{ entry.body.getPage(1) }}</p>
+                                  </div>
+                                </div><a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More</a>
+                                <!-- Post meta-->
+                                <div class="post-meta context-dark">
+                                  <time datetime="2016-01-01"><span class="post-meta-day">7</span><span class="big text-uppercase post-meta-month">Mar</span></time>
+                                </div>
+                              </section>
+                            </article>
+                            <hr class="hr bg-lighter offset-top-41 offset-sm-top-66">
+
+                              	{% endfor %}
+
+          
+            <div class="offset-top-66">
+                              <!-- Classic Pagination-->
+                              <nav>
+                                <ul class="pagination-classic">
+                                  <li><a href="#">Prev</a></li>
+                                  <li class="active"><a href="#">1</a></li>
+                                  <li><a href="#">2</a></li>
+                                  <li><a href="#">3</a></li>
+                                  <li><a href="#">4</a></li>
+                                  <li><a href="#">Next</a></li>
+                                </ul>
+                              </nav>
+                              <!--// Classic Pagination-->
+                              <!--ul.pagination-classic-->
+                              <!--  li.previous-->
+                              <!--    a.btn.btn-default(href='#' class= size)= nameListPrev-->
+                              <!--  each val, index in amountList-->
+                              <!--    - var isActive = (index == active - 1)? "active": ""-->
+                              <!--    - var isHidden = (index > 2)? "veil reveal-xs-inline-block": ""-->
+                              <!--    li(class="#{isHidden} #{isActive}")-->
+                              <!--      a.btn.btn-default(href='#' class="#{size}" )= val-->
+                              <!--  li.next-->
+                              <!--    a.btn.btn-default(href='#' class= size)= nameListNext-->
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="cell-md-4 cell-md-push-1 offset-top-66 offset-md-top-0 cell-lg-3">
+        <!-- Section Blog Events-->
+        <aside class="text-left">
+          <div class="range">
+            <div class="cell-sm-6 cell-md-12 offset-sm-top-41 offset-md-top-0">
+              <!-- RD calendar-->
+                            <div class="rd-calendar">
+                              <div class="rdc-panel"><a class="rdc-next"></a><a class="rdc-prev"></a>
+                                <div class="rdc-month"></div>
+                                <div class="rdc-fullyear"></div>
+                              </div>
+                              <div class="rdc-table"></div>
+                              <div class="rdc-events text-left"><a class="rdc-events_close"></a>
+                                <ul>
+                                  <li class="rdc-event" data-date="04/12/2016">
+                                    <div class="rdc-event-wrap">
+                                      <article class="post widget-event">
+                                        <div class="post-meta"><span class="icon icon-xxs text-picton-blue mdi mdi-clock"></span>
+                                          <time class="text-dark" datetime="2016-01-01">8:00 AM</time>
+                                        </div>
+                                        <div class="post-title">
+                                          <h6 class="text-regular"><a href="#">Pitae augue vitae matt</a></h6>
+                                        </div>
+                                      </article>
+                                    </div>
+                                  </li>
+                                  <li class="rdc-event" data-date="04/13/2016">
+                                    <div class="rdc-event-wrap">
+                                      <article class="post widget-event">
+                                        <div class="post-meta"><span class="icon icon-xxs text-picton-blue mdi mdi-clock"></span>
+                                          <time class="text-dark" datetime="2016-01-01">9:00 AM</time>
+                                        </div>
+                                        <div class="post-title">
+                                          <h6 class="text-regular"><a href="#">Pitae augue vitae matt</a></h6>
+                                        </div>
+                                      </article>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+            </div>
+            <!-- Recent Events-->
+            <div class="cell-sm-6 cell-md-12 offset-top-41">
+              <h6 class="text-uppercase text-spacing-60">Recent Events</h6>
+              <div class="text-subline"></div>
+              <div class="offset-top-34">
+                              <!-- Event Widget-->
+                              <article class="post widget-event text-left"><a href="#">
+                                  <div class="unit unit-horizontal unit-spacing-xs unit-middle">
+                                    <div class="unit-left"><img class="img-circle" width="46" height="46" src="images/blog/post-thumb-01-46x46.jpg" alt=""></div>
+                                    <div class="unit-body">
+                                      <div class="post-meta">
+                                        <ul class="list-inline list-inline-sm">
+                                          <li><span class="icon-xxs text-picton-blue mdi mdi-calendar"></span>
+                                            <time class="text-dark" datetime="2016-01-01">05/14/2015</time>
+                                          </li>
+                                          <li><span class="icon-xxs text-picton-blue mdi mdi-clock"></span>
+                                            <time class="text-dark" datetime="2016-01-01">9:00 PM</time>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                      <div class="post-title">
+                                        <h6 class="text-regular">Let’s Change the world</h6>
+                                      </div>
+                                    </div>
+                                  </div></a></article>
+              </div>
+              <div class="offset-top-30">
+                              <!-- Event Widget-->
+                              <article class="post widget-event text-left"><a href="#">
+                                  <div class="unit unit-horizontal unit-spacing-xs unit-middle">
+                                    <div class="unit-left"><img class="img-circle" width="46" height="46" src="images/blog/post-thumb-02-46x46.jpg" alt=""></div>
+                                    <div class="unit-body">
+                                      <div class="post-meta">
+                                        <ul class="list-inline list-inline-sm">
+                                          <li><span class="icon-xxs text-picton-blue mdi mdi-calendar"></span>
+                                            <time class="text-dark" datetime="2016-01-01">05/14/2015</time>
+                                          </li>
+                                          <li><span class="icon-xxs text-picton-blue mdi mdi-clock"></span>
+                                            <time class="text-dark" datetime="2016-01-01">9:00 PM</time>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                      <div class="post-title">
+                                        <h6 class="text-regular">The meaning of Web De...</h6>
+                                      </div>
+                                    </div>
+                                  </div></a></article>
+              </div>
+              <div class="offset-top-30">
+                              <!-- Event Widget-->
+                              <article class="post widget-event text-left"><a href="#">
+                                  <div class="unit unit-horizontal unit-spacing-xs unit-middle">
+                                    <div class="unit-left"><img class="img-circle" width="46" height="46" src="images/blog/post-thumb-03-46x46.jpg" alt=""></div>
+                                    <div class="unit-body">
+                                      <div class="post-meta">
+                                        <ul class="list-inline list-inline-sm">
+                                          <li><span class="icon-xxs text-picton-blue mdi mdi-calendar"></span>
+                                            <time class="text-dark" datetime="2016-01-01">05/14/2015</time>
+                                          </li>
+                                          <li><span class="icon-xxs text-picton-blue mdi mdi-clock"></span>
+                                            <time class="text-dark" datetime="2016-01-01">9:00 PM</time>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                      <div class="post-title">
+                                        <h6 class="text-regular">Get Started with Templa...</h6>
+                                      </div>
+                                    </div>
+                                  </div></a></article>
+              </div>
+            </div>
+          </div>
+          <!-- Flickr Feed-->
+          <h6 class="offset-top-41 text-uppercase text-spacing-60">Flickr Feed</h6>
+          <div class="text-subline"></div>
+          <div class="offset-top-34">
+                          <div class="group-xs flickr widget-flickrfeed" data-photo-swipe="gallery" data-flickr-tags="14098790@N07"><a class="flickr-item thumbnail-classic" data-photo-swipe-item="" href="" data-image_c="href" data-size="800x800" data-type="flickr-item"><img width="82" height="82" data-title="alt" src="images/_blank.png" alt="" data-image_q="src"></a><a class="flickr-item thumbnail-classic" data-photo-swipe-item="" href="" data-image_c="href" data-size="800x800" data-type="flickr-item"><img width="82" height="82" data-title="alt" src="images/_blank.png" alt="" data-image_q="src"></a><a class="flickr-item thumbnail-classic" data-photo-swipe-item="" href="" data-image_c="href" data-size="800x800" data-type="flickr-item"><img width="82" height="82" data-title="alt" src="images/_blank.png" alt="" data-image_q="src"></a><a class="flickr-item thumbnail-classic" data-photo-swipe-item="" href="" data-image_c="href" data-size="800x800" data-type="flickr-item"><img width="82" height="82" data-title="alt" src="images/_blank.png" alt="" data-image_q="src"></a><a class="flickr-item thumbnail-classic" data-photo-swipe-item="" href="" data-image_c="href" data-size="800x800" data-type="flickr-item"><img width="82" height="82" data-title="alt" src="images/_blank.png" alt="" data-image_q="src"></a><a class="flickr-item thumbnail-classic" data-photo-swipe-item="" href="" data-image_c="href" data-size="800x800" data-type="flickr-item"><img width="82" height="82" data-title="alt" src="images/_blank.png" alt="" data-image_q="src"></a><a class="flickr-item thumbnail-classic" data-photo-swipe-item="" href="" data-image_c="href" data-size="800x800" data-type="flickr-item"><img width="82" height="82" data-title="alt" src="images/_blank.png" alt="" data-image_q="src"></a><a class="flickr-item thumbnail-classic" data-photo-swipe-item="" href="" data-image_c="href" data-size="800x800" data-type="flickr-item"><img width="82" height="82" data-title="alt" src="images/_blank.png" alt="" data-image_q="src"></a><a class="flickr-item thumbnail-classic" data-photo-swipe-item="" href="" data-image_c="href" data-size="800x800" data-type="flickr-item"><img width="82" height="82" data-title="alt" src="images/_blank.png" alt="" data-image_q="src"></a>
+                          </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!--
 
 <button onclick="myFunction()">News</button>
 <button onclick="myFunction2()">Events</button>
@@ -39,6 +263,6 @@ function myFunction2() {
 }
 </script>
 
-
+-->
 
 {% endblock %}

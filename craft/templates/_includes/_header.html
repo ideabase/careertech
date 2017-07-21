@@ -26,61 +26,89 @@
 				    </li>
 				{% endmacro %}
 
-<header class="page-head slider-menu-position" >
-  <div class="rd-navbar-wrap">
-      <nav class="rd-navbar rd-navbar-default rd-navbar-transparent rd-navbar--is-stuck rd-navbar-static">
-        <div class="rd-navbar-inner">
-
-          <!-- panel -->
-            <div class="rd-navbar-panel">
-              <button class="rd-navbar-toggle">
-                <span></span>
-              </button>
-              <div class="rd-navbar-brand">
-                <a href="{{ siteUrl }}">
-                  {% for asset in header.logo %}
-                  <img alt="{{asset.title}}" src="{{ asset.url('featureImage') }}">
-                  {% endfor %}</a>
-
-              </div>
-            </div>
-
-
-            <div class="rd-navbar-menu-wrap">
-
-              <div class="rd-navbar-nav-wrap">
-                <div class="rd-navbar-mobile-scroll">
-                  <div class="rd-navbar-mobile-brand"><a href="#"><img style="margin-top: -5px;margin-left: -15px;" width="138" height="31" src="images/logos/1.white-red-condensed.png" alt=""></a></div>
-                  <div class="form-search-wrap">
-                    <!-- RD Search Form-->
-										<!-- RD Search Form-->
-										<form class="form-search rd-search" action="search-results.html" method="GET">
-											<div class="form-group">
-												<label class="form-label form-search-label form-label-sm" for="rd-navbar-form-search-widget">Search</label>
-												<input class="form-search-input input-sm form-control form-control-gray-lightest input-sm" id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off">
+				<header class="page-head slider-menu-position">
+					<!-- RD Navbar Transparent-->
+					<div class="rd-navbar-wrap">
+						<nav class="rd-navbar rd-navbar-default rd-navbar-transparent" data-md-device-layout="rd-navbar-fixed" data-anchor-offset="20" data-lg-device-layout="rd-navbar-static" data-lg-auto-height="true" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
+							<div class="rd-navbar-inner">
+								<!-- RD Navbar Panel-->
+								<div class="rd-navbar-panel">
+									<!-- RD Navbar Toggle-->
+									<button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
+									<!-- Navbar Brand-->
+									<div class="rd-navbar-brand"><a href="index.html"><img style="margin-top: -5px;margin-left: -15px;" width="138" height="50" src="images/logos/1.white-red-condensed.png" alt=""></a></div>
+								</div>
+								<div class="rd-navbar-menu-wrap">
+									<div class="rd-navbar-nav-wrap">
+										<div class="rd-navbar-mobile-scroll">
+											<!-- Navbar Brand Mobile-->
+											<div class="rd-navbar-mobile-brand"><a href="index.html"><img style="margin-top: -5px;margin-left: -15px;" width="138" height="31" src="images/logos/1.white-red-condensed.png" alt=""></a></div>
+											<div class="form-search-wrap">
+												<!-- RD Search Form-->
+												<form class="form-search rd-search" action="search-results.html" method="GET">
+													<div class="form-group">
+														<label class="form-label form-search-label form-label-sm" for="rd-navbar-form-search-widget">Search</label>
+														<input class="form-search-input input-sm form-control form-control-gray-lightest input-sm" id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off">
+													</div>
+													<button class="form-search-submit" type="submit"><span class="mdi mdi-magnify"></span></button>
+												</form>
 											</div>
-											<button class="form-search-submit" type="submit"><span class="mdi mdi-magnify"></span></button>
-										</form>
-                  </div>
-                  <ul class="rd-navbar-nav">
-                    {% for node in nav %}
-                    {{ _self.addNodeToNavigation(node, loop.index) }}
-                    {% endfor %}
-                  </ul>
-                </div>
-              </div>
-							<!-- RD Navbar Search-->
-							<div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#"><span></span></a>
-								<form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-results.html" method="GET">
-									<div class="form-group">
-										<label class="form-label" for="rd-navbar-search-form-input">Type and hit enter...</label>
-										<input class="rd-navbar-search-form-input form-control form-control-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
-									</div>
-								</form>
-							</div>
+											<!-- RD Navbar Nav-->
+											<ul class="rd-navbar-nav">
+												{% for node in nav %}
+				                {{ _self.addNodeToNavigation(node, loop.index) }}
+				                {% endfor %}
 
-            </div>
-        </div>
-      </nav>
-</div>
-</header>
+											</ul>
+										</div>
+									</div>
+									<!-- RD Navbar Search-->
+									<div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#"><span></span></a>
+										<form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-results.html" method="GET">
+											<div class="form-group">
+												<label class="form-label" for="rd-navbar-search-form-input">Type and hit enter...</label>
+												<input class="rd-navbar-search-form-input form-control form-control-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</nav>
+					</div>
+				</header>
+				<div class="snackbars" id="form-output-global"></div>
+	      <!-- PhotoSwipe Gallery-->
+	      <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	        <div class="pswp__bg"></div>
+	        <div class="pswp__scroll-wrap">
+	          <div class="pswp__container">
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	          </div>
+	          <div class="pswp__ui pswp__ui--hidden">
+	            <div class="pswp__top-bar">
+	              <div class="pswp__counter"></div>
+	              <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	              <button class="pswp__button pswp__button--share" title="Share"></button>
+	              <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	              <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	              <div class="pswp__preloader">
+	                <div class="pswp__preloader__icn">
+	                  <div class="pswp__preloader__cut">
+	                    <div class="pswp__preloader__donut"></div>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+	            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	              <div class="pswp__share-tooltip"></div>
+	            </div>
+	            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+	            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+	            <div class="pswp__caption">
+	              <div class="pswp__caption__center"></div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>

@@ -1,5 +1,124 @@
 {% extends "_layout" %}
+{% block whiteHeader %}
+
+<div class="rd-parallax rd-parallax-swiper">
+	<div class="rd-parallax-layer" data-speed="0.3" data-sm-speed="1" data-type="html">
+		<div class="swiper-container swiper-slider" data-loop="true" data-height="100vh" data-dragable="false" data-min-height="480px">
+			<div class="swiper-wrapper text-center">
+				<div class="swiper-slide" id="page-loader" data-slide-bg="images/intros/intro-new-04.jpg" data-preview-bg="images/intros/intro-04-1920x955.jpg">
+					<div class="swiper-caption swiper-parallax" data-speed="0.5" data-fade="true">
+						<div class="swiper-slide-caption">
+							<div class="shell">
+								<div class="range range-lg-center">
+									<div class="cell-lg-12">
+
+										<div class="group group-xl offset-top-20 offset-xs-top-50">
+											{% if entry.applicationLightSwitch %}
+												<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">
+													<span class="btn-text">Apply now</span></a>
+											{% else %}
+												<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">
+													<span class="btn-text">Applications closed for this period</span></a>
+											{% endif %}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
 {% block content %}
+<main class="page-content">
+	<h1>Admissions Criteria</h1>
+	<div>
+		<hr class="divider bg-red">
+	</div>
+	<h3>General</h3>
+
+
+	<p>{{ entry.generalText }}</p>
+	<p>Enrollment Status: {% if entry.applicationLightSwitch %}
+		Open
+	{% else %}
+		Closed
+	{% endif %}</p>
+
+	<hr class="hr hr-gradient">
+
+	<h1>Specific Program Criteria</h1>
+	<div>
+		<hr class="divider bg-red">
+	</div>
+
+	{% for entry in craft.entries.section('programs') %}
+		<div class="group group-xl offset-top-20 offset-xs-top-50">
+			<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{entry.url}}">
+			<span class="btn-text">{{entry.title}}</span></a>
+		</div>
+	{% endfor %}
+
+	<hr class="hr hr-gradient">
+
+
+	<h1>Admissions Deadlines</h1>
+	<div>
+		<hr class="divider bg-red">
+	</div>
+	<table class="table table-striped">
+		{% if entry.applicationDeadlines | length %}
+			<h1>Application Deadlines</h1>
+				<tbody>
+				{% for row in entry.applicationDeadlines %}
+					<tr>
+						<th>{{ row.program }}</th>
+						<th>{{ row.fall }}</th>
+						<th>{{ row.spring }}</th>
+					</tr>
+				{% endfor %}
+			</tbody>
+		{% endif %}
+	</table>
+	{% if entry.applicationLightSwitch %}
+		<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">
+			<span class="btn-text">Apply now</span></a>
+	{% else %}
+		<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" >
+			<span class="btn-text">Applications closed for this period</span></a>
+	{% endif %}
+
+	<hr class="hr hr-gradient">
+
+	<h1>Important Dates & Events</h1>
+	<div>
+		<hr class="divider bg-red">
+	</div>
+	{{ entry.admissionsDates }}
+
+	<p>Here you will find all the important dates and events regarding CTE admissions. Examples include orientation schedules, teacher meetings, and specific class events.</p>
+	<div class="group group-xl offset-top-20 offset-xs-top-50">
+		<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ 'calendars' }}">
+		<span class="btn-text">Admissions Calendar</span></a>
+	</div>
+	<br/>
+		<br/>
+			<br/>  <br/>
+				<br/>
+					<br/>
+</main>
+
+
+
+
+
+
+<!--
 
 {% if entry.featureImage | length %}
 	{% include '_includes/_feature.html' %}
@@ -56,5 +175,5 @@ table, th {
 <h1>Admission Dates & Events</h1>
 {{ entry.admissionsDates }}
 <a href="{{ 'calendars' }}">Admissions Calendar</a>
-
+-->
 {% endblock %}

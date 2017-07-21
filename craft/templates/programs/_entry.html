@@ -1,98 +1,156 @@
 {% extends "_layout" %}
+
+{% block whiteHeader %}
+<!-- RD Navbar Transparent-->
+        <div id="home" data-type="anchor">
+          <!--Swiper-->
+          <div class="rd-parallax rd-parallax-swiper">
+            <div class="rd-parallax-layer" data-speed="0.3" data-sm-speed="1" data-type="html">
+              <div class="swiper-container swiper-slider" data-loop="true" data-height="100vh" data-dragable="false" data-min-height="480px">
+                <div class="swiper-wrapper text-center">
+                  <div class="swiper-slide" id="page-loader" data-slide-bg="images/intros/intro-new-08.jpg" data-preview-bg="images/intros/intro-new-108.jpg">
+                    <div class="swiper-caption swiper-parallax" data-speed="0.5" data-fade="true">
+                      <div class="swiper-slide-caption">
+                        <div class="shell">
+                          <div class="range range-lg-center">
+                            <div class="cell-lg-12">
+                              <h1><span class="big text-uppercase" data-caption-animate="fadeInUp" data-caption-delay="700">{{ entry.title }}</span></h1>
+                            </div>
+                            <div class="cell-lg-10 offset-top-30">
+															{% if entry.applicationLightSwitch %}
+																{% for apply in apply.admissions %}
+																<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ apply.url }}">
+																<span class="btn-text">Apply Now</span></a>
+																{% endfor %}
+															{% else %}
+																<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ apply.url }}">
+																<span class="btn-text">Applications closed for this period</span></a>
+															{% endif %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  {% endblock %}
 {% block content %}
+      <!-- Page Contents-->
+      <main class="page-content">
 
-{% include '_includes/_feature.html' %}
+        <section>
+          <div class="shell">
+            <div class="offset-sm-top-66 text-left">
+              <!-- Responsive-tabs-->
+              <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
+                <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
+                  <li>About the program</li>
+                  <li>Program Overview</li>
+                  <li>Meet the instructor</li>
+                  <li>Photos & Stories</li>
+                </ul>
 
-<div id="about">
-<h1>{{ entry.title }}</h1>
+                <!-- Tab 1 Content -->
+                <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
+                  <div>
+                    <h1>Program Requirements</h1>
+                    <div>
+                      <hr class="divider bg-red">
+											{% set program = entry %}
+											{% if entry.admissionsCriteria | length %}
+												<ul>
+													{% for row in entry.admissionsCriteria %}
+														<li>{{ row.criteria}}</li>
+													{% endfor %}
+												</ul>
+												{%  endif %}
+                    </div>
 
-<!--apply onf and off -->
-{% if entry.applicationLightSwitch %}
-	{% for apply in apply.admissions %}
-		<a href="{{ apply.url }}">Apply Now</a>
-	{% endfor %}
-{% else %}
-	<p>Applications closed for this period </p>
-{% endif %}
+                    <div>
+                      <h1>Courses</h1>
+                      <div>
+                        <hr class="divider bg-red">
+                        <ul>
+                          {% for classes in craft.entries.section('classes').relatedTo(entry) %}
+                              <li><a href="{{classes.url}}">{{ classes.title }}</a></li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
 
-<p>Grade Level: {{ entry.gradeLevel }}</p>
-<p>School: {{ entry.school }}</p>
-<p>Length: {{ entry.length }}</p>
-<p>Credit at Kent: {{ entry.creditAtKent }}</p>
-<h2>Program Description</h2>
-<p>{{ entry.body }}</p>
+                    <h1>Program Description</h1>
+                    <div>
+                      <hr class="divider bg-red">
+                    </div>
+                    <p>{{ entry.body }}</p>
+                  </div>
 
-<ul>
+                  <!-- Tab 2 Content -->
+                  <div>
+										{% if entry.programsMatrix | length %}
+											{% for block in entry.programsMatrix %}
+												<h3>{{ block.heading }}</h3>
+												{% for row in block.text %}
+													<ul>
+														<li>{{ row.bulletpoint }}</li>
+													</ul>
+												{% endfor %}
+											{% endfor %}
+										{% endif %}
+                  </div>
 
-{% set program = entry %}
-{% for entry in craft.entries.section('classes').relatedTo(program) %}
-	<li><a href="{{ entry.courseAccessLink }}">{{ entry.title }}</a></li>
-{% endfor %}
-</ul>
-{% if entry.admissionsCriteria | length %}
-	<h3>Program Criteria</h3>
-	<ul>
-		{% for row in entry.admissionsCriteria %}
-			<li>{{ row.criteria}}</li>
-		{% endfor %}
-	</ul>
-	{%  endif %}
+                  <!-- Tab 3 Content -->
+                  <div>
+										{% set repeat="\n" %}
+										{% for classes in craft.entries.section('classes').relatedTo(program) %}
 
+												{% for instructor in classes.instructor %}
 
-</div>
-<hr>
-<div>
-	{% if entry.programsMatrix | length %}
-		<h2>Program Overview</h2>
-		{% for block in entry.programsMatrix %}
-			<h3>{{ block.heading }}</h3>
-			{% for row in block.text %}
-				<ul>
-					<li>{{ row.bulletpoint }}</li>
-				</ul>
-			{% endfor %}
-		{% endfor %}
-	{% endif %}
-</div>
-<hr>
-<!-- meet the instructor -->
-<!-- variable repeat along with the if statement so that we dont get repeated results-->
-<div>
-		<h2> meet the instructor</h2>
-		{% set repeat="\n" %}
-		{% for classes in craft.entries.section('classes').relatedTo(program) %}
+													{% if repeat != instructor.title %}
+														<p>{{ instructor.title }}</p>
+														<p>{{ instructor.body}}</p>
 
-				{% for instructor in classes.instructor %}
+														{% for asset in instructor.featureImage %}
+															<img src="{{ asset.url('featureImage') }}"/>
+														{% endfor %}
 
-					{% if repeat != instructor.title %}
-						<p>{{ instructor.title }}</p>
-						<p>{{ instructor.body}}</p>
+													{% endif %}
 
-						{% for asset in instructor.featureImage %}
-							<img src="{{ asset.url('featureImage') }}"/>
-						{% endfor %}
+													{% set repeat = instructor.title %}
+												{% endfor %}
+										{% endfor %}
+                  </div>
 
-					{% endif %}
+                  <!-- Tab 4 Content -->
+                  <div>
+										{% for projects in craft.entries.section('projects').relatedTo(program) %}
+											<p>{{ projects.title}}</p>
+											<p>{{ projects.body}}</p>
+											{% for asset in projects.featureImage %}
+												<img src="{{ asset.url('featureImage') }}"/>
+											{% endfor %}
+										{% endfor %}
+                  </div>
 
-					{% set repeat = instructor.title %}
-				{% endfor %}
-		{% endfor %}
-</div>
-
-
-<!-- stories and the projects of a specific class-->
-<div>
-	<h2> Stories</h2>
-	{% for projects in craft.entries.section('projects').relatedTo(program) %}
-		<p>{{ projects.title}}</p>
-		<p>{{ projects.body}}</p>
-		{% for asset in projects.featureImage %}
-			<img src="{{ asset.url('featureImage') }}"/>
-		{% endfor %}
-	{% endfor %}
-</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
+      </main>
+
+
+      <!-- Page Footer-->
+      <!-- Default footer-->
+
+</body>
 
 
 

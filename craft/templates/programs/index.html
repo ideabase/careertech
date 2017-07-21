@@ -1,57 +1,78 @@
 {% extends "_layout" %}
+{% block header %}
+      <!-- Classic Breadcrumbs-->
+      <section class="breadcrumb-classic">
+        <div class="shell section-34 section-sm-50">
+          <div class="range range-lg-middle">
+            <div class="cell-lg-5 reveal-lg-block text-lg-left">
+              <h2><span class="big">Explore Programs</span></h2>
+            </div>
+						{% if entry.applicationLightSwitch %}
+							{% for apply in apply.admissions %}
+							<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
+							<span class="btn-text">Apply Now</span></a>
+							{% endfor %}
+						{% else %}
+						<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200">
+						<span class="btn-text">Applications closed for this period</span></a>
+						{% endif %}
+
+          </div>
+        </div>
+      </section>
+			{% endblock %}
 {% block content %}
+      <!-- Page Contents-->
+      <main class="page-content">
+        <section>
+          <div class="shell">
 
-<h1>{{ entry.title }}</h1>
-<p>{{ entry.body }}</p>
-{% include '_includes/_admissions.html' %}
-{% include '_includes/_feature.html' %}
+            <div class="offset-sm-top-66 text-left">
+              <!-- Responsive-tabs-->
+              <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
+                <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
+                  <li>Career path</li>
+                  <li>a-z</li>
 
-{#<button onclick="myFunction()">A-Z</button>
-<button onclick="myFunction2()">Pathways</button>#}
+                </ul>
+                <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
+                  <div>
+                    <section class="program-listing">
+											{% for category in craft.categories.group('pathways') %}
+												<h4>{{ category.title }}</h4>
+												{% for entry in craft.entries.section('programs').relatedTo(category) %}
+													<ul class="list list-marked">
+														<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+													</ul>
+												{% endfor %}
+											{% endfor %}
+											<h4><a href="{{ 'electives' }}">Electives</a></h4>
+                  </section>
+                  </div>
 
-{#<div id="list">
+                  <div>
+                    <section class="program-listing">
+											{% for category in craft.categories.group('pathways').order('title asc') %}
+												<h4>{{ category.title }}</h4>
+												{% for entry in craft.entries.section('programs').relatedTo(category).order('title asc') %}
+												<ul class="list list-marked">
+													<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+												</ul>
+												{% endfor %}
+											{% endfor %}
+											<h4><a href="{{ 'electives' }}">Electives</a></h4>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-	{% for category in craft.categories.group('pathways') %}
-		<h4>{{ category.title }}</h4>
-		{% for entry in craft.entries.section('programs').relatedTo(category) %}
-			<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
-		{% endfor %}
-	{% endfor %}
-
-</div>#}
-
-{# alphabetical #}
+      </main>
 
 
+      <!-- Page Footer-->
+      <!-- Default footer-->
 
-<div id="alphabeticalList">
-	<hr>
-	{% for category in craft.categories.group('pathways').order('title asc') %}
-		<h4>{{ category.title }}</h4>
-		{% for entry in craft.entries.section('programs').relatedTo(category).order('title asc') %}
-			<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
-		{% endfor %}
-	{% endfor %}
-	<h4><a href="{{ 'electives' }}">Electives</a></h4>
-</div>
-
-<script>
-function myFunction() {
-	var x = document.getElementById('alphabeticalList');
-	if (x.style.display === 'none') {
-		x.style.display = 'block';
-	} else {
-			x.style.display = 'none';
-	}
-}
-
-function myFunction2() {
-	var x = document.getElementById('list');
-	if (x.style.display === 'none') {
-		x.style.display = 'block';
-	} else {
-			x.style.display = 'none';
-	}
-}
-</script>
 {% endblock %}
