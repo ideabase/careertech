@@ -11,3 +11,8 @@
 .btn-anis-effect.btn-primary:before, .btn-anis-effect.btn-primary:after {
   background-color: gray;
 }
+
+a .btn .btn-block .btn-primary {
+  background-color: red;
+  border-color: red;
+}

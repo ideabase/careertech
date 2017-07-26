@@ -12,3 +12,7 @@ h4 {
 .rd-navbar-default.rd-navbar-static .rd-navbar-nav > li > a:after, .rd-navbar-floated.rd-navbar-static .rd-navbar-nav > li > a:after, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-nav > li > a:after {
   background: red;
 }
+
+.page blockquote.quote .text-primary, .page .text-primary {
+  color: red;
+}
