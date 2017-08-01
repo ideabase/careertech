@@ -1,12 +1,108 @@
 {% extends "_layout" %}
+
+
+
 {% block content %}
 
-{% for category in craft.categories.group('facultyType') %}
-		<h4>{{ category.title }}</h4>
-		{% for entry in craft.entries.section('faculty').relatedTo(category) %}
-			<p><a href="{{ entry.url }}">{{ entry.title }}</a></p>
-		{% endfor %}
 
-{% endfor %}
 
+<body>
+
+		<!-- Classic Breadcrumbs-->
+		<section class="breadcrumb-classic">
+			<div class="shell section-34 section-sm-50">
+				<div class="range range-lg-middle">
+					<div class="cell-lg-5 reveal-lg-block text-lg-left">
+						<h2><span class="big">{{ entry.title }}</span></h2>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+					<!-- Page Contents-->
+					<main class="page-content">
+						<!--Section Real Estate Agents-->
+						<section class="section-98 section-sm-110 section-bottom-66">
+							<div class="shell">
+
+													<!-- Responsive-tabs-->
+													<div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
+														<ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
+															{% for category in craft.categories.group('facultyType') %}
+															<li>{{ category.title }}</li>
+															{% endfor %}
+															<li>By Program</li>
+															<li>Academic Instructors</li>
+														</ul>
+
+<!-- FACULTY and staff TAB -->
+
+													<div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
+															{% for category in craft.categories.group('facultyType') %}
+															<div class="text-center text-md-left">
+																<div class="range range-xs-center section-34">
+
+
+																	{% for entry in craft.entries.section('faculty').relatedTo(category) %}
+																	<div class="cell-sm-6 cell-md-3 offset-top-50 offset-sm-top-0">
+																		<img class="img-responsive reveal-inline-block" src="images/users/user-alex-merphy-270x270.jpg" width="270" height="270" alt="">
+																		<div class="text-md-left offset-top-20">
+																			<div>
+																				<h5 class="text-bold text-primary"><a href="{{ entry.url }}">{{ entry.title }}</a></h5>
+																			</div>
+																		</div>
+																		<address class="contact-info text-md-left">
+																			<ul class="list-unstyled p">
+																				<li class="reveal-block"><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
+																				</li>
+																				<li class="reveal-block"><span class="icon icon-xxs mdi mdi-email-open text-middle"></span> <a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
+																				</li>
+																			</ul>
+																		</address>
+																	</div>
+																	{% endfor %}
+
+
+
+																</div>
+															</div>
+															{% endfor %}
+
+<!-- BY PROGRAM TAB -->
+															<div class="text-center text-md-left">
+															<div class="range range-xs-center section-34">
+																{% for program in craft.entries.section('programs') %}
+																	<div>
+																		<h1>{{program.title}}</h1>
+																	{% for classes in craft.entries.section('classes').relatedTo(program) %}
+																	<hr class="divider bg-red hr-sm-left-0">
+																	<h4>{{classes.title}}</h4>
+																	</div>
+																											{% for entry in craft.entries.section('faculty').relatedTo(classes) %}
+																											<div class="cell-sm-6 cell-md-3 offset-top-50 offset-md-top-0"><img class="img-responsive reveal-inline-block" src="images/users/user-ryan-jackson-270x270.jpg" width="270" height="270" alt="">
+																												<div class="text-md-left offset-top-20">
+																													<div>
+																														<h5 class="text-bold text-primary"><a href="faculty-member.html">{{ entry.title }}</a></h5>
+																													</div>
+																												</div>
+																												<address class="contact-info text-md-left">
+																													<ul class="list-unstyled p">
+																														<li><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
+																														</li>
+																														<li><span class="icon icon-xxs mdi mdi-email-open text-middle"></span> <a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
+																														</li>
+																													</ul>
+																												</address>
+																											</div>
+																											{% endfor %}
+
+																	{% endfor %}
+																{% endfor %}
+															</div>
+														</div>
+								</div>
+						</section>
+					</main>
 {% endblock %}
