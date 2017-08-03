@@ -27,7 +27,9 @@
     <div class="rd-parallax-layer" data-speed="0.3" data-sm-speed="1" data-type="html">
       <div class="swiper-container swiper-slider" data-loop="true" data-height="100vh" data-dragable="false" data-min-height="480px">
         <div class="swiper-wrapper text-center">
-          <div class="swiper-slide" id="page-loader" data-slide-bg="images/intros/intro-new-08.jpg" data-preview-bg="images/intros/intro-new-108.jpg">
+          {% for asset in entry.featureImage %}
+          <div class="swiper-slide" id="page-loader" data-slide-bg="{{asset.url('featureImage')}}" data-preview-bg="{{asset.url('featureImage')}}">
+          {% endfor %}
             <div class="swiper-caption swiper-parallax" data-speed="0.5" data-fade="true">
               <div class="swiper-slide-caption">
                 <div class="shell">
@@ -62,7 +64,7 @@
 
     <div class="group group-xl offset-top-20 offset-xs-top-50">
       <a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ 'programs' }}">
-      <span class="btn-text">View full list of programs</span></a>
+      <span class="btn-text">View full list of programs[S]</span></a>
     </div>
     <br />
     <h3>{{ entry.admissionsTitle }}</h3>
@@ -76,13 +78,13 @@
 
 	{% include '_includes/_admissions.html' %}
 
-  <h3>News | Upcoming Events</h3>
+  <h3>News | Upcoming Events[S]</h3>
   <div>
     <hr class="divider bg-red">
   </div>
   <div class="group group-xl offset-top-20 offset-xs-top-50">
     <a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('calendars') }}">
-    <span class="btn-text">Full calendar</span></a>
+    <span class="btn-text">Full calendar[S]</span></a>
   </div>
   <br/>
     <br/>

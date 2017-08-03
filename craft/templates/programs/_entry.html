@@ -26,7 +26,7 @@
 																{% endfor %}
 															{% else %}
 																<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ apply.url }}">
-																<span class="btn-text">Applications closed for this period</span></a>
+																<span class="btn-text">Applications closed for this period[S]</span></a>
 															{% endif %}
                             </div>
                           </div>
@@ -51,16 +51,16 @@
               <!-- Responsive-tabs-->
               <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
                 <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
-                  <li>About the program</li>
-                  <li>Program Overview</li>
-                  <li>Meet the instructor</li>
-                  <li>Photos & Stories</li>
+                  <li>About the program[S]</li>
+                  <li>Program Overview[S]</li>
+                  <li>Meet the instructor[S]</li>
+                  <li>Photos & Stories[S]</li>
                 </ul>
 
                 <!-- Tab 1 Content -->
                 <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                   <div>
-                    <h1>Program Requirements</h1>
+                    <h1>Program Requirements[S]</h1>
                     <div>
                       <hr class="divider bg-red">
 											{% set program = entry %}
@@ -74,7 +74,7 @@
                     </div>
 
                     <div>
-                      <h1>Courses</h1>
+                      <h1>Courses[S]</h1>
                       <div>
                         <hr class="divider bg-red">
                         <ul>
@@ -85,7 +85,7 @@
                       </div>
                     </div>
 
-                    <h1>Program Description</h1>
+                    <h1>Program Description[S]</h1>
                     <div>
                       <hr class="divider bg-red">
                     </div>
@@ -124,6 +124,9 @@
 													{% endif %}
 
 													{% set repeat = instructor.title %}
+                          <div>
+                            <hr class="divider bg-red">
+                          </div>
 												{% endfor %}
 										{% endfor %}
                   </div>

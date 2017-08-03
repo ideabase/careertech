@@ -1,24 +1,73 @@
 {% extends "_layout" %}
 {% block content %}
-  <div>
+{% set faculty = entry.facultyType %}
+<body>
+  <section class="breadcrumb-classic">
+    <div class="shell section-34 section-sm-50">
+      <div class="range range-lg-middle">
+        <div class="cell-lg-5 reveal-lg-block text-lg-left">
+          <h2><span class="big">{{faculty.title}}[need checking]</span></h2>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <h3>{{entry.title}}</h3>
-      <p>{{ entry.body }}</p>
+  <!-- Page Content-->
+  <main class="page-content">
+    <!-- My Works-->
+    <section class="section-98 section-sm-110">
+      <div class="shell">
+        <div class="range range-xs-center">
+          <div class="cell-xs-10 cell-sm-5">
+                    <!-- Member block type 5-->
+                    {% for asset in entry.featureImage %}
+                    <div class="member-block-type-5 inset-md-right-20"><img class="img-responsive center-block" src="{{asset.url('profileImage')}}"  alt="">
+                    {% endfor %}
+                      <div class="member-block-body"><a class="btn btn-block btn-primary" href="mailto:{{entry.emailAddress}}">get in touch[S]</a>
+                        <div class="offset-top-34">
+                          <ul class="list-inline list-inline-xs">
+                            <li><a class="icon icon-xxs icon-circle icon-darker-filled fa-facebook" href="#{icon.link}"></a></li>
+                            <li><a class="icon icon-xxs icon-circle icon-darker-filled fa-twitter" href="#{icon.link}"></a></li>
+                            <li><a class="icon icon-xxs icon-circle icon-darker-filled fa-google-plus" href="#{icon.link}"></a></li>
+                            <li><a class="icon icon-xxs icon-circle icon-darker-filled fa-linkedin" href="#{icon.link}"></a></li>
+                          </ul>
+                        </div>
+                        <address class="contact-info offset-top-20 offset-sm-top-34">
+                          <ul class="list-unstyled p">
+                            <li><span class="icon icon-xxs text-middle text-dark mdi mdi-phone"></span><a class="text-middle reveal-inline-block" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a></li>
+                            <li><span class="icon icon-xxs text-middle text-dark mdi mdi-email-open"></span><a class="text-middle reveal-inline-block text-picton-blue" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a></li>
+                          </ul>
+                        </address>
+                      </div>
+                    </div>
+          </div>
+          <div class="cell-xs-10 cell-sm-7 text-sm-left">
+            <div>
+              <h1>{{entry.title}}</h1>
+            </div>
+            <p class="small text-darker offset-top-4">{{faculty.title}}[need checking]</p>
+            <hr class="divider bg-red hr-sm-left-0">
+            <p class="text-left">{{entry.body}}</p>
+            <div class="offset-top-30">
+              <p class="text-left">Courses related[S]</p>
+            </div>
+            <div class="offset-top-30 text-center">
+              {% for class in craft.entries.section('classes').relatedTo(entry) %}
+                  <p>
+                    <a class="h3 text-bold" href='{{class.url}}'>{{class.title}}</a>
+                  </p>
+              {% endfor %}
+            </div>
 
-      {% for asset in entry.featureImage %}
-        <img src="{{ asset.url('featureImage') }}">
-      {% endfor %}
 
-      <p style="text-align: center">{{ entry.emailAddress }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <p style="text-align: center">{{ entry.phoneNumber }}</p>
-
-  {% for class in craft.entries.section('classes').relatedTo(entry) %}
-    <a href='{{class.url}}'>{{class.title}}</a>
-  {% endfor %}
-  </div>
-
-
+</main>
+  </body>
 
 
 {% endblock %}

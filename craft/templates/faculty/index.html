@@ -33,8 +33,7 @@
 															{% for category in craft.categories.group('facultyType') %}
 															<li>{{ category.title }}</li>
 															{% endfor %}
-															<li>By Program</li>
-															<li>Academic Instructors</li>
+															<li>By Program[S]</li>
 														</ul>
 
 <!-- FACULTY and staff TAB -->
@@ -46,8 +45,10 @@
 
 
 																	{% for entry in craft.entries.section('faculty').relatedTo(category) %}
-																	<div class="cell-sm-6 cell-md-3 offset-top-50 offset-sm-top-0">
-																		<img class="img-responsive reveal-inline-block" src="images/users/user-alex-merphy-270x270.jpg" width="270" height="270" alt="">
+																	<div class="cell-sm-6 cell-md-3">
+																		{% for asset in entry.featureImage %}
+																		<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
+																		{% endfor %}
 																		<div class="text-md-left offset-top-20">
 																			<div>
 																				<h5 class="text-bold text-primary"><a href="{{ entry.url }}">{{ entry.title }}</a></h5>
@@ -70,38 +71,41 @@
 															</div>
 															{% endfor %}
 
+
 <!-- BY PROGRAM TAB -->
 															<div class="text-center text-md-left">
-															<div class="range range-xs-center section-34">
+																<div class="range range-xs-center section-34">
 																{% for program in craft.entries.section('programs') %}
-																	<div>
-																		<h1>{{program.title}}</h1>
+																	<div><h1>{{program.title}}</h1>
+																	<hr class="divider bg-red hr-sm-left-0"></div>
 																	{% for classes in craft.entries.section('classes').relatedTo(program) %}
-																	<hr class="divider bg-red hr-sm-left-0">
 																	<h4>{{classes.title}}</h4>
-																	</div>
-																											{% for entry in craft.entries.section('faculty').relatedTo(classes) %}
-																											<div class="cell-sm-6 cell-md-3 offset-top-50 offset-md-top-0"><img class="img-responsive reveal-inline-block" src="images/users/user-ryan-jackson-270x270.jpg" width="270" height="270" alt="">
-																												<div class="text-md-left offset-top-20">
-																													<div>
-																														<h5 class="text-bold text-primary"><a href="faculty-member.html">{{ entry.title }}</a></h5>
-																													</div>
-																												</div>
-																												<address class="contact-info text-md-left">
-																													<ul class="list-unstyled p">
-																														<li><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
-																														</li>
-																														<li><span class="icon icon-xxs mdi mdi-email-open text-middle"></span> <a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
-																														</li>
-																													</ul>
-																												</address>
-																											</div>
-																											{% endfor %}
+																		{% for entry in craft.entries.section('faculty').relatedTo(classes) %}
+																		{% for asset in entry.featureImage %}
+																		<div class="cell-sm-6 cell-md-3"><img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
+																		{% endfor %}
+																			<div class="text-md-left offset-top-20">
+																				<div>
+																					<h5 class="text-bold text-primary"><a href="{{entry.url}}">{{entry.title}}</a></h5>
+																				</div>
+																			</div>
+																			<address class="contact-info text-md-left">
+																				<ul class="list-unstyled p">
+																					<li><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
+																					</li>
+																					<li><span class="icon icon-xxs mdi mdi-email-open text-middle"></span> <a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
+																					</li>
+																				</ul>
+																			</address>
 
+																		</div>
+																		{% endfor %}
+																		{% endfor %}
 																	{% endfor %}
-																{% endfor %}
-															</div>
-														</div>
+																	</div>
+																</div>
+
+
 								</div>
 						</section>
 					</main>
