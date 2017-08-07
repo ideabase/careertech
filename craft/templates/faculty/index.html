@@ -79,14 +79,14 @@
 
 
 <!-- BY PROGRAM TAB -->
-															<div class="text-center text-md-left">
+															<div class="text-center text-md-center">
 																{% for program in craft.entries.section('programs').order('title asc') %}
 																<div class="cell-sm-12 cell-md-12">
 																	<h1>{{program.title}}</h1>
 																	{% for class in craft.entries.section('classes').relatedTo(program).order('title asc') %}
 																	<h4>{{class.title}}</h4>
-																	<hr class="divider bg-red hr-sm-left-0">
-																	<div class="range range-xs-left section-34">
+																	<hr class="divider bg-red hr-sm-center-0">
+																	<div class="range range-xs-center section-34">
 																				{% for entry in craft.entries.section('faculty').relatedTo(class).order('title asc') %}
 																				<div class="cell-sm-6 cell-md-3">
 																					{% if entry.featureImage | length %}
@@ -100,7 +100,7 @@
 																					{% endif %}
 																					<div class="text-md-left offset-top-20">
 																						<div>
-																							<h5 class="text-bold text-primary"><a href="{{ entry.url }}"></a>{{entry.title}}</h5>
+																							<h5 class="text-bold text-primary"><a href="{{ entry.url }}">{{entry.title}}</h5></a>
 																						</div>
 																					</div>
 																					<address class="contact-info text-md-left">

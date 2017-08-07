@@ -117,9 +117,15 @@
 														<p>{{ instructor.title }}</p>
 														<p>{{ instructor.body}}</p>
 
-														{% for asset in instructor.featureImage %}
-															<img src="{{ asset.url('profileImage') }}"/>
-														{% endfor %}
+                            {% if instructor.featureImage | length %}
+														  {% for asset in instructor.featureImage %}
+															  <img src="{{ asset.url('profileImage') }}"/>
+														  {% endfor %}
+                            {% else %}
+                              {% for asset in imageMissing.featureImage %}
+                                <img src="{{ asset.url('profileImage') }}"/>
+                              {% endfor %}
+                            {% endif %}
 
 													{% endif %}
 

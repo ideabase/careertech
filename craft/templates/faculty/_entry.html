@@ -20,9 +20,17 @@
         <div class="range range-xs-center">
           <div class="cell-xs-10 cell-sm-5">
                     <!-- Member block type 5-->
-                    {% for asset in entry.featureImage %}
-                    <div class="member-block-type-5 inset-md-right-20"><img class="img-responsive center-block" src="{{asset.url('profileImage')}}"  alt="">
-                    {% endfor %}
+
+                    <div class="member-block-type-5 inset-md-right-20">
+                      {% if entry.featureImage | length %}
+                        {% for asset in entry.featureImage %}
+                          <img class="img-responsive center-block" src="{{asset.url('profileImage')}}"  alt="">
+                        {% endfor %}
+                      {% else %}
+                        {% for asset in imageMissing.featureImage %}
+                          <img class="img-responsive center-block" src="{{asset.url('profileImage')}}"  alt="">
+                        {% endfor %}
+                      {% endif %}
                       <div class="member-block-body"><a class="btn btn-block btn-primary" href="mailto:{{entry.emailAddress}}">get in touch[S]</a>
                         <div class="offset-top-34">
                           <ul class="list-inline list-inline-xs">
@@ -40,6 +48,7 @@
                         </address>
                       </div>
                     </div>
+
           </div>
           <div class="cell-xs-10 cell-sm-7 text-sm-left">
             <div>
