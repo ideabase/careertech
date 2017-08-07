@@ -1,39 +1,25 @@
 {% extends "_layout" %}
-{% block whiteHeader %}
+{% block header %}
 
-<div class="rd-parallax rd-parallax-swiper">
-	<div class="rd-parallax-layer" data-speed="0.3" data-sm-speed="1" data-type="html">
-		<div class="swiper-container swiper-slider" data-loop="true" data-height="100vh" data-dragable="false" data-min-height="480px">
-			<div class="swiper-wrapper text-center">
-				{% for asset in entry.featureImage %}
-				<div class="swiper-slide" id="page-loader" data-slide-bg="{{asset.url('featureImage')}}" data-preview-bg="{{asset.url('featureImage')}}">
-				{% endfor %}
-					<div class="swiper-caption swiper-parallax" data-speed="0.5" data-fade="true">
-						<div class="swiper-slide-caption">
-							<div class="shell">
-								<div class="range range-lg-center">
-									<div class="cell-lg-12">
-
-										<div class="group group-xl offset-top-20 offset-xs-top-50">
-											{% if entry.applicationLightSwitch %}
-												<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">
-													<span class="btn-text">Apply now[S]</span></a>
-											{% else %}
-												<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">
-													<span class="btn-text">Applications closed for this period[S]</span></a>
-											{% endif %}
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+<section class="breadcrumb-classic">
+	<div class="shell section-34 section-sm-50">
+		<div class="range range-lg-middle">
+			<div class="cell-lg-5 reveal-lg-block text-lg-left">
+				<h2><span class="big">{{entry.title}}</span></h2>
 			</div>
+			{% if entry.applicationLightSwitch %}
+				{% for apply in apply.admissions %}
+				<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
+				<span class="btn-text">Apply Now[S]</span></a>
+				{% endfor %}
+			{% else %}
+			<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200">
+			<span class="btn-text">Applications closed for this period[S]</span></a>
+			{% endif %}
+
 		</div>
 	</div>
-</div>
-
+</section>
 {% endblock %}
 
 {% block content %}

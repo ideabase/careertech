@@ -44,11 +44,17 @@
 																<div class="range range-xs-center section-34">
 
 
-																	{% for entry in craft.entries.section('faculty').relatedTo(category) %}
+																	{% for entry in craft.entries.section('faculty').relatedTo(category).order('title asc') %}
 																	<div class="cell-sm-6 cell-md-3">
-																		{% for asset in entry.featureImage %}
-																		<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
-																		{% endfor %}
+																		{% if entry.featureImage | length %}
+																			{% for asset in entry.featureImage %}
+																			<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
+																			{% endfor %}
+																		{% else %}
+																			{% for asset in imageMissing.featureImage %}
+																			<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
+																			{% endfor %}
+																		{% endif %}
 																		<div class="text-md-left offset-top-20">
 																			<div>
 																				<h5 class="text-bold text-primary"><a href="{{ entry.url }}">{{ entry.title }}</a></h5>
@@ -74,36 +80,47 @@
 
 <!-- BY PROGRAM TAB -->
 															<div class="text-center text-md-left">
-																<div class="range range-xs-center section-34">
-																{% for program in craft.entries.section('programs') %}
-																	<div><h1>{{program.title}}</h1>
-																	<hr class="divider bg-red hr-sm-left-0"></div>
-																	{% for classes in craft.entries.section('classes').relatedTo(program) %}
-																	<h4>{{classes.title}}</h4>
-																		{% for entry in craft.entries.section('faculty').relatedTo(classes) %}
-																		{% for asset in entry.featureImage %}
-																		<div class="cell-sm-6 cell-md-3"><img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
-																		{% endfor %}
-																			<div class="text-md-left offset-top-20">
-																				<div>
-																					<h5 class="text-bold text-primary"><a href="{{entry.url}}">{{entry.title}}</a></h5>
+																{% for program in craft.entries.section('programs').order('title asc') %}
+																<div class="cell-sm-12 cell-md-12">
+																	<h1>{{program.title}}</h1>
+																	{% for class in craft.entries.section('classes').relatedTo(program).order('title asc') %}
+																	<h4>{{class.title}}</h4>
+																	<hr class="divider bg-red hr-sm-left-0">
+																	<div class="range range-xs-left section-34">
+																				{% for entry in craft.entries.section('faculty').relatedTo(class).order('title asc') %}
+																				<div class="cell-sm-6 cell-md-3">
+																					{% if entry.featureImage | length %}
+																						{% for asset in entry.featureImage %}
+																						<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
+																						{% endfor %}
+																					{% else %}
+																						{% for asset in imageMissing.featureImage %}
+																						<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
+																						{% endfor %}
+																					{% endif %}
+																					<div class="text-md-left offset-top-20">
+																						<div>
+																							<h5 class="text-bold text-primary"><a href="{{ entry.url }}"></a>{{entry.title}}</h5>
+																						</div>
+																					</div>
+																					<address class="contact-info text-md-left">
+																						<ul class="list-unstyled p">
+																							<li><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
+																							</li>
+																							<li><span class="icon icon-xxs mdi mdi-email-open text-middle"></span> <a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
+																							</li>
+																						</ul>
+																					</address>
 																				</div>
-																			</div>
-																			<address class="contact-info text-md-left">
-																				<ul class="list-unstyled p">
-																					<li><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
-																					</li>
-																					<li><span class="icon icon-xxs mdi mdi-email-open text-middle"></span> <a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
-																					</li>
-																				</ul>
-																			</address>
-
+																				{% endfor %}
 																		</div>
 																		{% endfor %}
-																		{% endfor %}
-																	{% endfor %}
 																	</div>
+																	{% endfor %}
+
 																</div>
+
+
 
 
 								</div>
