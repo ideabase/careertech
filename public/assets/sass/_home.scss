@@ -1,5 +1,7 @@
 .local-carousel{
-  text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
   position:relative;
   height: 210px;
   width:100%;
@@ -8,7 +10,7 @@
 
 .local-carousel h4{
   position: absolute;
-  top:100px;
+  margin-top: 0;
   color: white;
 }
 .local-carousel h4 span{
@@ -19,4 +21,13 @@
 
 .local-carousel h4 span.spacer{
   padding:0 5px;
+}
+
+.same-line{
+  position: relative;
+}
+.same-line-right{
+  position:absolute;
+  top:0;
+  right:0;
 }

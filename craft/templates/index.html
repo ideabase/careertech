@@ -55,17 +55,19 @@
 
 
 {% block content %}
+      <div class="same-line">
+        <h3>{{ entry.pathwayTitle }}</h3>
 
-      <h3>{{ entry.pathwayTitle }}</h3>
-      <a href="{{'programs'}}" style="text-align:right"><h3> View full list of programs > </h3></a>
+          <a class="same-line-right"href="{{'programs'}}" ><h3> View full list of programs > </h3></a>
+      </div>
       <div class="owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="2" data-sm-items="3" data-md-items="3" data-nav-custom=".owl-custom-navigation" data-dots="true" data-nav="false">
         {% for category in craft.categories.group('pathways') %}
-          <div class="local-carousel">
+          <a href="{{ 'programs' }}"><div class="local-carousel">
             {% for asset in category.featureImage %}
               <img src="{{asset.url('carouselImage')}}" alt=""/>
             {% endfor %}
-            <h4><a href="{{ 'programs' }}"><span>{{ category.title }}</span></a></h4>
-          </div>
+            <h4><span>{{ category.title }}</span></h4>
+          </div></a>
         {% endfor %}
 
         <!--template <a href="clients.html"><img class="img-semi-transparent" src="images/clients/client-02-126x68.png" width="126" height="68" alt=""></a>-->
@@ -88,14 +90,33 @@
         <span class="btn-text">Admissions Criteria</span></a>
       </div>
 
-          <h3>News | Upcoming Events</h3>
-          <!--<div>
-            <hr class="divider bg-red">
-          </div>-->
-          <div class="group group-xl offset-top-20 offset-xs-top-50">
-            <a class="btn btn-primary btn-lg" href="{{ url('calendars') }}">
-            <span class="btn-text">Full calendar[S]</span></a>
+      <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
+        <div class="same-line">
+          <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
+            <li>News[S]</li>
+            <li>Upcoming Events[S]</li>
+          </ul>
+
+          <a class="same-line-right btn btn-primary btn-lg" href="{{ url('calendars') }}">
+          <span class="btn-text">Full calendar[S]</span></a>
+          <!--<a class="same-line-right" href="{{ url('calendars') }}">View full calendar[S] ></a>-->
+
+        </div>
+
+
+
+        <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
+          <div>
+            <p>News</p>
           </div>
+
+          <!-- tab 2 contenct -->
+          <div>
+            <p>events</p>
+          </div>
+        </div>
+      </div>
+          
 
   	<!-- {% include '_includes/_admissions.html' %}-->
 

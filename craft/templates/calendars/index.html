@@ -27,51 +27,72 @@
       <div class="cell-md-8 cell-md-push-2 cel-lg-9">
         <div class="inset-md-left-20">
           <!-- Blog Events-->
-          <section>
 
-                            <!-- Post Event-->
-                            <article class="post post-event post-event-right">
-                              <!-- Post media-->
-                              <header class="post-media">
-                                <div data-photo-swipe="gallery">
-                                  <a class="thumbnail-classic" href="events-list-single-left-sidebar.html" target="_self">
-                                  </a>
-                                </div>
-                              </header>
-                              <!-- Post content-->
-                              <section class="post-content text-left offset-top-41">
-                                <!-- Post Title-->
-                                {% for entry in craft.entries.section('news').find() %}
-                                <!-- Post Body-->
-                                <div class="post-body">
-                                  <div class="inset-md-right-115">
-                                    <h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }} on {{ entry.postDate.format('F d, Y') }}</a></h3>
-                                    <p>{{ entry.body.getPage(1) }}</p>
-                                  </div>
-                                </div><a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
-
-                              </section>
-                            </article>
-                            <hr class="hr bg-lighter offset-top-41 offset-sm-top-66">
-
-                              	{% endfor %}
+					<div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
+		        <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
+		          <li>News[S]</li>
+		          <li>Events[S]</li>
+		        </ul>
 
 
-            <div class="offset-top-66">
-                              <!-- Classic Pagination-->
-                              <nav>
-                                <ul class="pagination-classic">
-                                  <li><a href="#">Prev</a></li>
-                                  <li class="active"><a href="#">1</a></li>
-                                  <li><a href="#">2</a></li>
-                                  <li><a href="#">3</a></li>
-                                  <li><a href="#">4</a></li>
-                                  <li><a href="#">Next</a></li>
-                                </ul>
-                              </nav>
+		        <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
+		          <div>
+		            <p>News</p>
+		          </div>
+							<div>
+							<section>
 
-            </div>
-          </section>
+																<!-- Post Event-->
+																<article class="post post-event post-event-right">
+																	<!-- Post media-->
+																	<header class="post-media">
+																		<div data-photo-swipe="gallery">
+																			<a class="thumbnail-classic" href="events-list-single-left-sidebar.html" target="_self">
+																			</a>
+																		</div>
+																	</header>
+																	<!-- Post content-->
+																	<section class="post-content text-left offset-top-41">
+																		<!-- Post Title-->
+																		{% for entry in craft.entries.section('news').find() %}
+																		<!-- Post Body-->
+																		<div class="post-body">
+																			<div class="inset-md-right-115">
+																				<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }} on {{ entry.postDate.format('F d, Y') }}</a></h3>
+																				<p>{{ entry.body.getPage(1) }}</p>
+																			</div>
+																		</div><a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
+
+																	</section>
+																</article>
+																<hr class="hr bg-lighter offset-top-41 offset-sm-top-66">
+
+																		{% endfor %}
+
+
+								<div class="offset-top-66">
+																	<!-- Classic Pagination-->
+																	<nav>
+																		<ul class="pagination-classic">
+																			<li><a href="#">Prev</a></li>
+																			<li class="active"><a href="#">1</a></li>
+																			<li><a href="#">2</a></li>
+																			<li><a href="#">3</a></li>
+																			<li><a href="#">4</a></li>
+																			<li><a href="#">Next</a></li>
+																		</ul>
+																	</nav>
+
+								</div>
+							</section>
+
+
+		          </div>
+		        </div>
+		      </div>
+
+
+
         </div>
       </div>
       <div class="cell-md-4 cell-md-push-1 offset-top-66 offset-md-top-0 cell-lg-3">

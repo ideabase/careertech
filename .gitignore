@@ -4,9 +4,4 @@
 /craft/config/db.php
 /public/assets/.DS_Store
 craft/config/db.php
-/public/assets/img/uploads/feature/kentcte-full-blackred.svg
-/public/assets/img/uploads/feature/kentcte-05.svg
-/public/assets/img/uploads/feature/cte-white-red-full2-08.svg
-/public/assets/img/uploads/feature/_featureImage/mj-smiling-8.jpg
-/public/assets/img/uploads/feature/_featureImage/Cuva.png
-/public/assets/img/uploads/feature/_featureImage/COS2.jpg
+/public/assets/img/uploads/*

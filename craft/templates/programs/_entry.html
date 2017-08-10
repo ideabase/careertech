@@ -61,31 +61,33 @@
                 <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                   <div>
                     <div class="tab-half">
-                    <h1>Program Requirements[S]</h1>
-
-                      <hr class="divider bg-red">
-											{% set program = entry %}
-											{% if entry.admissionsCriteria | length %}
-												<ul>
-													{% for row in entry.admissionsCriteria %}
-														<li>{{ row.criteria}}</li>
-													{% endfor %}
-												</ul>
-												{%  endif %}
-                        <h1>Courses[S]</h1>
-
+                      <div>
+                        <h1>Program Requirements[S]</h1>
                         <hr class="divider bg-red">
-                        <ul>
-                          {% for classes in craft.entries.section('classes').relatedTo(entry) %}
-                              <li><a href="{{classes.url}}">{{ classes.title }}</a></li>
-                          {% endfor %}
-                        </ul>
+  											{% set program = entry %}
+  											{% if entry.admissionsCriteria | length %}
+  												<ul>
+  													{% for row in entry.admissionsCriteria %}
+  														<li>{{ row.criteria}}</li>
+  													{% endfor %}
+  												</ul>
+  												{%  endif %}
+                          <h1>Courses[S]</h1>
 
+                          <hr class="divider bg-red">
+                          <ul>
+                            {% for classes in craft.entries.section('classes').relatedTo(entry) %}
+                                <li><a href="{{classes.url}}">{{ classes.title }}</a></li>
+                            {% endfor %}
+                          </ul>
+                        </div>
                     </div>
                     <div class="tab-half">
-                    <h1>Program Description[S]</h1>
-                      <hr class="divider bg-red">
-                      <p>{{ entry.body }}</p>
+                      <div>
+                        <h1>Program Description[S]</h1>
+                        <hr class="divider bg-red">
+                        <p>{{ entry.body }}</p>
+                      </div>
                     </div>
                   </div>
 
@@ -112,25 +114,27 @@
 												{% for instructor in classes.instructor %}
 
 													{% if repeat != instructor.title %}
-														<p>{{ instructor.title }}</p>
+                          <div class="tab-half">
+													<a href="{{instructor.url}}">
+                            <p>{{ instructor.title }}</p></a>
 														<p>{{ instructor.body}}</p>
 
                             {% if instructor.featureImage | length %}
 														  {% for asset in instructor.featureImage %}
-															  <img src="{{ asset.url('profileImage') }}"/>
+															  <a href="{{instructor.url}}"><img src="{{ asset.url('profileImage') }}" alt=""/></a>
 														  {% endfor %}
                             {% else %}
                               {% for asset in imageMissing.featureImage %}
-                                <img src="{{ asset.url('profileImage') }}"/>
+                                <a href="{{instructor.url}}"><img src="{{ asset.url('profileImage') }}" alt=""/></a>
                               {% endfor %}
                             {% endif %}
 
 													{% endif %}
 
+                        </div>
+
 													{% set repeat = instructor.title %}
-                          <div>
-                            <hr class="divider bg-red">
-                          </div>
+
 												{% endfor %}
 										{% endfor %}
                   </div>
