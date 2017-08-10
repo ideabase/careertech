@@ -1,9 +1,9 @@
-.btn-anis-effect.btn-primary {
+.btn-anis-effect.btn-primary, .btn-primary {
   background-color: red;
   border-color: red;
 }
 
-.btn-anis-effect.btn-primary:hover {
+.btn-anis-effect.btn-primary:hover, .btn-primary:hover {
   background-color: gray;
   border-color: gray;
 }

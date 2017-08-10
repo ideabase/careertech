@@ -31,24 +31,12 @@
 	<div class="shell">
 		<div class="range range-sm-center text-lg-left">
 			<div class="cell-sm-8 cell-md-12">
-				<div class="range range-xs-center">
+				<div class="range range-xs">
 					<div class="cell-xs-7 text-xs-left cell-md-4 cell-lg-3 cell-lg-push-4">
 						<h6 class="text-uppercase text-spacing-60">{{ footer.footerText }}</h6>
 						<p><a href="http://sixdistrict.com">{{ footer.footerText }}</a></p>
 						<p><a href="kentschools.net">needs check on craft[S]</a></p>
 
-					</div>
-					<div class="cell-xs-5 offset-top-41 offset-xs-top-0 text-xs-left cell-md-3 cell-lg-2 cell-lg-push-3">
-						<h6 class="text-uppercase text-spacing-60">Useful Links</h6>
-						<div class="reveal-block">
-							<div class="reveal-inline-block">
-								<ul class="list list-marked">
-									{% for node in nav %}
-									{{ _self.addNodeToNavigation(node, loop.index) }}
-									{% endfor %}
-								</ul>
-							</div>
-						</div>
 					</div>
 
 					<div class="cell-xs-12 offset-top-41 cell-md-5 offset-md-top-0 text-md-left cell-lg-4 cell-lg-push-2">
@@ -66,7 +54,7 @@
 						<div class="footer-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='138' height='50' src='{{asset.url}}' alt=''/></a></div>
 						{% endfor %}
 							{% if footer.socialName | length %}
-							<p class="text-darker offset-top-4">Connect with us[S]</p>
+							<p class="offset-top-4">Connect With Us</p>
 									<ul class="list-inline">
 										{% for social in  footer.socialName %}
 										<li><a class="icon fa icon-xxs icon-circle icon-darkest-filled" href="{{social.socialNetworkUrl}}">
@@ -83,7 +71,7 @@
 		</div>
 	</div>
 	<div class="shell offset-top-50">
-		<p class="small text-darker">Intense &copy; <span id="copyright-year"></span> . <a href="privacy.html">Privacy Policy</a>
+		<p class="small text-darker"><span id="copyright-year"></span> Kent City Schools<Br/>Designed and Developed by IdeaBase in Kent, OH
 
 		</p>
 	</div>

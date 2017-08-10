@@ -25,27 +25,27 @@
   <!--Swiper-->
   <div class="rd-parallax rd-parallax-swiper">
     <div class="rd-parallax-layer" data-speed="0.3" data-sm-speed="1" data-type="html">
-      <div class="swiper-container swiper-slider" data-loop="true"  data-dragable="false" data-min-height="480px">
+      <div class="swiper-container swiper-slider" data-loop="true"  data-dragable="true" data-min-height="480px">
         <div class="swiper-wrapper text-center">
           {% for asset in entry.featureImage %}
           <div class="swiper-slide" id="page-loader" data-slide-bg="{{asset.url('featureImage')}}" data-preview-bg="{{asset.url('featureImage')}}">
-          {% endfor %}
             <div class="swiper-caption swiper-parallax" data-speed="0.5" data-fade="true">
               <div class="swiper-slide-caption">
                 <div class="shell">
                   <div class="range range-lg-center">
                     <div class="cell-lg-12">
                       <h1><span data-caption-animate="fadeInUp" data-caption-delay="700">{{ entry.welcomeTitle }}</h1>
-                      <h1><span class="big text-uppercase" data-caption-animate="fadeInUp" data-caption-delay="700">{{ entry.welcomeTitle }}</span></h1>
+                      <h1><span class="big text-uppercase" data-caption-animate="fadeInUp" data-caption-delay="700">{{ entry.welcomeSubtitle }}</span></h1>
                     </div>
                     <div class="cell-lg-10 offset-top-30">
-                      <h4 class="hidden reveal-sm-block text-light" data-caption-animate="fadeInUp" data-caption-delay="900">{{ entry.body }}</h4>
+                      <div class="reveal-sm-block text-light" data-caption-animate="fadeInUp" data-caption-delay="900">{{ entry.body }}</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -55,42 +55,37 @@
 
 
 {% block content %}
-<!-- Page Contents-->
-  <main class="page-content">
-    <h3>{{ entry.pathwayTitle }}</h3>
-    <div>
-      <hr class="divider bg-red">
-    </div>
 
-    <div class="group group-xl offset-top-20 offset-xs-top-50">
-      <a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ 'programs' }}">
-      <span class="btn-text">View full list of programs[S]</span></a>
-    </div>
-    <br />
-    <h3>{{ entry.admissionsTitle }}</h3>
-    <div>
-      <hr class="divider bg-red">
-    </div>
+      <h3>{{ entry.pathwayTitle }}</h3>
 
-    <p>{{entry.admissionsText}}</p>
-  </main>
+      <i>Pathways Carousel To Go Here</i>
+      {% for category in craft.categories.group('pathways') %}
+        <h4><a href="programs">{{ category.title }}</a></h4>
+      {% endfor %}
+      <!--<div>
+        <hr class="divider bg-red">
+      </div>-->
+        <a href="{{ 'programs' }}">View full list of programs</a>
+      <h3>{{ entry.admissionsTitle }}</h3>
+      <!--<div>
+        <hr class="divider bg-red">
+      </div>-->
+      <p>{{entry.admissionsText}}</p>
+      <div class="group group-xl offset-top-20 offset-xs-top-50">
+        <a class="btn btn-primary btn-lg" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('admissions') }}">
+        <span class="btn-text">Admissions Criteria</span></a>
+      </div>
 
+          <h3>News | Upcoming Events</h3>
+          <!--<div>
+            <hr class="divider bg-red">
+          </div>-->
+          <div class="group group-xl offset-top-20 offset-xs-top-50">
+            <a class="btn btn-primary btn-lg" href="{{ url('calendars') }}">
+            <span class="btn-text">Full calendar[S]</span></a>
+          </div>
 
-	{% include '_includes/_admissions.html' %}
-
-  <h3>News | Upcoming Events[S]</h3>
-  <div>
-    <hr class="divider bg-red">
-  </div>
-  <div class="group group-xl offset-top-20 offset-xs-top-50">
-    <a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('calendars') }}">
-    <span class="btn-text">Full calendar[S]</span></a>
-  </div>
-  <br/>
-    <br/>
-      <br/>  <br/>
-        <br/>
-          <br/>
+  	<!-- {% include '_includes/_admissions.html' %}-->
 
 
 {% endblock %}

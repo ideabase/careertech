@@ -14,7 +14,7 @@
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
   <!-- Render SEO Metatags -->
-    {# {% hook 'seomaticRender' %} #}
+    {% hook 'seomaticRender' %}
   <!-- Render Favicons -->
   	{% include '_includes/_favicons.html' %}
   <!--Begin Critical CSS -->
@@ -27,16 +27,16 @@
 </head>
 
 <body>
-  <div class="page text-center">
   <!-- Helper code for the Admin toolbar, only shown when logged in -->
-    {#
       {% if entry is defined %}
       {% set config = {
         entry: entry,
       } %}
       {{ craft.adminbar.bar(config) }}
-    {% endif %}-->
-    #}
+    {% endif %}
+
+  <div class="page">
+
 
 	{% include '_includes/_header.html' %}
 
@@ -47,10 +47,13 @@
   {% block header %}
   {% endblock %}
 		<main class="page-content" role="main">
-			{% block content %}
-				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-			{% endblock %}
+      <!-- Page Contents-->
+          <div class="shell"> <!-- Begin Shell -->
+      			{% block content %}
+      				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+      				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+      			{% endblock %}
+          </div>
 		</main>
 
   {% include '_includes/_footer.html' %}

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h4 {
   text-transform: uppercase;
   color: rgba(255,0,0,0.5);
@@ -18,4 +22,9 @@ h4 {
 }
 .swiper-slide-caption{
   padding: 0;
+}
+
+main {
+  margin-top: 2.5em !important;
+  margin-bottom: 2.5em !important;
 }
