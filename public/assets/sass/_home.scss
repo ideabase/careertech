@@ -1,0 +1,22 @@
+.local-carousel{
+  text-align: center;
+  position:relative;
+  height: 210px;
+  width:100%;
+
+}
+
+.local-carousel h4{
+  position: absolute;
+  top:100px;
+  color: white;
+}
+.local-carousel h4 span{
+  background: rgb(0,0,0);
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
+}
+
+.local-carousel h4 span.spacer{
+  padding:0 5px;
+}

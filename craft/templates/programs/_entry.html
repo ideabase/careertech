@@ -60,8 +60,9 @@
                 <!-- Tab 1 Content -->
                 <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                   <div>
+                    <div class="tab-half">
                     <h1>Program Requirements[S]</h1>
-                    <div>
+
                       <hr class="divider bg-red">
 											{% set program = entry %}
 											{% if entry.admissionsCriteria | length %}
@@ -71,26 +72,23 @@
 													{% endfor %}
 												</ul>
 												{%  endif %}
-                    </div>
+                        <h1>Courses[S]</h1>
 
-                    <div>
-                      <h1>Courses[S]</h1>
-                      <div>
                         <hr class="divider bg-red">
                         <ul>
                           {% for classes in craft.entries.section('classes').relatedTo(entry) %}
                               <li><a href="{{classes.url}}">{{ classes.title }}</a></li>
                           {% endfor %}
                         </ul>
-                      </div>
-                    </div>
 
-                    <h1>Program Description[S]</h1>
-                    <div>
-                      <hr class="divider bg-red">
                     </div>
-                    <p>{{ entry.body }}</p>
+                    <div class="tab-half">
+                    <h1>Program Description[S]</h1>
+                      <hr class="divider bg-red">
+                      <p>{{ entry.body }}</p>
+                    </div>
                   </div>
+
 
                   <!-- Tab 2 Content -->
                   <div>

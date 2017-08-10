@@ -1,16 +1,26 @@
 {% extends "_layout" %}
-{% block content %}
+
+
 {% set faculty = entry.facultyType %}
+{% block header %}
+
+<!-- Classic Breadcrumbs-->
+<section class="breadcrumb-classic">
+	<div class="shell section-34 section-sm-50">
+		<div class="range range-lg-middle">
+			<div class="cell-lg-5 reveal-lg-block text-lg-left">
+				<h2><span class="big">{{faculty.title}}[need checking]</span></h2>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+{% block content %}
+
 <body>
-  <section class="breadcrumb-classic">
-    <div class="shell section-34 section-sm-50">
-      <div class="range range-lg-middle">
-        <div class="cell-lg-5 reveal-lg-block text-lg-left">
-          <h2><span class="big">{{faculty.title}}[need checking]</span></h2>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- Page Content-->
   <main class="page-content">

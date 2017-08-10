@@ -57,15 +57,27 @@
 {% block content %}
 
       <h3>{{ entry.pathwayTitle }}</h3>
+      <a href="{{'programs'}}" style="text-align:right"><h3> View full list of programs > </h3></a>
+      <div class="owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="2" data-sm-items="3" data-md-items="3" data-nav-custom=".owl-custom-navigation" data-dots="true" data-nav="false">
+        {% for category in craft.categories.group('pathways') %}
+          <div class="local-carousel">
+            {% for asset in category.featureImage %}
+              <img src="{{asset.url('carouselImage')}}" alt=""/>
+            {% endfor %}
+            <h4><a href="{{ 'programs' }}"><span>{{ category.title }}</span></a></h4>
+          </div>
+        {% endfor %}
 
-      <i>Pathways Carousel To Go Here</i>
-      {% for category in craft.categories.group('pathways') %}
-        <h4><a href="programs">{{ category.title }}</a></h4>
-      {% endfor %}
-      <!--<div>
-        <hr class="divider bg-red">
-      </div>-->
-        <a href="{{ 'programs' }}">View full list of programs</a>
+        <!--template <a href="clients.html"><img class="img-semi-transparent" src="images/clients/client-02-126x68.png" width="126" height="68" alt=""></a>-->
+
+      </div>
+      <div class="owl-custom-navigation owl-customer-navigation">
+        <div class="owl-nav">
+          <div class="owl-prev mdi mdi-chevron-left" data-owl-prev></div>
+          <div class="owl-next mdi mdi-chevron-right" data-owl-next></div>
+        </div>
+      </div>
+
       <h3>{{ entry.admissionsTitle }}</h3>
       <!--<div>
         <hr class="divider bg-red">
