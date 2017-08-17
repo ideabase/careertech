@@ -49,7 +49,7 @@
 											{% endfor %}
 												<div class="form-search-wrap">
 												<!-- RD Search Form-->
-												<form class="form-search rd-search" action="search-results.html" method="GET">
+												<form class="form-search rd-search" action="{{ url('search/results') }}" method="GET">
 													<div class="form-group">
 														<label class="form-label form-search-label form-label-sm" for="rd-navbar-form-search-widget">Search</label>
 														<input class="form-search-input input-sm form-control form-control-gray-lightest input-sm" id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off">
@@ -68,7 +68,7 @@
 									</div>
 									<!-- RD Navbar Search-->
 									<div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#"><span></span></a>
-										<form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-results.html" method="GET">
+										<form class="rd-navbar-search-form search-form-icon-right rd-search" action="{{ url('search/results') }}" method="GET">
 											<div class="form-group">
 												<label class="form-label" for="rd-navbar-search-form-input">Type and hit enter...</label>
 												<input class="rd-navbar-search-form-input form-control form-control-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">

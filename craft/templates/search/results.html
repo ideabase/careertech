@@ -1,0 +1,37 @@
+{% extends "_layout" %}
+
+
+
+{% block header %}
+
+<!-- Classic Breadcrumbs-->
+<section class="breadcrumb-classic">
+	<div class="shell section-34 section-sm-50">
+		<div class="range range-lg-middle">
+			<div class="cell-lg-5 reveal-lg-block text-lg-left">
+				<h2><span class="big">Search</span></h2>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+{% block content %}
+<h1>Search Results</h1>
+
+{% set query = craft.request.getParam('s') %}
+{% set entries = craft.entries.search(query).order('score') %}
+
+{% if entries|length %}
+    <p>{{ entries|length }} results:</p>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Your search for “{{ query }}” didn’t return any results.</p>
+{% endif %}
+
+{% endblock %}

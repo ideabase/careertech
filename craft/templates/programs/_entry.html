@@ -141,13 +141,26 @@
 
                   <!-- Tab 4 Content -->
                   <div>
+                    <div>
+                      <h3>Projects[S]</h3>
 										{% for projects in craft.entries.section('projects').relatedTo(program) %}
-											<p>{{ projects.title}}</p>
-											<p>{{ projects.body}}</p>
+											<a href="{{projects.url}}"><p>{{ projects.title}}</p>
+											<p>{{ projects.previewText}}</p></a>
 											{% for asset in projects.featureImage %}
-												<img src="{{ asset.url('featureImage') }}"/>
+												<img src="{{ asset.url('featureImage') }}" alt=""/>
 											{% endfor %}
 										{% endfor %}
+                    </div>
+                    <div>
+                      <h3>sucess stories[S]</h3>
+                    {% for stories in craft.entries.section('successStory').relatedTo(program) %}
+											<a href="{{stories.url}}"><p>{{ stories.title}}</p>
+											<p>{{ stories.previewText}}</p></a>
+											{% for asset in stories.featureImage %}
+												<img src="{{ asset.url('featureImage') }}" alt=""/>
+											{% endfor %}
+										{% endfor %}
+                    </div>
                   </div>
 
                 </div>

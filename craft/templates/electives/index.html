@@ -1,9 +1,9 @@
 {% extends "_layout" %}
 {% block content %}
-    {% for category in craft.categories.group('electives') %}
+    {% for entry in craft.entries.section('electives') %}
     <div>
-      <h4> {{category.title}}</h4>
-      <p> {{category.body}}</p>
+      <h4> {{entry.title}}</h4>
+      <p> {{entry.body}}</p>
     </div>
     {% endfor %}
 

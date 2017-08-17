@@ -1,31 +1,161 @@
-{#
- # News index template
- # -------------------
- #
- # This template is loaded whenever http://example.com/news is
- # requested, because it is located at news/index.html in your
- # craft/templates/ folder.
- #
- # See this page for more details on how Craft routes requests:
- # http://craftcms.com/docs/routing
- #}
-
 {% extends "_layout" %}
 
 {% set title = "News" %}
+{% block header %}
+
+<!-- Classic Breadcrumbs-->
+<section class="breadcrumb-classic">
+	<div class="shell section-34 section-sm-50">
+		<div class="range range-lg-middle">
+			<div class="cell-lg-5 reveal-lg-block text-lg-left">
+				<h2><span class="big">News & Calendars[S]</span></h2>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
 
 {% block content %}
 
 
 
-	<h1>News</h1>
 
-	{% for entry in craft.entries.section('news').find() %}
-		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.getPage(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
-		</article>
+<main class="page-content section-98 section-sm-top-110 section-sm-bottom-124">
+  <div class="shell">
+    <div class="range range-sm-center range-lg-left">
+      <div class="cell-md-8 cell-md-push-2 cel-lg-9">
+        <div class="inset-md-left-20">
+          <!-- Blog Events-->
+
+					<div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
+		        <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
+		          <li>News[S]</li>
+		          <li>Events[S]</li>
+		        </ul>
+
+
+		        <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
+		          <div>
+		            <p>News</p>
+		          </div>
+							<div>
+							<section>
+
+																<!-- Post Event-->
+																<article class="post post-event post-event-right">
+																	<!-- Post media-->
+																	<header class="post-media">
+																		<div data-photo-swipe="gallery">
+																			<a class="thumbnail-classic" href="events-list-single-left-sidebar.html" target="_self">
+																			</a>
+																		</div>
+																	</header>
+																	<!-- Post content-->
+																	<section class="post-content text-left offset-top-41">
+																		<!-- Post Title-->
+																		{% for entry in craft.entries.section('news').find() %}
+																		<!-- Post Body-->
+																		<div class="post-body">
+																			<div class="inset-md-right-115">
+																				<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }} on {{ entry.postDate.format('F d, Y') }}</a></h3>
+																				<p>{{ entry.body.getPage(1) }}</p>
+																			</div>
+																		</div><a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
+
+																	</section>
+																</article>
+																<hr class="hr bg-lighter offset-top-41 offset-sm-top-66">
+
+																		{% endfor %}
+
+
+								<div class="offset-top-66">
+																	<!-- Classic Pagination-->
+																	<nav>
+																		<ul class="pagination-classic">
+																			<li><a href="#">Prev</a></li>
+																			<li class="active"><a href="#">1</a></li>
+																			<li><a href="#">2</a></li>
+																			<li><a href="#">3</a></li>
+																			<li><a href="#">4</a></li>
+																			<li><a href="#">Next</a></li>
+																		</ul>
+																	</nav>
+
+								</div>
+							</section>
+
+
+		          </div>
+		        </div>
+		      </div>
+
+
+
+        </div>
+      </div>
+      <div class="cell-md-4 cell-md-push-1 offset-top-66 offset-md-top-0 cell-lg-3">
+        <!-- Section Blog Events-->
+        <aside class="text-left">
+          <div class="range">
+            <div class="cell-sm-6 cell-md-12 offset-sm-top-41 offset-md-top-0">
+              <!-- RD calendar-->
+                            <h1> events categories[S] </h1>
+                            {% for entry in craft.categories.group('eventType') %}
+                              <h4>entry.title</h4>
+                            {% endfor %}
+            </div>
+            <!-- Recent Events-->
+
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!--
+
+<button onclick="myFunction()">News</button>
+<button onclick="myFunction2()">Events</button>
+
+<div id="news">
+	{% for entry in craft.entries.section('news').limit('2') %}
+		<h3>{{ entry.title }}</h3>
+		<p>{{ entry.postDate.format('F d, Y') }}
+		{{ entry.body }}</p>
 	{% endfor %}
+</div>
+
+<div id="events">
+	{% for entry in craft.entries.section('events') %}
+		<h3>{{ entry.title }}</h3>
+		<p>{{ entry.dateTime.format('F d, Y') }}</p>
+	{% endfor %}
+</div>
+
+<script>
+function myFunction() {
+	var x = document.getElementById('news');
+	if (x.style.display === 'none') {
+		x.style.display = 'block';
+	} else {
+			x.style.display = 'none';
+	}
+}
+
+function myFunction2() {
+	var x = document.getElementById('events');
+	if (x.style.display === 'none') {
+		x.style.display = 'block';
+	} else {
+			x.style.display = 'none';
+	}
+}
+</script>
+
+-->
+
 {% endblock %}

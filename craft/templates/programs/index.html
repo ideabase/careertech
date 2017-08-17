@@ -47,6 +47,12 @@
 												{% endfor %}
 											{% endfor %}
 											<h4><a href="{{ 'electives' }}">Electives[S]</a></h4>
+                      <h4>Additional Programs</h4>
+                      {% for additional in craft.entries.section('additionalPrograms') %}
+                      <ul class="list list-marked">
+                        <li><a href="{{ additional.courseAccessLink }}">{{ additional.title }}</a></li>
+                      </ul>
+                      {% endfor %}
                   </section>
                   </div>
 
@@ -55,9 +61,13 @@
 												{% for entry in craft.entries.section('programs').order('title asc') %}
 												<ul class="list list-marked">
 													<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-												</ul>
 												{% endfor %}
-											<h4><a href="{{ 'electives' }}">Electives[S]</a></h4>
+                          <li><a href="{{ 'electives' }}">Electives[S]</a></li>
+                        {% for additional in craft.entries.section('additionalPrograms') %}
+                            <li><a href="{{ additional.courseAccessLink }}">{{ additional.title }}</a></li>
+                        {% endfor %}
+                      </ul>
+
                     </section>
                   </div>
                 </div>

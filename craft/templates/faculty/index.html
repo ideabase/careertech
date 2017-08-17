@@ -21,10 +21,6 @@
 
 <body>
 
-
-
-
-
 					<!-- Page Contents-->
 					<main class="page-content">
 						<!--Section Real Estate Agents-->
@@ -49,6 +45,7 @@
 
 
 																	{% for entry in craft.entries.section('faculty').relatedTo(category).order('title asc') %}
+																		{% if not entry.temporaryStaff %}
 																	<div class="cell-sm-6 cell-md-3">
 																		{% if entry.featureImage | length %}
 																			{% for asset in entry.featureImage %}
@@ -73,6 +70,7 @@
 																			</ul>
 																		</address>
 																	</div>
+																	{% endif %}
 																	{% endfor %}
 
 
