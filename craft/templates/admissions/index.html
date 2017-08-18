@@ -45,12 +45,14 @@
 		<hr class="divider bg-red">
 	</div>
 
-	{% for entry in craft.entries.section('programs') %}
+
 		<div class="group group-xl offset-top-20 offset-xs-top-50">
+			{% for entry in craft.entries.section('programs').order('title asc') %}
 			<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{entry.url}}">
 			<span class="btn-text">{{entry.title}}</span></a>
+			{% endfor %}
 		</div>
-	{% endfor %}
+
 
 	<hr class="hr hr-gradient">
 

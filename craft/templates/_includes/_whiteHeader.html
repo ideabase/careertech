@@ -17,11 +17,11 @@
 				    <li{% if nodeClasses|length %} class="{{ nodeClasses|join(' ') }}"{% endif %}>
 				        <a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
 				        {% if node.hasChildren %}
-				            <ul class="nav__level{{ (node.level + 1) }}">
-				                {% for subnode in node.children %}
-				                    {{ _self.addNodeToNavigation(subnode, loop.index) }}
-				                {% endfor %}
-				            </ul>
+									<ul class="rd-navbar-dropdown">
+										{% for subnode in node.children %}
+											<li><a href="{{ subnode.url }}"><span class="text-middle">{{ subnode.name }}</span></a>
+										{% endfor %}
+									</ul>
 				        {% endif %}
 				    </li>
 				{% endmacro %}
@@ -48,10 +48,11 @@
 							{% endfor %}
               <div class="form-search-wrap">
                 <!-- RD Search Form-->
+
                 <form class="form-search rd-search" action="{{ url('search/results') }}" method="GET">
                   <div class="form-group">
                     <label class="form-label form-search-label form-label-sm" for="rd-navbar-form-search-widget">Search</label>
-                    <input class="form-search-input input-sm form-control-gray-lightest input-sm" id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off"/>
+                    <input class="form-search-input input-sm form-control #{inputClass}" id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off"/>
                   </div>
                   <button class="form-search-submit" type="submit"><span class="mdi mdi-magnify"></span></button>
                 </form>
@@ -71,11 +72,7 @@
                 <label class="form-label" for="rd-navbar-search-form-input">Type and hit enter...</label>
                 <input class="rd-navbar-search-form-input form-control form-control-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off"/>
               </div>
-              <!--button(type="submit").rd-navbar-search-form-submit.mdi.mdi-magnify-->
             </form>
-            <!--div.rd-navbar-live-search-results-->
-            <!--button(data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar-inner, .rd-navbar-live-search-results").rd-navbar-search-toggle-->
-            <!--  span-->
           </div>
         </div>
       </div>

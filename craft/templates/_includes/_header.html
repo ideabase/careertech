@@ -17,11 +17,11 @@
 				    <li{% if nodeClasses|length %} class="{{ nodeClasses|join(' ') }}"{% endif %}>
 				        <a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
 				        {% if node.hasChildren %}
-				            <ul class="nav__level{{ (node.level + 1) }}">
-				                {% for subnode in node.children %}
-				                    {{ _self.addNodeToNavigation(subnode, loop.index) }}
-				                {% endfor %}
-				            </ul>
+								<ul class="rd-navbar-dropdown">
+										{% for subnode in node.children %}
+											<li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="{{ subnode.url }}"><span class="rd-navbar-submenu-toggle">{{ subnode.name }}</span></a>
+										{% endfor %}
+								</ul>
 				        {% endif %}
 				    </li>
 				{% endmacro %}
@@ -60,7 +60,7 @@
 											<!-- RD Navbar Nav-->
 											<ul class="rd-navbar-nav">
 												{% for node in nav %}
-				                {{ _self.addNodeToNavigation(node, loop.index) }}
+				                	{{ _self.addNodeToNavigation(node, loop.index) }}
 				                {% endfor %}
 
 											</ul>
