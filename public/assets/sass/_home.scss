@@ -31,3 +31,38 @@
   top:0;
   right:0;
 }
+
+.home-admissions-wrap{
+  position:relative;
+  height:250px;
+  display:table;
+  background-color: #EAEAEA;
+  padding: 20px 105px 20px 105px;
+  margin-top: 30px;
+}
+.home-admissionbox-left{
+  margin-top: 30px;
+  float: left;
+  padding: 0px 30px 30px 0px;
+}
+.home-admissionbox-right{
+  margin-top: 30px;
+  float:right;
+  padding-left: 30px;
+}
+
+.home-wrap{
+  position:relative;
+  height:100px;
+  padding: 30px 105px 20px 105px;
+}
+.home-box-left{
+  float:left;
+}
+.home-box-right{
+  float:right;
+}
+.news-container p{
+  margin-top: 50px;
+  text-align: center;
+}

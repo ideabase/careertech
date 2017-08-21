@@ -1,9 +1,23 @@
 .program-listing {
   columns: 2;
   column-gap: 50px;
+  height:800px;
 }
 .tab-half{
   display: inline-table;
   width:40%;
   margin: 5px;
+}
+
+.program-wrap{
+  position:relative;
+  height:1000px;
+  display: table;
+  //padding: 30px 105px 20px 105px;
+}
+.program-box-left{
+  float:left;
+}
+.program-box-right{
+  float:right;
 }

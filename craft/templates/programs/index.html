@@ -7,13 +7,12 @@
             <div class="cell-lg-5 reveal-lg-block text-lg-left">
               <h2><span class="big">{{entry.title}}</span></h2>
             </div>
+            <a class="apply-button-whiteheader btn btn-primary btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
 						{% if entry.applicationLightSwitch %}
 							{% for apply in apply.admissions %}
-							<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
 							<span class="btn-text">Apply Now[S]</span></a>
 							{% endfor %}
 						{% else %}
-						<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200">
 						<span class="btn-text">Applications closed for this period[S]</span></a>
 						{% endif %}
 
@@ -30,7 +29,7 @@
             <div class="offset-sm-top-66 text-left">
               <!-- Responsive-tabs-->
               <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
-                <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
+                <ul class="resp-tabs-list tabs-1 text-left tabs-group-default" data-group="tabs-group-default">
                   <li>Career path[S]</li>
                   <li>a-z[S]</li>
 
@@ -40,19 +39,23 @@
                     <section class="program-listing">
 											{% for category in craft.categories.group('pathways') %}
 												<h4>{{ category.title }}</h4>
+
 												{% for entry in craft.entries.section('programs').relatedTo(category) %}
 													<ul class="list list-marked">
 														<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
 													</ul>
 												{% endfor %}
+                        <hr class="hr hr-gradient">
 											{% endfor %}
 											<h4><a href="{{ 'electives' }}">Electives[S]</a></h4>
+                      <hr class="hr hr-gradient">
                       <h4>Additional Programs</h4>
                       {% for additional in craft.entries.section('additionalPrograms') %}
                       <ul class="list list-marked">
                         <li><a href="{{ additional.courseAccessLink }}">{{ additional.title }}</a></li>
                       </ul>
                       {% endfor %}
+
                   </section>
                   </div>
 

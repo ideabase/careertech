@@ -55,10 +55,10 @@
 
 
 {% block content %}
-      <div class="same-line">
-        <h3>{{ entry.pathwayTitle }}</h3>
+      <div class="home-wrap">
+        <h3 class="home-box-left">{{ entry.pathwayTitle }}</h3>
 
-          <a class="same-line-right"href="{{'programs'}}" ><h3> View full list of programs > </h3></a>
+          <a class="home-box-right" href="{{'programs'}}" ><h3> View full list of programs > </h3></a>
       </div>
       <div class="owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="2" data-sm-items="3" data-md-items="3" data-nav-custom=".owl-custom-navigation" data-dots="true" data-nav="false">
         {% for category in craft.categories.group('pathways') %}
@@ -79,46 +79,53 @@
           <div class="owl-next mdi mdi-chevron-right" data-owl-next></div>
         </div>
       </div>
-      <hr class="hr hr-gradient">
-      <h3>{{ entry.admissionsTitle }}</h3>
-      <!--<div>
-      
-        <hr class="divider bg-red">
-      </div>-->
-      <p>{{entry.admissionsText}}</p>
-      <div class="group group-xl offset-top-20 offset-xs-top-50">
-        <a class="btn btn-primary btn-lg" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('admissions') }}">
-        <span class="btn-text">Admissions Criteria</span></a>
-      </div>
-
-
-      <hr class="hr hr-gradient">
-      <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
-        <div class="same-line">
-          <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
-            <li>News[S]</li>
-            <li>Upcoming Events[S]</li>
-          </ul>
-
-          <a class="same-line-right btn btn-primary btn-lg" href="{{ url('calendars') }}">
-          <span class="btn-text">Full calendar[S]</span></a>
-          <!--<a class="same-line-right" href="{{ url('calendars') }}">View full calendar[S] ></a>-->
-
-        </div>
 
 
 
-        <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
-          <div>
-            <p>News</p>
+          <div class="home-admissions-wrap">
+            <h3>{{ entry.admissionsTitle }}</h3>
+            <div class="home-admissionbox-left">
+              <p>{{entry.admissionsText}}</p>
+            </div>
+
+            <div class="home-admissionbox-right">
+              <div class="group group-xl">
+                <a class="btn btn-primary btn-lg" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('admissions') }}">
+                <span class="btn-text">Admissions Criteria</span></a>
+              </div>
+            </div>
           </div>
 
-          <!-- tab 2 contenct -->
-          <div>
-            <p>events</p>
+          <div class="home-wrap">
+            <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
+
+
+                  <ul class="home-box-left resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
+                    <li>News[S]</li>
+                    <li>Upcoming Events[S]</li>
+                  </ul>
+
+
+                <a class="home-box-right" href="{{ url('calendars') }}">View full calendar[S]</a>
+                <!--<a class="same-line-right" href="{{ url('calendars') }}">View full calendar[S] ></a>-->
+
+
+
+
+
+              <div class="news-container resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
+                <div>
+                  <p>News</p>
+                </div>
+
+                <!-- tab 2 contenct -->
+                <div>
+                  <p>events</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+
 
 
   	<!-- {% include '_includes/_admissions.html' %}-->
