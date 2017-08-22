@@ -37,7 +37,9 @@
                 <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                   <div>
                     <section class="program-listing">
+
 											{% for category in craft.categories.group('pathways') %}
+                        <div class="listing-categories">
 												<h4>{{ category.title }}</h4>
 
 												{% for entry in craft.entries.section('programs').relatedTo(category) %}
@@ -46,15 +48,21 @@
 													</ul>
 												{% endfor %}
                         <hr class="hr hr-gradient">
+                      </div>
 											{% endfor %}
+                      <div class="listing-categories">
 											<h4><a href="{{ 'electives' }}">Electives[S]</a></h4>
                       <hr class="hr hr-gradient">
+                      </div>
+                      <div class="listing-categories">
                       <h4>Additional Programs</h4>
                       {% for additional in craft.entries.section('additionalPrograms') %}
                       <ul class="list list-marked">
                         <li><a href="{{ additional.courseAccessLink }}">{{ additional.title }}</a></li>
                       </ul>
+
                       {% endfor %}
+                    </div>
 
                   </section>
                   </div>

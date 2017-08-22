@@ -62,27 +62,32 @@
                 <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                   <div class="program-wrap">
                     <div class="program-box-left">
-                      <div>
+
                         <h1>Program Requirements[S]</h1>
                         <hr class="divider bg-red">
-  											{% set program = entry %}
-  											{% if entry.admissionsCriteria | length %}
-  												<ul>
-  													{% for row in entry.admissionsCriteria %}
-  														<li>{{ row.criteria}}</li>
-  													{% endfor %}
-  												</ul>
-  												{%  endif %}
+                        <div class="program-requirements">
+    											{% set program = entry %}
+                          <h3>Grade level[S]: {{entry.gradeLevel}}</h3>
+                          <h3>School[S]: <span style="color:black; font-size:15px;">{{entry.school}}</span></h3>
+                          <hr>
+                          <h3>Program length[S]:</h3>
+                          <p>{{entry.length}}</p>
+                          <hr>
+    											{% if entry.admissionsCriteria | length %}
+    												  <h3>Admissions criteria[S]: </h3>
+    													{% for row in entry.admissionsCriteria %}
+    														<p>{{ row.criteria}}</p>
+    													{% endfor %}
+    											{%  endif %}
                         </div>
                         <div>
                           <h1>Courses[S]</h1>
 
                           <hr class="divider bg-red">
-                          <ul>
                             {% for classes in craft.entries.section('classes').relatedTo(entry) %}
-                                <li><a href="{{classes.courseAccessLink}}">{{ classes.title }}</a></li>
+                              <a class="course-button btn btn-primary btn-anis-effect" href="{{classes.courseAccessLink}}" data-caption-animate="fadeInUp" data-caption-delay="1200">
+                              <span class="btn-text">{{ classes.title }}</span></a>
                             {% endfor %}
-                          </ul>
                         </div>
                     </div>
                     <div class="program-box-right">
@@ -97,49 +102,53 @@
 
                   <!-- Tab 2 Content -->
                   <div>
+                    <hr class="divider bg-red">
+                    <section class="program-listing">
+
 										{% if entry.programsMatrix | length %}
 											{% for block in entry.programsMatrix %}
+                      <div class="program-overview">
 												<h3>{{ block.heading }}</h3>
+
 												{% for row in block.text %}
 													<ul>
-														<li>{{ row.bulletpoint }}</li>
+														<li><p>{{ row.bulletpoint }}</p></li>
 													</ul>
 												{% endfor %}
+                        </div>
 											{% endfor %}
 										{% endif %}
+                  </section>
                   </div>
 
                   <!-- Tab 3 Content -->
                   <div>
+                    <section class="program-listing">
 										{% set repeat="\n" %}
 										{% for classes in craft.entries.section('classes').relatedTo(program) %}
-
 												{% for instructor in classes.instructor %}
-
 													{% if repeat != instructor.title %}
-                          <div class="tab-half">
-													<a href="{{instructor.url}}">
-                            <p>{{ instructor.title }}</p></a>
-														<p>{{ instructor.body}}</p>
+                          <div class="instructor-tab">
+  													<a href="{{instructor.url}}">
+                              <p>{{ instructor.title }}</p></a>
 
-                            {% if instructor.featureImage | length %}
-														  {% for asset in instructor.featureImage %}
-															  <a href="{{instructor.url}}"><img src="{{ asset.url('profileImage') }}" alt=""/></a>
-														  {% endfor %}
-                            {% else %}
-                              {% for asset in imageMissing.featureImage %}
-                                <a href="{{instructor.url}}"><img src="{{ asset.url('profileImage') }}" alt=""/></a>
-                              {% endfor %}
-                            {% endif %}
 
-													{% endif %}
-
-                        </div>
-
+                              {% if instructor.featureImage | length %}
+  														  {% for asset in instructor.featureImage %}
+  															  <a href="{{instructor.url}}"><img src="{{ asset.url('profileImage') }}" alt=""/></a>
+  														  {% endfor %}
+                              {% else %}
+                                {% for asset in imageMissing.featureImage %}
+                                  <a href="{{instructor.url}}"><img src="{{ asset.url('profileImage') }}" alt=""/></a>
+                                {% endfor %}
+                              {% endif %}
+                              <p>{{ instructor.body}}</p>
+  													{% endif %}
+                          </div>
 													{% set repeat = instructor.title %}
-
 												{% endfor %}
 										{% endfor %}
+                  </section>
                   </div>
 
                   <!-- Tab 4 Content -->

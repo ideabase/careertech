@@ -9,11 +9,11 @@
 			</div>
 			{% if entry.applicationLightSwitch %}
 				{% for apply in apply.admissions %}
-				<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
+				<a class="apply-button-whiteheader btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
 				<span class="btn-text">Apply Now[S]</span></a>
 				{% endfor %}
 			{% else %}
-			<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200">
+			<a class="apply-button-whiteheader btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200">
 			<span class="btn-text">Applications closed for this period[S]</span></a>
 			{% endif %}
 
@@ -24,7 +24,7 @@
 
 {% block content %}
 <main class="page-content">
-	
+
 	<h1>Admissions Criteria[S]</h1>
 	<div>
 		<hr class="divider bg-red">
@@ -42,14 +42,12 @@
 	<hr class="hr hr-gradient">
 
 	<h1>Specific Program Criteria[S]</h1>
-	<div>
+
 		<hr class="divider bg-red">
-	</div>
 
-
-		<div class="group group-xl offset-top-20 offset-xs-top-50">
+		<div class="admissions-program-listing">
 			{% for entry in craft.entries.section('programs').order('title asc') %}
-			<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{entry.url}}">
+			<a class="admissions-button btn btn-primary btn-anis-effect" data-caption-animate="fadeInUp"  data-caption-delay="1200" href="{{entry.url}}">
 			<span class="btn-text">{{entry.title}}</span></a>
 			{% endfor %}
 		</div>
@@ -64,13 +62,13 @@
 	</div>
 	<table class="table table-striped">
 		{% if entry.applicationDeadlines | length %}
-			<h1>Application Deadlines</h1>
+
 				<tbody>
 				{% for row in entry.applicationDeadlines %}
 					<tr>
-						<th>{{ row.program }}</th>
-						<th>{{ row.fall }}</th>
-						<th>{{ row.spring }}</th>
+						<td>{{ row.program }}</td>
+						<td>{{ row.fall }}</td>
+						<td>{{ row.spring }}</td>
 					</tr>
 				{% endfor %}
 			</tbody>
