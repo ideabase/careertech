@@ -29,7 +29,7 @@
 	<div>
 		<hr class="divider bg-red">
 	</div>
-	<h3>General[S]</h3>
+	<h4>General[S]</h4>
 
 
 	<p>{{ entry.generalText }}</p>
@@ -39,7 +39,7 @@
 		Closed[S]
 	{% endif %}</p>
 
-	<hr class="hr hr-gradient">
+	<hr class="adm-hr hr">
 
 	<h1>Specific Program Criteria[S]</h1>
 
@@ -47,13 +47,13 @@
 
 		<div class="admissions-program-listing">
 			{% for entry in craft.entries.section('programs').order('title asc') %}
-			<a class="admissions-button btn btn-primary btn-anis-effect" data-caption-animate="fadeInUp"  data-caption-delay="1200" href="{{entry.url}}">
+			<a class="admissions-button btn btn-primary" data-caption-animate="fadeInUp"  data-caption-delay="1200" href="{{entry.url}}">
 			<span class="btn-text">{{entry.title}}</span></a>
 			{% endfor %}
 		</div>
 
 
-	<hr class="hr hr-gradient">
+	<hr class="adm-hr hr" >
 
 
 	<h1>Admissions Deadlines[S]</h1>
@@ -62,44 +62,47 @@
 	</div>
 	<table class="table table-striped">
 		{% if entry.applicationDeadlines | length %}
-
-				<tbody>
 				{% for row in entry.applicationDeadlines %}
+				{% if loop.first %}
 					<tr>
+						<th>{{ row.program }}</th>
+						<th>{{ row.fall }}</th>
+						<th>{{ row.spring }}</th>
+					</tr>
+				{% endif %}
+				{% if not loop.first %}
+					<tr>
+
 						<td>{{ row.program }}</td>
 						<td>{{ row.fall }}</td>
 						<td>{{ row.spring }}</td>
 					</tr>
+					{% endif %}
 				{% endfor %}
-			</tbody>
+
 		{% endif %}
 	</table>
 	{% if entry.applicationLightSwitch %}
-		<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">
+		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">
 			<span class="btn-text">Apply now[S]</span></a>
 	{% else %}
-		<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" >
+		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" >
 			<span class="btn-text">Applications closed for this period[S]</span></a>
 	{% endif %}
 
-	<hr class="hr hr-gradient">
 
+	<div class="adm-events-wrapper">
 	<h1>Important Dates & Events[S]</h1>
-	<div>
-		<hr class="divider bg-red">
-	</div>
-	{{ entry.admissionsDates }}
+		<div>
+			<hr class="divider bg-red">
+		</div>
+		{{ entry.admissionsDates }}
 
-	<p>Here you will find all the important dates and events regarding CTE admissions. Examples include orientation schedules, teacher meetings, and specific class events.[S]</p>
-	<div class="group group-xl offset-top-20 offset-xs-top-50">
-		<a class="btn btn-primary btn-lg btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ 'calendars' }}">
-		<span class="btn-text">Admissions Calendar[S]</span></a>
+		<p>Here you will find all the important dates and events regarding CTE admissions. Examples include orientation schedules, teacher meetings, and specific class events.[S]</p>
+
+			<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ 'calendars' }}">
+			<span class="btn-text">Admissions Calendar[S]</span></a>
 	</div>
-	<br/>
-		<br/>
-			<br/>  <br/>
-				<br/>
-					<br/>
 </main>
 
 

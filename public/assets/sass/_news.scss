@@ -1,0 +1,29 @@
+.news-wraper{
+  height: 1000px;
+}
+.news-lefttab{
+  float:left;
+  background-color: #EAEAEA;
+  width:30%;
+  height:inherit;
+  padding: 80px 40px 40px 40px;
+}
+.news-righttab{
+    float:right;
+    width:70%;
+    height:inherit;
+    padding: 80px 40px 40px 100px;
+}
+.events-wrap{
+  height:400px;
+}
+.events-day{
+  float:left;
+  height:inherit;
+  width:20%;
+}
+.events-content{
+  float:right;
+  height:inherit;
+  width:80%;
+}
