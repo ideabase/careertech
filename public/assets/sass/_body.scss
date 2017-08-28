@@ -46,3 +46,23 @@ main {
 .text-link{
 
 }
+
+.callendar-top, .callendar-bottom p{
+
+  font-size:20px;
+
+}
+.callendar-top{
+  background-color: red;
+  height:50%;
+  color:white;
+}
+
+.callendar-bottom{
+  background-color: #EAEAEA;
+  height:50%;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-color: gray;
+}

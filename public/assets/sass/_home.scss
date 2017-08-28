@@ -1,25 +1,29 @@
 .local-carousel{
+  background-color: black;
+  padding: 10px 5px 10px 5px;
+}
+.local-carousel-image{
   display:flex;
   align-items: center;
   justify-content: center;
   position:relative;
   height: 210px;
-  width:100%;
+  width:98%;
 
 }
 
-.local-carousel h4{
+.local-carousel-image h4{
   position: absolute;
   margin-top: 0;
   color: white;
 }
-.local-carousel h4 span{
+.local-carousel-image h4 span{
   background: rgb(0,0,0);
   background: rgba(0,0,0,0.7);
   padding: 10px;
 }
 
-.local-carousel h4 span.spacer{
+.local-carousel-image h4 span.spacer{
   padding:0 5px;
 }
 
@@ -55,7 +59,7 @@
 
 .home-wrap{
   position:relative;
-  height:100px;
+  height:500px;
   padding: 30px 105px 20px 105px;
 }
 .home-box-left{
@@ -65,6 +69,30 @@
   float:right;
 }
 .news-container p{
-  margin-top: 50px;
   text-align: center;
+}
+.events{
+  height:400px;
+  display: flex;
+  width:100%;
+  padding: 50px 0px 10px 0px;
+
+}
+.events-box{
+
+  width:33%;
+  padding:10px;
+  border-color: black;
+  text-align: center;
+    border: 2px solid gray;
+}
+
+//top and bottom in body.scss
+.callendar-home-wraper{
+  width: 120px;
+  height: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  left: 30%;
+  position: relative;
 }

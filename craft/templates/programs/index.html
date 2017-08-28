@@ -7,7 +7,7 @@
             <div class="cell-lg-5 reveal-lg-block text-lg-left">
               <h2><span class="big">{{entry.title}}</span></h2>
             </div>
-            <a class="apply-button-whiteheader btn btn-primary btn-anis-effect" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
+            <a class="apply-button-whiteheader btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
 						{% if entry.applicationLightSwitch %}
 							{% for apply in apply.admissions %}
 							<span class="btn-text">Apply Now[S]</span></a>
@@ -73,10 +73,7 @@
 												<ul class="list list-marked">
 													<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
 												{% endfor %}
-                          <li><a href="{{ 'electives' }}">Electives[S]</a></li>
-                        {% for additional in craft.entries.section('additionalPrograms') %}
-                            <li><a href="{{ additional.courseAccessLink }}">{{ additional.title }}</a></li>
-                        {% endfor %}
+                          
                       </ul>
 
                     </section>

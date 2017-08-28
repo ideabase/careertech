@@ -15,17 +15,21 @@
 				    {%- endif -%}
 
 				    <li{% if nodeClasses|length %} class="{{ nodeClasses|join(' ') }}"{% endif %}>
-				        <a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
-				        {% if node.hasChildren %}
-								<ul class="rd-navbar-dropdown">
-										{% for subnode in node.children %}
-											<li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="{{ subnode.url }}"><span class="rd-navbar-submenu-toggle">{{ subnode.name }}</span></a>
-										{% endfor %}
-								</ul>
-				        {% endif %}
+						{% if node.hasChildren %}
+						<a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }} &#9660;</a>
+						<ul class="rd-navbar-dropdown">
+								{% for subnode in node.children %}
+									<li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="{{ subnode.url }}"><span class="rd-navbar-submenu-toggle">{{ subnode.name }}</span></a>
+								{% endfor %}
+						</ul>
+
+						{% else %}
+
+								<a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
+				    {% endif %}
 				    </li>
 				{% endmacro %}
-				 
+
 
 				<header class="page-head slider-menu-position">
 					<!-- RD Navbar Transparent-->

@@ -60,9 +60,9 @@
 
           <a class="home-box-right" href="{{'programs'}}" ><h3> View full list of programs > </h3></a>
       </div>
-      <div class="owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="2" data-sm-items="3" data-md-items="3" data-nav-custom=".owl-custom-navigation" data-dots="true" data-nav="false">
+      <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="2" data-sm-items="3" data-md-items="3" data-nav-custom=".owl-custom-navigation" data-dots="true" data-nav="false">
         {% for category in craft.categories.group('pathways') %}
-          <a href="{{ 'programs' }}"><div class="local-carousel">
+          <a href="{{ 'programs' }}"><div class="local-carousel-image">
             {% for asset in category.featureImage %}
               <img src="{{asset.url('carouselImage')}}" alt=""/>
             {% endfor %}
@@ -120,7 +120,23 @@
 
                 <!-- tab 2 contenct -->
                 <div>
-                  <p>events</p>
+                  <div class="events">
+                    {% for entry in craft.entries.section('events').limit(3) %}
+                      <div class="events-box" style="width:100%;">
+                        <div class="callendar-home-wraper">
+        									<div class="callendar-top">
+        										<p>{{entry.postDate.month()}}</p>
+        									</div>
+        									<div class="callendar-bottom">
+        										<p>{{entry.postDate.day()}}</p>
+        									</div>
+        								</div>
+                        <h3>{{entry.title}}</h3>
+                      </div>
+
+
+                    {% endfor %}
+                  </div>
                 </div>
               </div>
             </div>
