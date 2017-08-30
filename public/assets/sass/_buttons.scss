@@ -1,6 +1,6 @@
 .btn-anis-effect.btn-primary, .btn-primary {
-  background-color: red;
-  border-color: red;
+  background-color: $red;
+  border-color: $red;
 }
 
 .btn-anis-effect.btn-primary:hover, .btn-primary:hover {
@@ -13,6 +13,6 @@
 }
 
 a .btn .btn-block .btn-primary {
-  background-color: red;
-  border-color: red;
+  background-color: $red;
+  border-color: $red;
 }

@@ -10,15 +10,15 @@ h4 {
 
 .list-marked li:before {
   border-radius: 0;
-  background-color: red;
+  background-color: $red;
 }
 
 .rd-navbar-default.rd-navbar-static .rd-navbar-nav > li > a:after, .rd-navbar-floated.rd-navbar-static .rd-navbar-nav > li > a:after, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-nav > li > a:after {
-  background: red;
+  background: $red;
 }
 
 .page blockquote.quote .text-primary, .page .text-primary {
-  color: red;
+  color: $red;
 }
 .swiper-slide-caption{
   padding: 0;
@@ -60,7 +60,7 @@ text-link:hover{
   padding-top: 10px;
 }
 .callendar-top{
-  background-color: red;
+  background-color: $red;
   height:50%;
   color:white;
 }

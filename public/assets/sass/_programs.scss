@@ -41,8 +41,8 @@
 }
 .program-requirements h3{
   text-transform: uppercase;
-  color:red;
-  
+  color:$red;
+
   font-size: 20px;
 }
 .program-requirements hr{
@@ -58,14 +58,14 @@
   page-break-inside: avoid;
 }
 .program-overview h3{
-  color: red;
+  color: $red;
   font-size: 25px;
   text-transform:uppercase;
 }
 
 .program-overview ul{
   list-style-type: square;
-  color: red;
+  color: $red;
 }
 .program-overview p{
   color: black;
