@@ -43,8 +43,16 @@ main {
   width: 20%;
   border-radius: 10px;
 }
-.text-link{
-
+text-link{
+  color: gray;
+  font-size: 28px;
+  text-decoration: underline;
+  text-decoration-color: palevioletred;
+}
+text-link:hover{
+  font-size: 29px;
+  color:cornflowerblue;
+  text-decoration-color:cornflowerblue;
 }
 
 .callendar-top, .callendar-bottom p{
@@ -64,4 +72,33 @@ main {
   border-left: 2px solid;
   border-right: 2px solid;
   border-color: gray;
+}
+
+
+//------small screen desygn
+@media only screen and (max-width: 500px) {
+    .center-button{
+      display: block;
+      margin: auto;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .apply-button-whiteheader{
+      position: relative;
+      border-radius: 10px;
+      left: 33%;
+      margin-top: 10px;
+    }
+
+    .apply-button-blackheader{
+      border-radius: 10px;
+    }
+    h2{
+      text-align: center;
+    }
+    text-link{
+      text-align: center;
+      display: block;
+      padding-top: 30px;
+    }
 }

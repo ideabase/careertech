@@ -11,6 +11,13 @@
   width:98%;
 
 }
+.small-screen{
+  display: none;
+}
+.nav{
+  position: absolute;
+  right: 50%;
+}
 
 .local-carousel-image h4{
   position: absolute;
@@ -21,20 +28,16 @@
   background: rgb(0,0,0);
   background: rgba(0,0,0,0.7);
   padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .local-carousel-image h4 span.spacer{
   padding:0 5px;
 }
 
-.same-line{
-  position: relative;
-}
-.same-line-right{
-  position:absolute;
-  top:0;
-  right:0;
-}
+
 
 .home-admissions-wrap{
   position:relative;
@@ -42,7 +45,7 @@
   display:table;
   background-color: #EAEAEA;
   padding: 20px 105px 20px 105px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 .home-admissionbox-left{
   margin-top: 30px;
@@ -58,9 +61,8 @@
 }
 
 .home-wrap{
-  position:relative;
-  height:500px;
   padding: 30px 105px 20px 105px;
+  margin-bottom: 40px;
 }
 .home-box-left{
   float:left;
@@ -95,4 +97,54 @@
   text-transform: uppercase;
   left: 30%;
   position: relative;
+}
+.events-smallscreen{
+  display:none;
+
+}
+
+//-----smalscreen css
+
+@media only screen and (max-width: 500px) {
+  .home-wrap{
+    padding: 10px;
+    margin-bottom: 0px;
+    display: flex;
+    padding-bottom: 0px;
+    white-space: nowrap;
+    text-align: center;
+    }
+  .home-box-left {
+      width: 100%;
+    }
+  .home-box-right{
+      display: none;
+    }
+    .local-carousel{
+      background-color: black;
+      padding: 10px 5px 10px 5px;
+    }
+    .small-screen{
+      display: block;
+    }
+    .home-admissions-wrap{
+      padding: 20px 30px 20px 30px;
+    }
+    .home-admissionbox-right{
+      display: none;
+    }
+    .home-admissionbox-left{
+      padding: 0px 0px 30px 0px;
+      width: 100%;
+    }
+    .events{
+      display: none;
+    }
+    .events-smallscreen{
+      height:400px;
+      display: flex;
+      width:100%;
+      padding: 50px 0px 10px 0px;
+
+    }
 }

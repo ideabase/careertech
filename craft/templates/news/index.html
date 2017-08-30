@@ -60,11 +60,11 @@
 							<div class="events-day">
 								<div class="callendar-wraper">
 									<div class="callendar-top">
-										{% set day = entry.postDate|date("l") %}
+										{% set day = entry.dateTime|date("l") %}
 										<p>{{day}}</p>
 									</div>
 									<div class="callendar-bottom">
-										<p>{{entry.postDate.day()}}</p>
+										<p>{{entry.dateTime.day()}}</p>
 									</div>
 								</div>
 							</div>

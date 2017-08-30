@@ -58,9 +58,9 @@
       <div class="home-wrap">
         <h3 class="home-box-left">{{ entry.pathwayTitle }}</h3>
 
-          <a class="home-box-right" href="{{'programs'}}" ><h3> View full list of programs > </h3></a>
+          <a class="home-box-right" href="{{'programs'}}" ><text-link> View full list of programs > </text-link></a>
       </div>
-      <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="2" data-sm-items="3" data-md-items="3" data-nav-custom=".owl-custom-navigation" data-dots="true" data-nav="false">
+      <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="1" data-md-items="3" data-nav-custom=".owl-custom-navigation" data-dots="false" data-nav="false">
         {% for category in craft.categories.group('pathways') %}
           <a href="{{ 'programs' }}"><div class="local-carousel-image">
             {% for asset in category.featureImage %}
@@ -73,12 +73,13 @@
         <!--template <a href="clients.html"><img class="img-semi-transparent" src="images/clients/client-02-126x68.png" width="126" height="68" alt=""></a>-->
 
       </div>
-      <div class="owl-custom-navigation owl-customer-navigation">
+      <div class="nav owl-custom-navigation owl-customer-navigation">
         <div class="owl-nav">
           <div class="owl-prev mdi mdi-chevron-left" data-owl-prev></div>
           <div class="owl-next mdi mdi-chevron-right" data-owl-next></div>
         </div>
       </div>
+      <a class="small-screen" href="{{'programs'}}" ><text-link> View full list of programs > </text-link></a>
 
 
 
@@ -89,6 +90,13 @@
             </div>
 
             <div class="home-admissionbox-right">
+              <div class="group group-xl">
+                <a class="btn btn-primary btn-lg" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('admissions') }}">
+                <span class="btn-text">Admissions Criteria</span></a>
+              </div>
+            </div>
+            <!-- small scren admissions criteria button-->
+            <div class="small-screen">
               <div class="group group-xl">
                 <a class="btn btn-primary btn-lg" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('admissions') }}">
                 <span class="btn-text">Admissions Criteria</span></a>
@@ -106,7 +114,7 @@
                   </ul>
 
 
-                <a class="home-box-right" href="{{ url('calendars') }}">View full calendar[S]</a>
+                <a class="home-box-right" href="{{ url('calendars') }}"><text-link>View full calendar[S]</text-link></a>
                 <!--<a class="same-line-right" href="{{ url('calendars') }}">View full calendar[S] ></a>-->
 
 
@@ -124,21 +132,42 @@
                     {% for entry in craft.entries.section('events').limit(3) %}
                       <div class="events-box" style="width:100%;">
                         <div class="callendar-home-wraper">
-        									<div class="callendar-top">
-        										<p>{{entry.postDate.month()}}</p>
+                          <div class="callendar-top">
+        										{% set day = entry.dateTime|date("l") %}
+        										<p>{{day}}</p>
         									</div>
         									<div class="callendar-bottom">
-        										<p>{{entry.postDate.day()}}</p>
+        										<p>{{entry.dateTime.day()}}</p>
         									</div>
         								</div>
                         <h3>{{entry.title}}</h3>
+                        <p>{{entry.location}}</p>
+                        <p>{{entry.startEndTime}}</p>
                       </div>
-
-
                     {% endfor %}
+                  </div>
+                    <div class="events-smallscreen">
+                      {% for entry in craft.entries.section('events').limit(1) %}
+                        <div class="events-box" style="width:100%;">
+                          <div class="callendar-home-wraper">
+                            <div class="callendar-top">
+          										{% set day = entry.dateTime|date("l") %}
+          										<p>{{day}}</p>
+          									</div>
+          									<div class="callendar-bottom">
+          										<p>{{entry.dateTime.day()}}</p>
+          									</div>
+          								</div>
+                          <h3>{{entry.title}}</h3>
+                          <p>{{entry.location}}</p>
+                          <p>{{entry.startEndTime}}</p>
+                        </div>
+                        {% endfor %}
+                      </div>
                   </div>
                 </div>
               </div>
+              <a class="small-screen" href="{{ url('calendars') }}"><text-link>View full calendar[S]</text-link></a>
             </div>
           </div>
 
