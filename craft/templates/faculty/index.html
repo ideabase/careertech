@@ -4,6 +4,11 @@
 {% block header %}
 
 <!-- Classic Breadcrumbs-->
+
+
+{% endblock %}
+{% block content %}
+
 <section class="breadcrumb-classic">
 	<div class="shell section-34 section-sm-50">
 		<div class="range range-lg-middle">
@@ -13,11 +18,6 @@
 		</div>
 	</div>
 </section>
-
-{% endblock %}
-{% block content %}
-
-
 
 <body>
 
@@ -46,7 +46,7 @@
 
 																	{% for entry in craft.entries.section('faculty').relatedTo(category).order('title asc') %}
 																		{% if not entry.temporaryStaff %}
-																	<div class="cell-sm-6 cell-md-3">
+																	<div class="margin-bottom-40px cell-sm-6 cell-md-3">
 																		{% if entry.featureImage | length %}
 																			{% for asset in entry.featureImage %}
 																			<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
@@ -82,16 +82,18 @@
 
 
 <!-- BY PROGRAM TAB -->
+
 															<div class="text-center text-md-center">
+																<div class="program-listing">
 																{% for program in craft.entries.section('programs').order('title asc') %}
-																<div class="cell-sm-12 cell-md-12">
+																<div class="faculty-listing cell-sm-12 cell-md-12">
 																	<h1>{{program.title}}</h1>
 																	{% for class in craft.entries.section('classes').relatedTo(program).order('title asc') %}
 																	<h4>{{class.title}}</h4>
 																	<hr class="hr hr-gradient">
-																	<div class="range range-xs-center section-34">
+																	<div class="range range-sm-center section-34">
 																				{% for entry in craft.entries.section('faculty').relatedTo(class).order('title asc') %}
-																				<div class="cell-sm-6 cell-md-3">
+																				<div class="margin-bottom-40px  cell-sm-6 cell-md-6">
 																					{% if entry.featureImage | length %}
 																						{% for asset in entry.featureImage %}
 																						<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
@@ -108,9 +110,9 @@
 																					</div>
 																					<address class="contact-info text-md-left">
 																						<ul class="list-unstyled p">
-																							<li><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
+																							<li><a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
 																							</li>
-																							<li><span class="icon icon-xxs mdi mdi-email-open text-middle"></span> <a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
+																							<li><a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
 																							</li>
 																						</ul>
 																					</address>
@@ -120,7 +122,7 @@
 																		{% endfor %}
 																	</div>
 																	{% endfor %}
-
+																</div>
 																</div>
 
 

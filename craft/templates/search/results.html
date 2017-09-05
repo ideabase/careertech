@@ -5,6 +5,10 @@
 {% block header %}
 
 <!-- Classic Breadcrumbs-->
+
+
+{% endblock %}
+{% block content %}
 <section class="breadcrumb-classic">
 	<div class="shell section-34 section-sm-50">
 		<div class="range range-lg-middle">
@@ -14,20 +18,21 @@
 		</div>
 	</div>
 </section>
-
-{% endblock %}
-{% block content %}
 <h1>Search Results</h1>
 
 {% set query = craft.request.getParam('s') %}
 {% set entries = craft.entries.search(query).order('score') %}
 
 {% if entries|length %}
-    <p>{{ entries|length }} results:</p>
+    <h4>{{ entries|length }} results:</h4>
 
     <ul>
         {% for entry in entries %}
-            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+
+            <li><ahref="{{ entry.url }}"><text-link>{{ entry.title }}</text-link></a></li>
+						{% if entry.body | length %}
+			  			<p>{{entry.body}}</p>
+						{% endif %}
         {% endfor %}
     </ul>
 {% else %}

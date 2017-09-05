@@ -4,6 +4,11 @@
 {% block header %}
 
 <!-- Classic Breadcrumbs-->
+
+
+{% endblock %}
+
+{% block content %}
 <section class="breadcrumb-classic">
 	<div class="shell section-34 section-sm-50">
 		<div class="range range-lg-middle">
@@ -14,12 +19,12 @@
 	</div>
 </section>
 
-{% endblock %}
 
-{% block content %}
+<main class="page-content">
     {% for forms in entry.singleForms %}
-      <a href="{{forms.formsLink}}"><h1>{{forms.formsTitle}}</h1></a>
+      <a href="{{forms.formsLink}}"><h4>{{forms.formsTitle}}</h4></a>
       <p>{{forms.previewText}}</p>
     {% endfor %}
+</main>
 
 {% endblock %}

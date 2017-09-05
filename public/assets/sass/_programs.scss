@@ -1,9 +1,14 @@
 .program-listing {
   columns: 2;
   column-gap: 50px;
-  height:800px;
+  //height:800px;
 }
-
+.faculty-listing{
+  page-break-inside: avoid;
+  background-color: #d9d9d9;
+  margin:20px;
+  padding-top: 30px;
+}
 
 .program-wrap{
   position:relative;

@@ -1,10 +1,21 @@
 {% extends "_layout" %}
 {% block content %}
+<section class="breadcrumb-classic">
+	<div class="shell section-34 section-sm-50">
+		<div class="range range-lg-middle">
+			<div class="cell-lg-5 reveal-lg-block text-lg-left">
+				<h2><span class="big">Electives [need checking]</span></h2>
+			</div>
+		</div>
+	</div>
+</section>
+
+<main class="page-content">
     {% for entry in craft.entries.section('electives') %}
     <div>
       <h4> {{entry.title}}</h4>
       <p> {{entry.body}}</p>
     </div>
     {% endfor %}
-
+</main>
 {% endblock %}

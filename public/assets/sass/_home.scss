@@ -1,6 +1,9 @@
 .local-carousel{
   background-color: black;
-  padding: 10px 5px 10px 5px;
+  padding: 10px 5px 0px 5px;
+}
+.carousel-featureImage{
+  height: 100%;
 }
 .local-carousel-image{
   display:flex;
@@ -80,22 +83,29 @@
   padding: 50px 0px 10px 0px;
 
 }
+.border{
+  border: 2px solid gray;
+  padding: 20px;
+  width: 100%;
+    text-align: center;
+}
 .events-box{
 
   width:33%;
-  padding:10px;
+  padding:20px;
   border-color: black;
   text-align: center;
-    border: 2px solid gray;
+
 }
 
 //top and bottom in body.scss
 .callendar-home-wraper{
+  margin-bottom: 20px;
   width: 120px;
   height: 100px;
   text-align: center;
   text-transform: uppercase;
-  left: 30%;
+  left: 25%;
   position: relative;
 }
 .events-smallscreen{
@@ -131,7 +141,10 @@
       padding: 20px 30px 20px 30px;
     }
     .home-admissionbox-right{
-      display: none;
+      float: none;
+      padding: 0px;
+
+      width: 100%;
     }
     .home-admissionbox-left{
       padding: 0px 0px 30px 0px;

@@ -38,14 +38,15 @@
   <div class="page">
 
 
-	{% include '_includes/_header.html' %}
 
+  {% block header %}
+    {% include '_includes/_header.html' %}
+  {% endblock %}
   {% block whiteHeader %}
     {% include '_includes/_whiteHeader.html' %}
   {% endblock %}
 
-  {% block header %}
-  {% endblock %}
+
 		<main class="page-content" role="main">
       <!-- Page Contents-->
           <div class="shell"> <!-- Begin Shell -->
