@@ -1,5 +1,5 @@
 .local-carousel{
-  background-color: black;
+  background-color: none;
   padding: 10px 5px 0px 5px;
 }
 .carousel-featureImage{
@@ -49,11 +49,11 @@
 
 .home-admissions-wrap{
   position:relative;
-  height:250px;
   display:table;
   background-color: #EAEAEA;
-  padding: 20px 105px 20px 105px;
-  margin-top: 40px;
+  padding:40px 105px 40px 105px;
+  margin-top: 70px;
+  margin-bottom: 50px;
 }
 .home-admissionbox-left{
   margin-top: 30px;
@@ -86,7 +86,7 @@
 
 }
 .border{
-  border: 2px solid gray;
+  border: 1px solid gray;
   padding: 20px;
   width: 100%;
     text-align: center;
