@@ -22,8 +22,11 @@
 
 <main class="page-content">
     {% for forms in entry.singleForms %}
-      <a href="{{forms.formsLink}}"><h4>{{forms.formsTitle}}</h4></a>
-      <p>{{forms.previewText}}</p>
+			{% for asset in forms.formsLink%}
+      <a href="{{asset.url}}"><h4>{{forms.formsTitle}}</h4></a>
+			<p>{{forms.previewText}}</p>
+			{% endfor %}
+
     {% endfor %}
 </main>
 

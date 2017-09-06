@@ -1,5 +1,4 @@
 .news-wraper{
-  height: 1000px;
 }
 .news-lefttab{
   float:left;
@@ -15,7 +14,8 @@
     padding: 80px 40px 40px 100px;
 }
 .events-wrap{
-  height:200px;
+  clear: both;
+  margin-bottom: 150px;
 }
 .events-day{
   float:left;
@@ -33,6 +33,7 @@
   height: 100px;
   text-align: center;
   text-transform: uppercase;
+  margin: auto;
 }
 
 .pagination-classic > li + li:not(:last-child).active > a, .pagination-classic > li + li:not(:last-child).active > span{
@@ -46,4 +47,44 @@
 
 .rdc-table_today {
   background-color: $red;
+}
+
+
+//small screen
+
+@media only screen and (max-width: 500px) {
+  .news-lefttab{
+    float:none;
+    background-color: #EAEAEA;
+    width:100%;
+    height:inherit;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .news-righttab{
+      float:none;
+      width:100%;
+      height:inherit;
+      padding: 10px;
+      margin-bottom: 20px;
+  }
+
+  .events-wrap{
+    clear: both;
+    margin-bottom: 20px;
+  }
+  .events-day{
+    float:none;
+    width:100%;
+    padding:18px;
+  }
+  .events-content{
+    float:none;
+    width:100%;
+    text-align: center;
+  }
+  .callendar-wraper{
+    margin: auto;
+  }
+
 }

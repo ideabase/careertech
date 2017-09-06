@@ -47,6 +47,7 @@
 																	{% for entry in craft.entries.section('faculty').relatedTo(category).order('title asc') %}
 																		{% if not entry.temporaryStaff %}
 																	<div class="margin-bottom-40px cell-sm-6 cell-md-3">
+																		<a href="{{ entry.url }}">
 																		{% if entry.featureImage | length %}
 																			{% for asset in entry.featureImage %}
 																			<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
@@ -58,9 +59,10 @@
 																		{% endif %}
 																		<div class="text-md-left offset-top-20">
 																			<div>
-																				<h5 class="text-bold text-primary"><a href="{{ entry.url }}">{{ entry.title }}</a></h5>
+																				<h5 class="text-bold text-primary">{{ entry.title }}</h5>
 																			</div>
 																		</div>
+																		</a>
 																		<address class="contact-info text-md-left">
 																			<ul class="list-unstyled p">
 																				<li class="reveal-block"><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
@@ -90,10 +92,11 @@
 																	<h1>{{program.title}}</h1>
 																	{% for class in craft.entries.section('classes').relatedTo(program).order('title asc') %}
 																	<h4>{{class.title}}</h4>
-																	<hr class="hr hr-gradient">
 																	<div class="range range-sm-center section-34">
 																				{% for entry in craft.entries.section('faculty').relatedTo(class).order('title asc') %}
+
 																				<div class="margin-bottom-40px  cell-sm-6 cell-md-6">
+																					<a href="{{ entry.url }}">
 																					{% if entry.featureImage | length %}
 																						{% for asset in entry.featureImage %}
 																						<img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
@@ -105,9 +108,10 @@
 																					{% endif %}
 																					<div class="text-md-left offset-top-20">
 																						<div>
-																							<h5 class="text-bold text-primary"><a href="{{ entry.url }}">{{entry.title}}</h5></a>
+																							<h5 class="text-bold text-primary">{{entry.title}}</h5>
 																						</div>
 																					</div>
+																					</a>
 																					<address class="contact-info text-md-left">
 																						<ul class="list-unstyled p">
 																							<li><a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>

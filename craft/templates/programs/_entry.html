@@ -85,7 +85,7 @@
 
                           <hr class="divider bg-red">
                             {% for classes in craft.entries.section('classes').relatedTo(entry) %}
-                              <a class="course-button btn btn-primary btn-anis-effect" href="{{classes.courseAccessLink}}" data-caption-animate="fadeInUp" data-caption-delay="1200">
+                              <a class="course-button btn btn-primary " href="{{classes.courseAccessLink}}" data-caption-animate="fadeInUp" data-caption-delay="1200">
                               <span class="btn-text">{{ classes.title }}</span></a>
                             {% endfor %}
                         </div>

@@ -5,9 +5,9 @@
 }
 .faculty-listing{
   page-break-inside: avoid;
-  background-color: #d9d9d9;
+  background-color: #EAEAEA;
   margin:20px;
-  padding-top: 30px;
+  padding: 30px;
 }
 
 .program-wrap{
@@ -84,4 +84,9 @@
 .instructor-tab img{
   height:300px;
   width: 300px;
+}
+@media only screen and (max-width: 500px) {
+  .program-listing {
+    columns: 1;
+  }
 }
