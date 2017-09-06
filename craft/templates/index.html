@@ -146,7 +146,7 @@
                 <div>
                   {% for entry in craft.entries.section('news').limit(3) %}
       						<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-      						<span class="h6 text-light">{{ entry.dateTime.format('F d, Y') }}</span>
+      						<span class="h6 text-light">{# {{ entry.dateTime.format('F d, Y') }} #}</span>
       						<p>{{ entry.body.getPage(1) }}</p>
       						<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
       						<hr>
@@ -170,7 +170,7 @@
         								</div>
                         <a href="{{entry.url}}"><h3>{{entry.title}}</h3></a>
                         <p>{{entry.location}}</p>
-                        <p>{{entry.startEndTime.localeTime()}} - {{entry.endTime.localeTime()}}</p>
+                        <p>{# {{entry.startEndTime.localeTime()}} - {{entry.endTime.localeTime()}} #}</p>
                       </div>
                       </div>
                     {% endfor %}
@@ -190,7 +190,7 @@
           								</div>
                           <a href="{{entry.url}}"><h3>{{entry.title}}</h3></a>
                           <p>{{entry.location}}</p>
-                          <p>{{entry.startEndTime.localeTime()}} - {{entry.endTime.localeTime()}}</p>
+                          <p>{# {{entry.startEndTime.localeTime()}} - {{entry.endTime.localeTime()}} #}</p>
                           <div>
 
                         {% endfor %}
