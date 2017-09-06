@@ -34,3 +34,16 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+.pagination-classic > li + li:not(:last-child).active > a, .pagination-classic > li + li:not(:last-child).active > span{
+  background: $red;
+  border-color: $red;
+}
+
+.rdc-panel {
+  background: $red;
+}
+
+.rdc-table_today {
+  background-color: $red;
+}

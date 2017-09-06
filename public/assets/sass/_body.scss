@@ -50,17 +50,26 @@ main {
   width: 20%;
   border-radius: 10px;
 }
-text-link{
+.text-link{
   color: gray;
-  font-size: 28px;
-  text-decoration: underline;
-  text-decoration-color: palevioletred;
+  font-size: 20px;
+  position: relative;
+  padding-right: 0.8em;
 }
-text-link:hover{
-  font-size: 29px;
-  color:cornflowerblue;
-  text-decoration-color:cornflowerblue;
-  cursor: pointer;
+.text-link:hover{
+  color: $red;
+}
+
+.text-link:after {
+  content: "";
+  background-image: url("../img/ui/arrow-right.svg");
+  background-repeat: no-repeat;
+  width: 9px;
+  height: 15px;
+  background-size: 100% auto;
+  right: 0;
+  position:absolute;
+  top:20%;
 }
 
 .callendar-top, .callendar-bottom p{
@@ -98,15 +107,21 @@ text-link:hover{
       margin-top: 10px;
     }
 
+    .home-wrap {
+      display: inherit;
+    }
+
     .apply-button-blackheader{
       border-radius: 10px;
     }
     h2{
       text-align: center;
     }
-    text-link{
+    .text-link{
       text-align: center;
       display: block;
-      padding-top: 30px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      display: block;
     }
 }

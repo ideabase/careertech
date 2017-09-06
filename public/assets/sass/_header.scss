@@ -43,3 +43,22 @@
 .pos-top{
   top: 0;
 }
+
+.has-children {
+  padding-right:1.25em;
+}
+
+.has-children:after {
+  content: "";
+  background-image: url("../img/ui/arrow-down.svg");
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  background-size: 100% auto;
+  right: 0;
+  position:absolute;
+  top:40%;
+  @media only screen and (max-width: 500px) {
+    content: none;
+  }
+}

@@ -40,6 +40,11 @@
   padding:0 5px;
 }
 
+.page .text-light {
+  font-size: 20px;
+  padding-top: 2em;
+}
+
 
 
 .home-admissions-wrap{
@@ -66,13 +71,10 @@
 .home-wrap{
   padding: 30px 105px 20px 105px;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
 }
-.home-box-left{
-  float:left;
-}
-.home-box-right{
-  float:right;
-}
+
 .news-container p{
   text-align: center;
 }
@@ -119,7 +121,7 @@
   .home-wrap{
     padding: 10px;
     margin-bottom: 0px;
-    display: flex;
+    //display: flex;
     padding-bottom: 0px;
     white-space: nowrap;
     text-align: center;
@@ -127,9 +129,7 @@
   .home-box-left {
       width: 100%;
     }
-  .home-box-right{
-      display: none;
-    }
+
     .local-carousel{
       background-color: black;
       padding: 10px 5px 10px 5px;
