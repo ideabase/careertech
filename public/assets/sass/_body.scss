@@ -94,6 +94,9 @@ main {
 .flex1{
   text-align: center;
 }
+h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:hover, .h4 a:hover, h5 a:hover, .h5 a:hover, h6 a:hover, .h6 a:hover {
+  color:$red;
+}
 
 //------small screen desygn
 @media only screen and (max-width: 500px) {

@@ -136,7 +136,7 @@
 
               <div class="news-container resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
 
-                <div class="flex1">
+
                   <a class="text-link" href="{{ url('news') }}">View full calendar[S]</a>
                   <div class="home-news">
                     {% for entry in craft.entries.section('news').limit(3) %}
@@ -146,7 +146,7 @@
         						<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
         						<hr>
       						{% endfor %}
-                  </div>
+                  
                 </div>
 
                 <!-- tab 2 contenct -->
