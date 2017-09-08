@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+.rd-navbar-default.rd-navbar-static .rd-navbar-dropdown, .rd-navbar-floated.rd-navbar-static .rd-navbar-dropdown, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-dropdown, .rd-navbar-logo-center.rd-navbar-static .rd-navbar-dropdown, .rd-navbar-default.rd-navbar-static .rd-navbar-cart-dropdown, .rd-navbar-floated.rd-navbar-static .rd-navbar-cart-dropdown, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-cart-dropdown, .rd-navbar-logo-center.rd-navbar-static .rd-navbar-cart-dropdown {
+    margin-top: 20px;
+}
 .ui-to-top:hover {
     background: red;
 }
@@ -92,7 +95,7 @@ main {
 }
 
 .flex1{
-  text-align: center;
+  
 }
 h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:hover, .h4 a:hover, h5 a:hover, .h5 a:hover, h6 a:hover, .h6 a:hover {
   color:$red;
