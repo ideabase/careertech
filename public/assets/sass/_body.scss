@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+.rd-navbar-default.rd-navbar-static .rd-navbar-dropdown, .rd-navbar-floated.rd-navbar-static .rd-navbar-dropdown, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-dropdown, .rd-navbar-logo-center.rd-navbar-static .rd-navbar-dropdown, .rd-navbar-default.rd-navbar-static .rd-navbar-cart-dropdown, .rd-navbar-floated.rd-navbar-static .rd-navbar-cart-dropdown, .rd-navbar-top-panel.rd-navbar-static .rd-navbar-cart-dropdown, .rd-navbar-logo-center.rd-navbar-static .rd-navbar-cart-dropdown {
+    margin-top: 20px;
+}
 .ui-to-top:hover {
     background: red;
 }
@@ -92,7 +95,7 @@ main {
 }
 
 .flex1{
-  text-align: center;
+  
 }
 
 //------small screen desygn

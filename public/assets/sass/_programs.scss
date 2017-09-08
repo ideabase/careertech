@@ -12,18 +12,20 @@
 
 .program-wrap{
   position:relative;
-  height:1200px;
   display: table;
+  padding-bottom: 30px;
   //padding: 30px 105px 20px 105px;
 }
 .program-box-left{
   float:left;
   width:50%;
   text-align: center;
+  margin-bottom: 30px;
 }
 .program-box-right{
   float:right;
   width: 50%;
+  margin-bottom: 30px;
 }
 .listing-categories{
   page-break-inside: avoid;
