@@ -1,0 +1,24 @@
+<section class="breadcrumb-classic">
+  <div class="shell section-34 section-sm-50">
+    <div class="range range-lg-middle">
+      {% if entry is defined %}
+      <div class="cell-lg-5 reveal-lg-block text-lg-left">
+
+        <h2><span class="big">{{entry.section}}</span></h2>
+
+      </div>
+      {% if entry.section.handle == 'admissions' or entry.section.handle == 'programsLandingPage' %}
+        <a class="apply-button-whiteheader btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
+        {% if entry.applicationLightSwitch %}
+          {% for apply in apply.admissions %}
+          <span class="btn-text">Apply Now[S]</span></a>
+          {% endfor %}
+        {% else %}
+        <span class="btn-text">Applications closed for this period[S]</span></a>
+        {% endif %}
+      {% endif %}
+      {% endif %}
+
+    </div>
+  </div>
+</section>

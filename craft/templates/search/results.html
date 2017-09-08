@@ -1,23 +1,7 @@
 {% extends "_layout" %}
 
-
-
-{% block header %}
-
-<!-- Classic Breadcrumbs-->
-
-
-{% endblock %}
 {% block content %}
-<section class="breadcrumb-classic">
-	<div class="shell section-34 section-sm-50">
-		<div class="range range-lg-middle">
-			<div class="cell-lg-5 reveal-lg-block text-lg-left">
-				<h2><span class="big">Search</span></h2>
-			</div>
-		</div>
-	</div>
-</section>
+
 <h1>Search Results</h1>
 
 {% set query = craft.request.getParam('s') %}
@@ -29,7 +13,7 @@
     <ul>
         {% for entry in entries %}
 
-            <li><ahref="{{ entry.url }}"><text-link>{{ entry.title }}</text-link></a></li>
+            <li><a class="text-link" href="{{ entry.url }}">{{ entry.title }}</a></li>
 						{% if entry.body | length %}
 			  			<p>{{entry.body}}</p>
 						{% endif %}

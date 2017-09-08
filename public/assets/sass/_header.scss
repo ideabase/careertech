@@ -4,7 +4,18 @@
 .rd-navbar-wrap {
   height: auto !important;
 }
-
+.dropdown-listing {
+  columns: 2;
+  column-gap: 5px;
+  width: 500px;
+  //height:800px;
+}
+.rd-navbar-default.rd-navbar-static .rd-navbar-dropdown{
+  width: 500px;
+}
+.rd-navbar-default.rd-navbar-static .rd-navbar-dropdown li{
+  page-break-inside: avoid;
+}
 .breadcrumb-classic {
   background: none;
   background-image: url("../img/ui/background-14-1920x651.jpg");

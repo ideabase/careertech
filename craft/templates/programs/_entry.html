@@ -1,6 +1,7 @@
 {% extends "_layout" %}
 
-{% block whiteHeader %}
+{% block header %}
+{% include '_includes/_header.html' %}
 <!-- RD Navbar Transparent-->
         <div id="home" data-type="anchor">
           <!--Swiper-->
@@ -42,6 +43,9 @@
         </div>
 
   {% endblock %}
+  {% block subheader %}
+{% endblock %}
+
 {% block content %}
       <!-- Page Contents-->
       <main class="page-content">
@@ -55,7 +59,19 @@
                   <li>About the program[S]</li>
                   <li>Program Overview[S]</li>
                   <li>Meet the instructor[S]</li>
-                  <li>Photos & Stories[S]</li>
+                  {% if craft.entries.section('projects').relatedTo(entry) | length and craft.entries.section('successStory').relatedTo(entry)| length %}
+
+                  <li>{{craft.entries.section('projects').section}} and {{craft.entries.section('successStory').section}}</li>
+
+                  {% elseif craft.entries.section('projects').relatedTo(entry) | length %}
+                  {% set section = craft.entries.section('projects') %}
+                  <li>{{section.section}}</li>
+
+                  {% elseif craft.entries.section('successStory').relatedTo(entry)| length %}
+                  {% set section = craft.entries.section('successStory') %}
+                  <li>{{section.section}}</li>
+                  {% endif %}
+
                 </ul>
 
                 <!-- Tab 1 Content -->
@@ -152,9 +168,12 @@
                   </div>
 
                   <!-- Tab 4 Content -->
+                  {% if craft.entries.section('projects').relatedTo(entry) | length or craft.entries.section('successStory').relatedTo(entry)| length %}
+
                   <div>
+                    {% if craft.entries.section('projects').relatedTo(program) | length %}
                     <div>
-                      <h3>Projects[S]</h3>
+                      <h3>{{craft.entries.section('projects').relatedTo(program).section}}</h3>
 										{% for projects in craft.entries.section('projects').relatedTo(program) %}
 											<a href="{{projects.url}}"><p>{{ projects.title}}</p>
 											<p>{{ projects.previewText}}</p></a>
@@ -163,9 +182,12 @@
 											{% endfor %}
 										{% endfor %}
                     </div>
+                    {% endif %}
+                    {% if craft.entries.section('successStory').relatedTo(program) | length %}
                     <div>
-                      <h3>sucess stories[S]</h3>
-                    {% for stories in craft.entries.section('successStory').relatedTo(program) %}
+
+                      <h3>{{craft.entries.section('successStory').section}}</h3>
+                    {% for stories in craft.entries.section('successStory').relatedTo(program)%}
 											<a href="{{stories.url}}"><p>{{ stories.title}}</p>
 											<p>{{ stories.previewText}}</p></a>
 											{% for asset in stories.featureImage %}
@@ -173,7 +195,9 @@
 											{% endfor %}
 										{% endfor %}
                     </div>
+                    {% endif %}
                   </div>
+                  {% endif %}
 
                 </div>
               </div>

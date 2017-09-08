@@ -1,23 +1,9 @@
 {% extends "_layout" %}
 
-{% set title = "News" %}
-{% block header %}
 
-<!-- Classic Breadcrumbs-->
-
-
-{% endblock %}
 
 {% block content %}
-<section class="breadcrumb-classic">
-	<div class="shell section-34 section-sm-50">
-		<div class="range range-lg-middle">
-			<div class="cell-lg-5 reveal-lg-block text-lg-left">
-				<h2><span class="big">News & Calendars[S]</span></h2>
-			</div>
-		</div>
-	</div>
-</section>
+
 
 <main class="page-content">
 	<div class="news-wraper">
@@ -36,7 +22,7 @@
 						{% for entry in craft.entries.section('news').limit(3) %}
 						<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 						<span class="h6 text-light">{# }{{ entry.dateTime.format('F d, Y') }} #}</span>
-						<p>{{ entry.body.getPage(1) }}</p>
+						<p>{{ entry.previewText }}</p>
 						<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
 						<hr>
 						{% endfor %}
