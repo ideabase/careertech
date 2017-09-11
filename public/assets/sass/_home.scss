@@ -21,13 +21,16 @@
   position: absolute;
   right: 50%;
 }
+.section-center-absolute h1, .reveal-sm-block, .text-light{
+    color: white;
 
-.local-carousel-image h4{
+}
+.local-carousel-image h4,{
   position: absolute;
   margin-top: 0;
   color: white;
 }
-.local-carousel-image h4 span{
+.local-carousel-image h4 span, .section-center-absolute span{
   background: rgb(0,0,0);
   background: rgba(0,0,0,0.7);
   padding: 10px;
@@ -129,8 +132,8 @@
     }
 
     .local-carousel{
-      background-color: black;
-      padding: 10px 5px 10px 5px;
+
+      padding: 10px 5px 0px 5px;
     }
     .small-screen{
       display: block;

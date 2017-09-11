@@ -1,4 +1,12 @@
-<section class="breadcrumb-classic">
+{% if entry.featureImage | length %}
+
+  {% set image = entry.featureImage.first %}
+
+<section class="breadcrumb-classic" style="background-image: url({{ image.getUrl('breadcrumbs') }});">
+
+{% else %}
+  <section class="breadcrumb-classic">
+{% endif %}
   <div class="shell section-34 section-sm-50">
     <div class="range range-lg-middle">
       {% if entry is defined %}
@@ -22,3 +30,19 @@
     </div>
   </div>
 </section>
+
+<!--
+<style type="text/css">
+
+{% if entry.featureImage | length %}
+
+ {% set image = entry.featureImage.first %}
+
+	.breadcrumb-classic {
+		background-image: url({{ image.getUrl('breadcrumbs') }});
+	}
+
+{% endif %}
+
+</style>
+-->

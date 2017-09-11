@@ -112,6 +112,9 @@
                         <hr class="divider bg-red">
                         <p>{{ entry.body }}</p>
                       </div>
+                      <div>
+                        <iframe src="{{ craft.videoEmbed.getEmbedUrl('https://www.youtube.com/watch?v=6xWpo5Dn254') }}"></iframe>
+                      </div>
                     </div>
                   </div>
 
@@ -171,6 +174,9 @@
                   {% if craft.entries.section('projects').relatedTo(entry) | length or craft.entries.section('successStory').relatedTo(entry)| length %}
 
                   <div>
+
+
+
                     {% if craft.entries.section('projects').relatedTo(program) | length %}
                     <div>
                       <h3>{{craft.entries.section('projects').relatedTo(program).section}}</h3>
