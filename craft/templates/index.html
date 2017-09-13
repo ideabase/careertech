@@ -56,7 +56,7 @@
       </div>
       <div class="flex1">
         <a class="text-link" href="{{'programs'}}" >View full list of programs</a>
-        <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="1" data-md-items="3" data-nav-custom=".owl-custom-navigation" data-dots="true" data-nav="false">
+        <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="1" data-md-items="3" data-nav="true">
           {% for category in craft.categories.group('pathways') %}
             <a href="{{ 'programs' }}"><div class="local-carousel-image">
               {% for asset in category.featureImage %}
@@ -69,12 +69,7 @@
           <!--template <a href="clients.html"><img class="img-semi-transparent" src="images/clients/client-02-126x68.png" width="126" height="68" alt=""></a>-->
 
         </div>
-        <div class="nav owl-custom-navigation owl-customer-navigation">
-          <div class="owl-nav">
-            <div class="owl-prev mdi mdi-chevron-left" data-owl-prev></div>
-            <div class="owl-next mdi mdi-chevron-right" data-owl-next></div>
-          </div>
-        </div>
+        
       </div>
 
 
@@ -135,7 +130,7 @@
         										<p>{{entry.dateTime.day()}}</p>
         									</div>
         								</div>
-                        <a href="{{entry.url}}"><h3>{{entry.title}}jdshfoaihfbkdsbfjbsda dsjfbsaldknfdljskflsaf dsfnasdjfnsdklk dsfjnadsknfkasj dfjansfnjsanfdkjas fdnfjkdsanfdksa jdnfjsadnlfkndals</h3></a>
+                        <a href="{{entry.url}}"><h3>{{entry.title}}</h3></a>
                         <p>{{entry.location}}</p>
                         <p>{{entry.startEndTime.localeTime()}} - {{entry.endTime.localeTime()}}</p>
                       </div>

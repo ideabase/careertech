@@ -1,3 +1,22 @@
+.owl-carousel-testimonials-2 .owl-nav {
+    display: table;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 100%;
+}
+.owl-carousel .owl-controls .owl-nav .owl-prev,.owl-carousel .owl-controls .owl-nav .owl-next{
+  border-radius: inherit;
+  border-width: medium;
+  border-color: black;
+  height: 15px;
+  width: 15px;
+  margin: 0px 5px 0px 5px;
+}
+.owl-carousel .owl-controls .owl-nav .owl-prev:hover,.owl-carousel .owl-controls .owl-nav .owl-next:hover{
+  height: 20px;
+  width: 20px;
+
+}
 .local-carousel{
   background-color: none;
   padding: 10px 5px 0px 5px;
@@ -10,7 +29,8 @@
   align-items: center;
   justify-content: center;
   position:relative;
-  height: 210px;
+
+  //height: 210px;
   width:98%;
 
 }
@@ -53,7 +73,7 @@
   display:table;
   background-color: #EAEAEA;
   padding:40px 105px 40px 105px;
-  margin-top: 70px;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 .home-admissionbox-left{

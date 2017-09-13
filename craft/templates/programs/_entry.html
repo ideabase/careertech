@@ -112,9 +112,13 @@
                         <hr class="divider bg-red">
                         <p>{{ entry.body }}</p>
                       </div>
+                      {% if entry.youtubeVideoLink | length %}
                       <div>
-                        <iframe src="{{ craft.videoEmbed.getEmbedUrl('https://www.youtube.com/watch?v=6xWpo5Dn254') }}"></iframe>
+                        <div class="video">
+                          {{entry.youtubeVideoLink|videoEmbed}}
+                        </div>
                       </div>
+                      {% endif %}
                     </div>
                   </div>
 
