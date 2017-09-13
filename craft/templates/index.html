@@ -110,7 +110,7 @@
                   <div class="home-news">
                     {% for entry in craft.entries.section('news').limit(3) %}
         						<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        						<span class="h6 text-light">{{ entry.dateTime.format('F d, Y') }}</span>
+        						<!--<span class="h6 text-light">{{ entry.dateTime.format('F d, Y') }}</span>-->
         						<p>{{ entry.previewText }}</p>
         						<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
         						<hr>
