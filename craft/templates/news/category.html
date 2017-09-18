@@ -1,5 +1,8 @@
+
 {% extends "_layout" %}
 
+
+{% set articles = craft.entries.relatedTo(category) %}
 
 
 {% block content %}
@@ -18,7 +21,7 @@
 
 				<div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
 					<div>
-						{% paginate craft.entries.section('news').limit(3) as pageInfo, pageEntries %}
+						{% paginate articles.limit(3) as pageInfo, pageEntries %}
 
 							{% for entry in pageEntries %}
 							    <article>

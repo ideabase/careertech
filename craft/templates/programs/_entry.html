@@ -145,33 +145,21 @@
                   </div>
 
                   <!-- Tab 3 Content -->
-                  <div>
-                    <section class="program-listing">
+                  <div class="faculty-listing cell-sm-12 cell-md-12">
+
+                    <div class="range range-sm-center section-34">
+
 										{% set repeat="\n" %}
 										{% for classes in craft.entries.section('classes').relatedTo(program) %}
-												{% for instructor in classes.instructor %}
-													{% if repeat != instructor.title %}
-                          <div class="instructor-tab">
-  													<a href="{{instructor.url}}">
-                              <p>{{ instructor.title }}</p></a>
-
-
-                              {% if instructor.featureImage | length %}
-  														  {% for asset in instructor.featureImage %}
-  															  <a href="{{instructor.url}}"><img src="{{ asset.url('profileImage') }}" alt=""/></a>
-  														  {% endfor %}
-                              {% else %}
-                                {% for asset in imageMissing.featureImage %}
-                                  <a href="{{instructor.url}}"><img src="{{ asset.url('profileImage') }}" alt=""/></a>
-                                {% endfor %}
-                              {% endif %}
-                              <p>{{ instructor.body}}</p>
-  													{% endif %}
-                          </div>
-													{% set repeat = instructor.title %}
+												{% for entry in classes.instructor %}
+													{% if repeat != entry.title %}
+                            {% include "_includes/_headShot.html" %}
+													{% set repeat = entry.title %}
+                          {% endif %}
 												{% endfor %}
 										{% endfor %}
-                  </section>
+                  </div>
+
                   </div>
 
                   <!-- Tab 4 Content -->

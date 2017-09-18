@@ -1,0 +1,27 @@
+
+<div class="margin-bottom-40px cell-sm-6 cell-md-3">
+  <a href="{{ entry.url }}">
+  {% if entry.featureImage | length %}
+    {% for asset in entry.featureImage %}
+    <img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
+    {% endfor %}
+  {% else %}
+    {% for asset in imageMissing.featureImage %}
+    <img class="img-responsive reveal-inline-block" src="{{ asset.url('profileImage') }}" width="270" height="270" alt="">
+    {% endfor %}
+  {% endif %}
+  <div class="text-md-left offset-top-20">
+    <div>
+      <h5 class="text-bold text-primary">{{ entry.title }}</h5>
+    </div>
+  </div>
+  </a>
+  <address class="contact-info text-md-left">
+    <ul class="list-unstyled p">
+      <li class="reveal-block"><span class="icon icon-xxs mdi mdi-phone text-middle"></span> <a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
+      </li>
+      <li class="reveal-block"><span class="icon icon-xxs mdi mdi-email-open text-middle"></span> <a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
+      </li>
+    </ul>
+  </address>
+</div>

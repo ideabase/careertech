@@ -113,18 +113,25 @@ h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:
 }
 
 //------small screen desygn
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1200px) {
+  .apply-button-whiteheader{
+    position: relative;
+    display: table;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+  }
+  h2{
+    text-align: center;
+  }
+
+}
+@media only screen and (max-width: 800px) {
     .center-button{
       display: block;
       margin: auto;
       width: 100%;
       border-radius: 10px;
-    }
-    .apply-button-whiteheader{
-      position: relative;
-      border-radius: 10px;
-      left: 33%;
-      margin-top: 10px;
     }
 
     .home-wrap {
@@ -134,9 +141,7 @@ h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:
     .apply-button-blackheader{
       border-radius: 10px;
     }
-    h2{
-      text-align: center;
-    }
+
     .text-link{
       text-align: center;
       display: block;

@@ -1,9 +1,10 @@
-{% if entry.featureImage | length %}
-
-  {% set image = entry.featureImage.first %}
-
-<section class="breadcrumb-classic" style="background-image: url({{ image.getUrl('breadcrumbs') }});">
-
+{% if entry is defined %}
+  {% if entry.featureImage | length %}
+    {% set image = entry.featureImage.first %}
+        <section class="breadcrumb-classic" style="background-image: url({{ image.getUrl('breadcrumbs') }});">
+    {% else %}
+        <section class="breadcrumb-classic">
+    {% endif %}
 {% else %}
   <section class="breadcrumb-classic">
 {% endif %}
@@ -30,19 +31,3 @@
     </div>
   </div>
 </section>
-
-<!--
-<style type="text/css">
-
-{% if entry.featureImage | length %}
-
- {% set image = entry.featureImage.first %}
-
-	.breadcrumb-classic {
-		background-image: url({{ image.getUrl('breadcrumbs') }});
-	}
-
-{% endif %}
-
-</style>
--->

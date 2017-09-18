@@ -10,3 +10,49 @@ footer{
     order: 5;
   }
 }
+
+.social-media-icons {
+display: flex;
+flex-wrap: wrap;
+margin-left:-10px;
+}
+
+.social-media-icon{
+width: 50px;
+}
+
+.social-media-icon {
+background-image: url('../img/social/web.svg');
+background-size: 100% auto;
+width: 50px;
+height: 50px;
+text-indent: -10000px;
+overflow: hidden;
+margin-right: 5px;
+// Repeat the following as many times as needed for each social network. No commas needed//
+  &.facebook {
+  background-image: url('../img/social/facebook.svg');
+  }
+  &.instagram {
+  background-image: url('../img/social/instagram.svg');
+  }
+  &.twitter {
+  background-image: url('../img/social/twitter.svg');
+  }
+  &.linkedin {
+  background-image: url('../img/social/linkedin.svg');
+  }
+  &.flickr {
+  background-image: url('../img/social/flickr.svg');
+  }
+  &.youtube {
+  background-image: url('../img/social/youtube.svg');
+  }
+  &.snapchat {
+  background-image: url('../img/social/snapchat.svg');
+  }
+  &.tumblr {
+  background-image: url('../img/social/tumblr.svg');
+  }
+
+}
