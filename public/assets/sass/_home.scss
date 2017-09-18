@@ -54,9 +54,10 @@
   background: rgb(0,0,0);
   background: rgba(0,0,0,0.7);
   padding: 10px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  z-index: 10;
+
 }
 
 .local-carousel-image h4 span.spacer{
@@ -70,52 +71,53 @@
 
 .home-admissions-wrap{
   position:relative;
-  display:table;
+  display:flex;
   background-color: #EAEAEA;
-  padding:40px 105px 40px 105px;
+  padding:40px 5%;
   margin-top: 20px;
   margin-bottom: 50px;
 }
 .home-admissionbox-left{
   margin-top: 30px;
-  float: left;
   padding: 0px 30px 30px 0px;
-  width:50%;
 }
 .home-admissionbox-right{
-  margin-top: 30px;
-  float:right;
-  padding-left: 30px;
-  width:40%;
+  margin-left: auto;
 }
 
 .home-wrap{
-  padding: 30px 105px 20px 105px;
+  padding: 30px 5% 20px 5%;
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
 }
 
 .events{
-  height:400px;
   display: flex;
   width:100%;
   padding: 50px 0px 10px 0px;
-
+  justify-content: space-between;
 }
 .border{
   border: 1px solid gray;
   padding: 20px;
   width: 100%;
     text-align: center;
+
+}
+.border .callendar-home-wraper a h3{
+  width: 80%;
 }
 .events-box{
 
-  width:33%;
+  width:30%;
   padding:20px;
-  border-color: black;
+  box-shadow: 1px 1px 15px rgba(0,0,0,.2);
   text-align: center;
-
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 //top and bottom in body.scss
@@ -136,7 +138,24 @@
 
 
 
+
 //-----smalscreen css
+
+@media only screen and (max-width: 800px) {
+  .events{
+      display: initial;
+  }
+  .events-box{
+        width: 100%;
+        margin-top: 2em !important;
+        margin-bottom: 1em;
+  }
+  .home-admissions-wrap{
+    padding: 20px 15px 20px 15px;
+    text-align: center;
+    display: block;
+  }
+}
 
 @media only screen and (max-width: 500px) {
   .home-wrap{
@@ -144,7 +163,6 @@
     margin-bottom: 0px;
     //display: flex;
     padding-bottom: 0px;
-    white-space: nowrap;
     text-align: center;
     }
   .home-box-left {
@@ -158,10 +176,7 @@
     .small-screen{
       display: block;
     }
-    .home-admissions-wrap{
-      padding: 20px 15px 20px 15px;
-      text-align: center;
-    }
+
     .home-admissionbox-right{
       float: none;
       padding: 0px;
@@ -173,12 +188,7 @@
       width: 100%;
       float: none;
     }
-    .events{
-        display: initial;
-    }
-    .events-box{
-          width: 100%;
-    }
+
   .home-news{
     white-space: normal;
   }
