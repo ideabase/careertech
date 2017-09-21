@@ -1,3 +1,16 @@
+.news-categories{
+  text-align: center;
+}
+
+.offset-top-10 {
+    margin-bottom: 0px;
+}
+.date-p{
+  margin-top: 0px !important;
+}
+.news-categories h4{
+  margin: 10px;
+}
 .news-wraper{
 }
 .news-lefttab{
@@ -20,16 +33,17 @@
 .events-day{
   float:left;
   height:inherit;
-  width:30%;
+  width: 15%;
   padding:18px;
+  padding-left: 0px;
 }
 .events-content{
   float:right;
   height:inherit;
-  width:70%;
+  width:85%;
 }
 .callendar-wraper{
-  width: 120px;
+
   height: 100px;
   text-align: center;
   text-transform: uppercase;
