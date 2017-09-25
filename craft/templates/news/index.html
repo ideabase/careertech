@@ -23,7 +23,7 @@
 							{% for entry in pageEntries %}
 							    <article>
 										<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-										<p class="date-p">{{ entry.dateTime.format('F d, Y') }}</p>
+										<p class="date-p">{{ entry.dateTime | date('F d, Y') }}</p>
 										<p>{{ entry.previewText }}</p>
 										<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
 										<hr>

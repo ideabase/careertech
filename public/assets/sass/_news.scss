@@ -63,7 +63,16 @@
   background-color: $red;
 }
 
-
+@media only screen and (width: 1230px) {
+  .news-lefttab{
+    float:none;
+    background-color: #EAEAEA;
+    width:100%;
+    height:inherit;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+}
 //small screen
 
 @media only screen and (max-width: 1300px) {
