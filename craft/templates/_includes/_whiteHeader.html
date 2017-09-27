@@ -19,7 +19,7 @@
 						<a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
 						<ul class="dropdown-listing rd-navbar-dropdown ">
 								{% for subnode in node.children %}
-									<li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="{{ subnode.url }}"><span class="rd-navbar-submenu-toggle">{{ subnode.name }}</span></a>
+									<li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="{{ subnode.url }}"><span class="text-middle">{{ subnode.name }}</span></a>
 								{% endfor %}
 						</ul>
 
