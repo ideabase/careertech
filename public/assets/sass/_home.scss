@@ -45,8 +45,15 @@
 }
 .section-center-absolute h1, .reveal-sm-block, .text-light{
     color: white;
-
 }
+
+.section-center-absolute{
+    @media only screen and (max-width: 480px) {
+        font-size: 80%;
+        width: 80%;
+    }
+}
+
 .local-carousel-image h4,{
   position: absolute;
   margin-top: 0;
@@ -67,7 +74,7 @@
 }
 
 .page .text-light {
-  font-size: 20px;
+  font-size: 1.1em;
   padding-top: 2em;
 }
 

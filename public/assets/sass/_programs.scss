@@ -88,8 +88,19 @@
 address ul li{
     overflow-x: auto;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
   .program-listing {
     columns: 1;
+  }
+  .program-box-left{
+    float:none;
+    width:100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .program-box-right{
+    float:none;
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
