@@ -11,7 +11,7 @@
 	<meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<title>{% if entry is defined %}{{ entry }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
   <!-- Render SEO Metatags -->
     {% hook 'seomaticRender' %}
@@ -77,8 +77,8 @@
   {% endif %}
 
   <script src="{{siteUrl}}assets/js/core.min.js"></script>
-  <script src="{{siteUrl}}assets/js/script.js"></script>
-  <script type="text/javascript" src="{{ siteUrl }}assets/js/min/scripts-min.js"></script>
+  <script src="{{siteUrl}}assets/js/script.js" async></script>
+  <script type="text/javascript" src="{{ siteUrl }}assets/js/min/scripts-min.js" async></script>
 </div>
 </body>
 </html>

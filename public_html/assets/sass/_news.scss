@@ -1,0 +1,115 @@
+.news-categories{
+  text-align: center;
+}
+
+.offset-top-10 {
+    margin-bottom: 0px;
+}
+.date-p{
+  margin-top: 0px !important;
+}
+.news-categories h4{
+  margin: 10px;
+}
+.news-wraper{
+}
+.news-lefttab{
+  float:left;
+  background-color: #EAEAEA;
+  width:30%;
+  height:inherit;
+  padding: 80px 40px 40px 40px;
+}
+.news-righttab{
+    float:right;
+    width:70%;
+    height:inherit;
+    padding: 80px 40px 40px 100px;
+}
+.events-wrap{
+  clear: both;
+  margin-bottom: 150px;
+}
+.events-day{
+  float:left;
+  height:inherit;
+  width: 15%;
+  padding:18px;
+  padding-left: 0px;
+}
+.events-content{
+  float:right;
+  height:inherit;
+  width:85%;
+}
+.callendar-wraper{
+
+  height: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.pagination-classic > li + li:not(:last-child).active > a, .pagination-classic > li + li:not(:last-child).active > span{
+  background: $red;
+  border-color: $red;
+}
+
+.rdc-panel {
+  background: $red;
+}
+
+.rdc-table_today {
+  background-color: $red;
+}
+
+@media only screen and (width: 1230px) {
+  .news-lefttab{
+    float:none;
+    background-color: #EAEAEA;
+    width:100%;
+    height:inherit;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+}
+//small screen
+
+@media only screen and (max-width: 1300px) {
+  .news-lefttab{
+    float:none;
+    background-color: #EAEAEA;
+    width:100%;
+    height:inherit;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin: auto;
+    max-width: 400px;
+  }
+  .news-righttab{
+      float:none;
+      width:100%;
+      height:inherit;
+      padding: 10px;
+      margin-bottom: 20px;
+  }
+
+  .events-wrap{
+    clear: both;
+    margin-bottom: 20px;
+  }
+  .events-day{
+    float:none;
+    width:100%;
+    padding:18px;
+  }
+  .events-content{
+    float:none;
+    width:100%;
+    text-align: center;
+  }
+  .callendar-wraper{
+    margin: auto;
+  }
+
+}

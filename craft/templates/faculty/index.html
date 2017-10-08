@@ -76,10 +76,14 @@
 																					</a>
 																					<address class="contact-info text-md-left">
 																						<ul class="list-unstyled p">
+																							{% if entry.phoneNumber | length %}
 																							<li><a class="reveal-inline-block text-middle" href="callto:{{entry.phoneNumber}}">{{entry.phoneNumber}}</a>
 																							</li>
+																							{% endif %}
+																							{% if entry.emailAddress | length %}
 																							<li><a class="reveal-inline-block text-middle" href="mailto:{{entry.emailAddress}}">{{entry.emailAddress}}</a>
 																							</li>
+																							{% endif %}
 																						</ul>
 																					</address>
 																				</div>

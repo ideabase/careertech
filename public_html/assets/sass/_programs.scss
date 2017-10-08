@@ -1,0 +1,106 @@
+.program-listing {
+  columns: 2;
+  column-gap: 50px;
+  //height:800px;
+}
+.faculty-listing{
+  page-break-inside: avoid;
+  background-color: #EAEAEA;
+  margin:20px;
+  padding: 30px;
+}
+
+.program-wrap{
+  position:relative;
+  display: table;
+  padding-bottom: 30px;
+  //padding: 30px 105px 20px 105px;
+}
+.program-box-left{
+  float:left;
+  width:50%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.program-box-right{
+  float:right;
+  width: 50%;
+  margin-bottom: 30px;
+}
+.listing-categories{
+  page-break-inside: avoid;
+  margin-bottom: 30px;
+}
+
+
+//individual program page
+.course-button{
+  border-radius:0;
+  margin:10px;
+  width:82%;
+}
+.program-requirements{
+  background-color:#EAEAEA;
+  margin: 15px 50px 50px 50px;
+  padding:20px 40px 20px 40px;
+  text-align:left;
+}
+.program-requirements h3{
+  text-transform: uppercase;
+  color:$red;
+
+  font-size: 15px;
+}
+.program-requirements hr{
+  background-color:black;
+  height:2px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.program-overview{
+  background-color:#EAEAEA;
+  margin-top: 50px;
+  padding:15px;
+  page-break-inside: avoid;
+}
+.program-overview h3{
+  color: $red;
+  font-size: 25px;
+  text-transform:uppercase;
+}
+
+.program-overview ul{
+  list-style-type: square;
+  color: $red;
+}
+.program-overview p{
+  color: black;
+}
+.instructor-tab{
+  margin: 10px 30px 10px 100px;
+  text-align: center;
+
+}
+.instructor-tab img{
+  height:300px;
+  width: 300px;
+}
+address ul li{
+    overflow-x: auto;
+}
+@media only screen and (max-width: 1000px) {
+  .program-listing {
+    columns: 1;
+  }
+  .program-box-left{
+    float:none;
+    width:100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .program-box-right{
+    float:none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

@@ -17,9 +17,9 @@
 				    <li{% if nodeClasses|length %} class="{{ nodeClasses|join(' ') }}"{% endif %}>
 						{% if node.hasChildren %}
 						<a href="{{ node.url }}" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
-						<ul class="dropdown-listing rd-navbar-dropdown">
+						<ul class="dropdown-listing rd-navbar-dropdown rd-navbar-open-right">
 								{% for subnode in node.children %}
-									<li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="{{ subnode.url }}"><span class="rd-navbar-submenu-toggle">{{ subnode.name }}</span></a>
+									<li class="rd-navbar--has-dropdown rd-navbar-submenu"><a href="{{ subnode.url }}"><span class="text-middle">{{ subnode.name }}</span></a>
 								{% endfor %}
 						</ul>
 
@@ -49,9 +49,7 @@
 									<div class="rd-navbar-nav-wrap">
 										<div class="rd-navbar-mobile-scroll">
 											<!-- Navbar Brand Mobile-->
-											{% for asset in header.logo %}
-				              <div class="rd-navbar-mobile-brand"><a href="index.html"><img src='{{asset.url}}' alt=''/></a></div>
-											{% endfor %}
+											
 												<div class="form-search-wrap">
 												<!-- RD Search Form-->
 												<form class="form-search rd-search" action="{{ url('search/results') }}" method="GET">

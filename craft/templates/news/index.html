@@ -23,7 +23,7 @@
 							{% for entry in pageEntries %}
 							    <article>
 										<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-										<span class="h6 text-light">{# }{{ entry.dateTime.format('F d, Y') }} #}</span>
+										<p class="date-p">{{ entry.dateTime | date('F d, Y') }}</p>
 										<p>{{ entry.previewText }}</p>
 										<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
 										<hr>
@@ -72,8 +72,7 @@
 											</div>
 										<div class="events-content">
 											<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-											<span class="h6 text-light">{{ entry.dateTime.format('F d, Y') }} || {{entry.startEndTime.localeTime()}} - {{entry.endTime.localeTime()}}</span>
-
+											<p class="date-p">{{ entry.dateTime.format('F d, Y') }} || {{entry.startEndTime.localeTime()}} - {{entry.endTime.localeTime()}}</p>
 											<p>{{ entry.previewText }}</p>
 										</div>
 										<hr>
@@ -145,13 +144,19 @@
 			</div>
 			<hr>
 			<h1> Events by type[S]: </h1>
-			{% for entry in craft.categories.group('eventType') %}
-				<a href="{{entry.url}}#undefined2"><h4>{{entry.title}}</h4></a>
-			{% endfor %}
+			<div class="news-categories">
+				{% for entry in craft.categories.group('eventType') %}
+					<a href="{{entry.url}}#undefined2"><h4>{{entry.title}}</h4></a>
+				{% endfor %}
+			</div>
+			<hr>
+
 			<h1> News by type[S]: </h1>
-			{% for entry in craft.categories.group('storyType') %}
-				<a href="{{entry.url}}"><h4>{{entry.title}}</h4></a>
-			{% endfor %}
+			<div class="news-categories">
+				{% for entry in craft.categories.group('storyType') %}
+					<a href="{{entry.url}}"><h4>{{entry.title}}</h4></a>
+				{% endfor %}
+			</div>
 		</div>
 	</div>
 </main>
