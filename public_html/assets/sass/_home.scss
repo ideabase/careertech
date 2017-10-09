@@ -19,6 +19,23 @@
   width: 20px;
 
 }
+.right-Top{
+  order: 1;
+  text-align: right;
+  display: block;
+  width: 100%;
+  margin-top: -100px !important;
+  @media only screen and (max-width: 1000px) {
+      order: 2;
+      margin-top: 10px !important;
+      text-align: center;
+  }
+}
+
+.flex1{
+  display: flex !important;
+  flex-wrap: wrap;
+}
 .local-carousel{
   background-color: none;
   padding: 10px 5px 0px 5px;
@@ -51,10 +68,6 @@
     font-size: 80%;
     width: 80%;
     max-width: 900px;
-    @media only screen and (max-width: 480px) {
-        font-size: 80%;
-        width: 80%;
-    }
 }
 
 .local-carousel-image h4,{
@@ -106,6 +119,7 @@
 
 .events{
   display: flex;
+  order: 2;
   width:100%;
   padding: 50px 0px 10px 0px;
   justify-content: space-between;
@@ -147,15 +161,25 @@
   display:none;
 
 }
+.home-news{
+  white-space: normal;
 
+  order: 2;
+
+}
+.home-news div{
+  display: block;
+  width: 100%;
+}
 
 
 
 //-----smalscreen css
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
   .events{
       display: initial;
+      order:1;
   }
   .events-box{
         width: 100%;
@@ -169,7 +193,7 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   .home-wrap{
     padding: 10px;
     margin-bottom: 0px;
@@ -203,5 +227,7 @@
 
   .home-news{
     white-space: normal;
+    order: 1;
+    width:100%;
   }
 }

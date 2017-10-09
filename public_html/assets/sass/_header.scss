@@ -13,6 +13,11 @@
   columns: 2;
   column-gap: 5px;
   width: 500px;
+  @media only screen and (max-width: 1200px) {
+    columns: 1;
+    width: 280px;
+
+  }
   //height:800px;
 }
 
