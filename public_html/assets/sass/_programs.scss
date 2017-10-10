@@ -31,6 +31,18 @@
   page-break-inside: avoid;
   margin-bottom: 30px;
 }
+.video{
+  margin: auto;
+  height: 350px;
+  width: 90%;
+  max-width: 700px;
+
+}
+
+iframe{
+  height: 350px;
+  width: 700px;
+}
 
 
 //individual program page
@@ -103,4 +115,17 @@ address ul li{
     width: 100%;
     margin-bottom: 30px;
   }
+  .course-button {
+    border-radius: 0;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.program-requirements {
+    margin:0px;
+    margin-bottom: 20px;
+  }
+  .shell{
+    max-width: 100%;
+}
 }
