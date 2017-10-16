@@ -27,7 +27,7 @@
 																{% endfor %}
 															{% else %}
 																<a class="apply-button-blackheader btn btn-primary btn-lg" data-caption-animate="fadeInUp" data-caption-delay="1200">
-																<span class="btn-text">Applications closed for this period[S]</span></a>
+																<span class="btn-text">Applications closed for this period</span></a>
 															{% endif %}
                             </div>
                           </div>
@@ -56,9 +56,9 @@
               <!-- Responsive-tabs-->
               <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
                 <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
-                  <li>About the program[S]</li>
-                  <li>Program Overview[S]</li>
-                  <li>Meet the instructor[S]</li>
+                  <li>About the program</li>
+                  <li>Program Overview</li>
+                  <li>Meet the instructor</li>
                   {% if craft.entries.section('projects').relatedTo(entry) | length and craft.entries.section('successStory').relatedTo(entry)| length %}
 
                   <li>{{craft.entries.section('projects').section}} and {{craft.entries.section('successStory').section}}</li>
@@ -79,25 +79,25 @@
                   <div class="program-wrap">
                     <div class="program-box-left">
 
-                        <h1>Program Requirements[S]</h1>
+                        <h1>Program Requirements</h1>
                         <hr class="divider bg-red">
                         <div class="program-requirements">
     											{% set program = entry %}
-                          <h3>Grade level[S]: {{entry.gradeLevel}}</h3>
-                          <h3>School[S]: <span style="color:black; font-size:15px;">{{entry.school}}</span></h3>
+                          <h3>Grade level: {{entry.gradeLevel}}</h3>
+                          <h3>School: <span style="color:black; font-size:15px;">{{entry.school}}</span></h3>
                           <hr>
-                          <h3>Program length[S]:</h3>
+                          <h3>Program length:</h3>
                           <p>{{entry.length}}</p>
                           <hr>
     											{% if entry.admissionsCriteria | length %}
-    												  <h3>Admissions criteria[S]: </h3>
+    												  <h3>Admissions criteria: </h3>
     													{% for row in entry.admissionsCriteria %}
     														<p>{{ row.criteria}}</p>
     													{% endfor %}
     											{%  endif %}
                         </div>
                         <div>
-                          <h1>Courses[S]</h1>
+                          <h1>Courses</h1>
 
                           <hr class="divider bg-red">
                             {% for classes in craft.entries.section('classes').relatedTo(entry) %}
@@ -108,7 +108,7 @@
                     </div>
                     <div class="program-box-right">
                       <div>
-                        <h1>Program Description[S]</h1>
+                        <h1>Program Description</h1>
                         <hr class="divider bg-red">
                         <p>{{ entry.body }}</p>
                       </div>
@@ -117,7 +117,7 @@
                         <div class="video">
                           {{entry.youtubeVideoLink|videoEmbed}}
                         </div>
-                      
+
                       {% endif %}
                     </div>
                   </div>

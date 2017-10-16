@@ -5,23 +5,23 @@
 
 <main class="page-content">
 
-	<h1>Admissions Criteria[S]</h1>
+	<h1>Admissions Criteria</h1>
 	<div>
 		<hr class="divider bg-red">
 	</div>
-	<h4>General[S]</h4>
+	<h4>General</h4>
 
 
 	<p>{{ entry.generalText }}</p>
 	<p>Enrollment Status: {% if entry.applicationLightSwitch %}
-		Open[S]
+		Open
 	{% else %}
-		Closed[S]
+		Closed
 	{% endif %}</p>
 
 	<hr class="adm-hr hr">
 
-	<h1>Specific Program Criteria[S]</h1>
+	<h1>Specific Program Criteria</h1>
 
 		<hr class="divider bg-red">
 
@@ -36,7 +36,7 @@
 	<hr class="adm-hr hr" >
 
 
-	<h1>Admissions Deadlines[S]</h1>
+	<h1>Admissions Deadlines</h1>
 	<div>
 		<hr class="divider bg-red">
 	</div>
@@ -64,24 +64,21 @@
 	</table>
 	{% if entry.applicationLightSwitch %}
 		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">
-			<span class="btn-text">Apply now[S]</span></a>
+			<span class="btn-text">Apply now</span></a>
 	{% else %}
 		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" >
-			<span class="btn-text">Applications closed for this period[S]</span></a>
+			<span class="btn-text">Applications closed for this period</span></a>
 	{% endif %}
 
 
 	<div class="adm-events-wrapper">
-	<h1>Important Dates & Events[S]</h1>
+	<h1>Important Dates & Events</h1>
 		<div>
 			<hr class="divider bg-red">
 		</div>
 		{{ entry.admissionsDates }}
-
-		<p>Here you will find all the important dates and events regarding CTE admissions. Examples include orientation schedules, teacher meetings, and specific class events.[S]</p>
-
-			<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ 'news' }}">
-			<span class="btn-text">Admissions Calendar[S]</span></a>
+		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ 'news' }}">
+			<span class="btn-text">Admissions Calendar</span></a>
 	</div>
 </main>
 

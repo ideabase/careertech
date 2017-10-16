@@ -67,9 +67,14 @@
 .pos-top{
   top: 0;
 }
-
-.has-children {
-  padding-right:1.25em;
+@media screen and (min-width:1200px){
+  .has-children {
+    padding-right:1.25em;
+  }
+}
+.rd-navbar-default.rd-navbar-transparent.rd-navbar-fixed .rd-navbar-submenu-toggle{
+  text-align: center;
+  width: 60px;
 }
 
 .has-children:after {

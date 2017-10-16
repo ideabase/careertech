@@ -1109,7 +1109,7 @@ $document.ready(function () {
    * RD Twitter Feed
    * @description Enables RD Twitter Feed plugin
    */
-  if (plugins.twitterfeed.length > 0) {
+  /*if (plugins.twitterfeed.length > 0) {
     var i;
     for (i = 0; i < plugins.twitterfeed.length; i++) {
       var twitterfeedItem = plugins.twitterfeed[i];
@@ -1594,7 +1594,7 @@ $document.ready(function () {
    * RD Facebook
    * @description Enables RD Facebook plugin
    */
-  if (plugins.facebookfeed.length > 0) {
+  /*if (plugins.facebookfeed.length > 0) {
     for (i = 0; i < plugins.facebookfeed.length; i++) {
       var facebookfeedItem = plugins.facebookfeed[i];
       $(facebookfeedItem).RDFacebookFeed({

@@ -70,10 +70,13 @@ iframe{
   margin-bottom: 40px;
 }
 .program-overview{
-  background-color:#EAEAEA;
-  margin-top: 50px;
-  padding:15px;
+
+  background-color: #EAEAEA;
+  margin-bottom: 20px;
+  padding: 25px;
   page-break-inside: avoid;
+  width: 100%;
+  display: inline-block;
 }
 .program-overview h3{
   color: $red;
