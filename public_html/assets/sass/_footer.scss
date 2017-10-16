@@ -1,0 +1,58 @@
+.footer-brand{
+  width:100%;
+}
+footer{
+  clear: both;
+}
+
+@media (min-width: 1200px) {
+  footer .range > .cell-lg-push-1 {
+    order: 5;
+  }
+}
+
+.social-media-icons {
+display: flex;
+flex-wrap: wrap;
+margin-left:-10px;
+}
+
+.social-media-icon{
+width: 50px;
+}
+
+.social-media-icon {
+background-image: url('../img/social/web-white.svg');
+background-size: 100% auto;
+width: 50px;
+height: 50px;
+text-indent: -10000px;
+overflow: hidden;
+margin-right: 5px;
+// Repeat the following as many times as needed for each social network. No commas needed//
+  &.facebook {
+  background-image: url('../img/social/facebook-white.svg');
+  }
+  &.instagram {
+  background-image: url('../img/social/instagram-white.svg');
+  }
+  &.twitter {
+  background-image: url('../img/social/twitter-white.svg');
+  }
+  &.linkedin {
+  background-image: url('../img/social/linkedin-white.svg');
+  }
+  &.flickr {
+  background-image: url('../img/social/flickr-white.svg');
+  }
+  &.youtube {
+  background-image: url('../img/social/youtube-white.svg');
+  }
+  &.snapchat {
+  background-image: url('../img/social/snapchat-white.svg');
+  }
+  &.tumblr {
+  background-image: url('../img/social/tumblr-white.svg');
+  }
+
+}

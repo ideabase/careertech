@@ -72,7 +72,7 @@
 											</div>
 										<div class="events-content">
 											<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-											<p class="date-p">{{ entry.dateTime.format('F d, Y') }} || {{entry.startEndTime.localeTime()}} - {{entry.endTime.localeTime()}}</p>
+											<p class="date-p">{{ entry.dateTime.format('F d, Y') }} || {{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</p>
 											<p>{{ entry.previewText }}</p>
 										</div>
 										<hr>

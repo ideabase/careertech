@@ -1,0 +1,233 @@
+
+
+.owl-carousel-testimonials-2 .owl-nav {
+    display: table;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 100%;
+}
+.owl-carousel .owl-controls .owl-nav .owl-prev,.owl-carousel .owl-controls .owl-nav .owl-next{
+  border-radius: inherit;
+  border-width: medium;
+  border-color: black;
+  height: 15px;
+  width: 15px;
+  margin: 0px 5px 0px 5px;
+}
+.owl-carousel .owl-controls .owl-nav .owl-prev:hover,.owl-carousel .owl-controls .owl-nav .owl-next:hover{
+  height: 20px;
+  width: 20px;
+
+}
+.right-Top{
+  order: 1;
+  text-align: right;
+  display: block;
+  width: 100%;
+  margin-top: -100px !important;
+  @media only screen and (max-width: 1000px) {
+      order: 2;
+      margin-top: 10px !important;
+      text-align: center;
+  }
+}
+
+.flex1{
+  display: flex !important;
+  flex-wrap: wrap;
+}
+.local-carousel{
+  background-color: none;
+  padding: 10px 5px 0px 5px;
+}
+.carousel-featureImage{
+  height: 100%;
+}
+.local-carousel-image{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+
+  //height: 210px;
+  width:98%;
+
+}
+.small-screen{
+  display: none;
+}
+.nav{
+  position: absolute;
+  right: 50%;
+}
+.section-center-absolute h1, .reveal-sm-block, .text-light{
+    color: white;
+}
+
+.section-center-absolute{
+    font-size: 80%;
+    width: 80%;
+    max-width: 900px;
+}
+
+.local-carousel-image h4,{
+  position: absolute;
+  margin-top: 0;
+  color: white;
+}
+.local-carousel-image h4 span{
+  background: rgb(0,0,0);
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 10;
+
+}
+
+.local-carousel-image h4 span.spacer{
+  padding:0 5px;
+}
+
+.page .text-light {
+  font-size: 1.1em;
+  padding-top: 2em;
+}
+
+.home-admissions-wrap{
+  position:relative;
+  display:flex;
+  background-color: #EAEAEA;
+  padding:40px 5%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.home-admissionbox-left{
+  margin-top: 30px;
+  padding: 0px 30px 30px 0px;
+}
+.home-admissionbox-right{
+  margin-left: auto;
+}
+
+.home-wrap{
+  padding: 30px 5% 20px 5%;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.events{
+  display: flex;
+  order: 2;
+  width:100%;
+  padding: 50px 0px 10px 0px;
+  justify-content: space-between;
+}
+.border{
+  border: 1px solid gray;
+  padding: 20px;
+  width: 100%;
+    text-align: center;
+
+}
+.border .callendar-home-wraper a h3{
+  width: 80%;
+}
+.events-box{
+
+  width:30%;
+  padding:20px;
+  box-shadow: 1px 1px 15px rgba(0,0,0,.2);
+  text-align: center;
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+//top and bottom in body.scss
+.callendar-home-wraper{
+  margin: auto;
+  margin-bottom: 20px;
+  width: 120px;
+  height: 100px;
+  text-align: center;
+  text-transform: uppercase;
+
+  position: relative;
+}
+.events-smallscreen{
+  display:none;
+
+}
+.home-news{
+  white-space: normal;
+
+  order: 2;
+
+}
+.home-news div{
+  display: block;
+  width: 100%;
+}
+
+
+
+//-----smalscreen css
+
+@media only screen and (max-width: 1000px) {
+  .events{
+      display: initial;
+      order:1;
+  }
+  .events-box{
+        width: 100%;
+        margin-top: 2em !important;
+        margin-bottom: 1em;
+  }
+  .home-admissions-wrap{
+    padding: 20px 15px 20px 15px;
+    text-align: center;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .home-wrap{
+    padding: 10px;
+    margin-bottom: 0px;
+    //display: flex;
+    padding-bottom: 0px;
+    text-align: center;
+    }
+  .home-box-left {
+      width: 100%;
+    }
+
+    .local-carousel{
+
+      padding: 10px 5px 0px 5px;
+    }
+    .small-screen{
+      display: block;
+    }
+
+    .home-admissionbox-right{
+      float: none;
+      padding: 0px;
+      width: 100%;
+      margin-top: 15px;
+    }
+    .home-admissionbox-left{
+      padding:0px;
+      width: 100%;
+      float: none;
+    }
+
+  .home-news{
+    white-space: normal;
+    order: 1;
+    width:100%;
+  }
+}

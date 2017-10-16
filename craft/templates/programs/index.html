@@ -32,10 +32,12 @@
                         <hr class="hr hr-gradient">
                       </div>
 											{% endfor %}
+                      {% if craft.entries.section('electives')| length()%}
                       <div class="listing-categories">
 											<h4><a href="{{ 'electives' }}">Electives[S]</a></h4>
                       <hr class="hr hr-gradient">
                       </div>
+                      {% endif %}
                       <div class="listing-categories">
                       <h4>Additional Programs</h4>
                       {% for additional in craft.entries.section('additionalPrograms') %}

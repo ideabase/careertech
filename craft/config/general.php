@@ -11,7 +11,7 @@ return array(
   '*' => array(
 	       'extraAllowedFileExtensions' => 'eps',
          'siteUrl' => 'https://cte.ideabasekent.com/public',
-         'enableCsrfProtection' => true,
+         'enableCsrfProtection' => false,
          'omitScriptNameInUrls' => true,
          'cpTrigger' => 'admin',
          'environmentVariables' => array(
