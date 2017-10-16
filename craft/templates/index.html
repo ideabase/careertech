@@ -57,7 +57,7 @@
       </div>
 
         <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="1" data-md-items="3" data-nav="true">
-          {% for category in craft.categories.group('pathways') %}
+          {% for category in craft.entries.section('programs') %}
             <a href="{{ 'programs' }}"><div class="local-carousel-image">
               {% for asset in category.featureImage %}
                 <img src="{{asset.url('carouselImage')}}" alt=""/>

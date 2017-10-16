@@ -41,7 +41,11 @@
 					<div class="cell-xs-12 offset-top-41 cell-md-5 offset-md-top-0 text-md-left cell-lg-4 cell-lg-push-2">
 						<h6 class="text-uppercase text-spacing-60">{{ footer.footerTitle }}</h6>
 						<p>{{ footer.footerAddress }}</p>
-						<p>(P) {{ footer.phoneNumber }}<br /> (F) {{ footer.faxNumber }}</p>
+						<p>(P) {{ footer.phoneNumber }}
+							{% if footer.faxNumber | length %}
+							<br /> (F) {{ footer.faxNumber }}
+							{% endif %}
+						</p>
 						<div class="offset-top-30">
 
 						</div>

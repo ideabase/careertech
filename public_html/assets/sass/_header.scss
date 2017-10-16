@@ -2,7 +2,9 @@
 
     background-image: none !important;
 }
-
+.swiper-container {
+  max-height: 700px;
+}
 .rd-navbar-default.rd-navbar-light.rd-navbar-static .rd-navbar-inner {
   padding-bottom: 15px;
 }

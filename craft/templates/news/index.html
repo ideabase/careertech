@@ -12,8 +12,8 @@
 		<div class="news-righttab">
 			<div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
 				<ul class="resp-tabs-list tabs-1 text-left tabs-group-default" data-group="tabs-group-default">
-					<li>News[S]</li>
-					<li>Events[S]</li>
+					<li>News</li>
+					<li>Events</li>
 				</ul>
 
 				<div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
@@ -25,7 +25,7 @@
 										<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 										<p class="date-p">{{ entry.dateTime | date('F d, Y') }}</p>
 										<p>{{ entry.previewText }}</p>
-										<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More[S]</a>
+										<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More</a>
 										<hr>
 							    </article>
 							{% endfor %}
@@ -143,7 +143,7 @@
 				</div>
 			</div>
 			<hr>
-			<h1> Events by type[S]: </h1>
+			<h1> Events by type: </h1>
 			<div class="news-categories">
 				{% for entry in craft.categories.group('eventType') %}
 					<a href="{{entry.url}}#undefined2"><h4>{{entry.title}}</h4></a>
@@ -151,7 +151,7 @@
 			</div>
 			<hr>
 
-			<h1> News by type[S]: </h1>
+			<h1> News by type: </h1>
 			<div class="news-categories">
 				{% for entry in craft.categories.group('storyType') %}
 					<a href="{{entry.url}}"><h4>{{entry.title}}</h4></a>
