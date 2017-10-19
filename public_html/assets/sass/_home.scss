@@ -68,6 +68,9 @@
     font-size: 80%;
     width: 80%;
     max-width: 900px;
+    @media screen and (min-width: 1600px){
+      font-size: 120%;
+    }
 }
 
 .local-carousel-image h4,{

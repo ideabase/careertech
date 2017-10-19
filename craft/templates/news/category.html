@@ -3,6 +3,31 @@
 
 
 {% set articles = craft.entries.relatedTo(category) %}
+{% block subheader %}
+
+{% if entry is defined %}
+  {% if entry.featureImage | length %}
+    {% set image = entry.featureImage.first %}
+        <section class="breadcrumb-classic" style="background-image: url({{ image.getUrl('breadcrumbs') }});">
+    {% else %}
+        <section class="breadcrumb-classic">
+    {% endif %}
+{% else %}
+  <section class="breadcrumb-classic">
+{% endif %}
+  <div class="shell section-34 section-sm-50">
+    <div class="range range-lg-middle">
+
+      <div class="cell-lg-5 reveal-lg-block text-lg-left">
+
+        <h3><span class="big">News filtered by {{ craft.request.getSegment(2) }}</span></h3>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
 
 
 {% block content %}
@@ -148,13 +173,19 @@
 			</div>
 			<hr>
 			<h1> Events by type: </h1>
-			{% for entry in craft.categories.group('eventType') %}
-				<a href="{{entry.url}}#undefined2"><h4>{{entry.title}}</h4></a>
-			{% endfor %}
+			<div class="news-categories">
+				{% for entry in craft.categories.group('eventType') %}
+					<a href="{{entry.url}}#undefined2"><h4>{{entry.title}}</h4></a>
+				{% endfor %}
+			</div>
+			<hr>
+
 			<h1> News by type: </h1>
-			{% for entry in craft.categories.group('storyType') %}
-				<a href="{{entry.url}}"><h4>{{entry.title}}</h4></a>
-			{% endfor %}
+			<div class="news-categories">
+				{% for entry in craft.categories.group('storyType') %}
+					<a href="{{entry.url}}"><h4>{{entry.title}}</h4></a>
+				{% endfor %}
+			</div>
 		</div>
 	</div>
 </main>
