@@ -59,6 +59,7 @@
 
   {% include '_includes/_footer.html' %}
 </div>
+{% cache globally %}
 <link href="{{ siteUrl }}assets/css/theme-min.css" type="text/css" rel="stylesheet" media="screen"/>
 <link href="{{ siteUrl }}assets/css/style.css" type="text/css" rel="stylesheet" media="screen"/>
 
@@ -71,13 +72,13 @@
     ga('create', 'UA-########-#', 'auto');
     ga('send', 'pageview');
   </script>
+  <script src="{{siteUrl}}assets/js/core.min.js" ></script>
+  <script src="{{siteUrl}}assets/js/min/script-min.js" async></script>
+{% endcache %}
 {% if craft.config.devMode %}
 <!-- Live Reload - For local environment only -->
 <script src="//localhost:35729/livereload.js"></script>
 {% endif %}
-
-<script src="{{siteUrl}}assets/js/core.min.js" ></script>
-<script src="{{siteUrl}}assets/js/min/script-min.js" async></script>
 <!--<script type="text/javascript" src="{{ siteUrl }}assets/js/min/scripts-min.js" async></script>-->
 </body>
 </html>

@@ -1,3 +1,4 @@
+{% cache %}
 {% if entry is defined %}
   {% if entry.featureImage | length %}
     {% set image = entry.featureImage.first %}
@@ -8,6 +9,7 @@
 {% else %}
   <section class="breadcrumb-classic">
 {% endif %}
+
   <div class="shell section-34 section-sm-50">
     <div class="range range-lg-middle">
       {% if entry is defined %}
@@ -31,3 +33,4 @@
     </div>
   </div>
 </section>
+{% endcache %}
