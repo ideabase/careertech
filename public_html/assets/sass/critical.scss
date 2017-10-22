@@ -1,3 +1,14 @@
+@import 'theme-scaffolding.scss';
+@import 'theme-type.scss';
+@import 'theme-nav.scss';
+@import 'theme-media.scss';
+@import 'theme-carousel.scss';
+
+
+@import 'theme-plugins-navbar.scss';
+@import 'theme-plugins-swiper.scss';
+@import 'theme-plugins-owl.scss';
+
 @import '_reset.scss';
 @import '_variables.scss';
 @import '_hero-image.scss';

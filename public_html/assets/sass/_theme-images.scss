@@ -1,0 +1,60 @@
+.jumbotron {
+  padding-top: 38px;
+  padding-bottom: 38px;
+  margin-bottom: 38px;
+  color: inherit;
+  background-color: #212121; }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    color: inherit; }
+  .jumbotron p {
+    margin-bottom: 19px;
+    font-size: 16px;
+    font-weight: 200; }
+  .jumbotron > hr {
+    border-top-color: #080808; }
+  .container .jumbotron,
+  .container-fluid .jumbotron {
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px; }
+  .jumbotron .container {
+    max-width: 100%; }
+  @media screen and (min-width: 768px) {
+    .jumbotron {
+      padding-top: 60.8px;
+      padding-bottom: 60.8px; }
+      .container .jumbotron,
+      .container-fluid .jumbotron {
+        padding-left: 76px;
+        padding-right: 76px; }
+      .jumbotron h1,
+      .jumbotron .h1 {
+        font-size: 72px; } }
+
+        .thumbnail {
+          display: block;
+          padding: 0;
+          margin-bottom: 24px;
+          line-height: 1.5;
+          background-color: #191919;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          -webkit-transition: border 0.2s ease-in-out;
+          -o-transition: border 0.2s ease-in-out;
+          transition: border 0.2s ease-in-out; }
+          .thumbnail > img,
+          .thumbnail a > img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto; }
+          .thumbnail .caption {
+            padding: 20px;
+            color: #434345; }
+
+        a.thumbnail:hover,
+        a.thumbnail:focus,
+        a.thumbnail.active {
+          border-color: inherit; }
