@@ -57,11 +57,14 @@
   z-index: 0;
 }
 .rd-navbar-default.rd-navbar-fixed .rd-navbar-brand{
-  left: auto;;
+  left: auto;
+  @media screen and (min-width: 480px) {
+    top: 5px;
+  }
 }
 .rd-navbar-brand__link {
   display: block;
-  width: 180px;
+  width: 200px;
   height: auto;
   margin-top: -3px !important;
   img {
@@ -75,6 +78,7 @@
     width: 425px;
   }
 }
+
 
 .rd-navbar--is-stuck .rd-navbar-brand__link {
   margin-top: 0 !important;

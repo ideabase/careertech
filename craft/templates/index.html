@@ -57,10 +57,10 @@
       {% cache %}
       <div class="home-wrap">
         <h3 class="home-box-left">{{ entry.pathwayTitle }}</h3>
-        <a class="text-link" id="full-listprogram" href="{{'programs'}}" >View full list of programs</a>
+        <a class="text-link" id="full-listprogram" href="{{'programs'}}" >View Full Program List</a>
       </div>
 
-        <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="1" data-md-items="3" data-nav="true">
+        <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="2" data-dots="true" data-md-items="4" data-nav="false">
           {% for category in craft.entries.section('programs') %}
             <a href="{{ 'programs' }}"><div class="local-carousel-image">
               {% for asset in category.featureImage %}
@@ -87,7 +87,7 @@
             <div class="home-admissionbox-right">
               <div class="group group-xl">
                 <a class="btn btn-primary btn-lg" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('admissions') }}">
-                <span class="btn-text">Admissions Criteria</span></a>
+                <span class="btn-text">View Admissions Criteria</span></a>
               </div>
             </div>
 
@@ -99,7 +99,7 @@
 
                   <ul class="home-box-left resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
                     <li>News</li>
-                    <li>Important dates/events</li>
+                    <li>Important Dates &amp; Events</li>
                   </ul>
 
 
@@ -107,17 +107,15 @@
                 <div>
                   <div class="flex1">
                     <div class="right-Top">
-                      <a class="text-link" href="{{ url('news') }}">View all news</a>
+                      <a class="text-link" href="{{ url('news') }}">View All News</a>
                     </div>
                     <div class="home-news">
                       {% for entry in craft.entries.section('news').limit(3) %}
-                      <div>
-          						<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-          						<!--<span class="h6 text-light">{{ entry.dateTime | date('F d, Y') }}</span>-->
-          						<p>{{ entry.previewText }}</p>
-          						<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More</a>
-          						<hr>
-                    </div>
+                      <div class="home-news__item">
+            						<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+            						<span class="home-news__date">{{ entry.dateTime | date('F d, Y') }}</span>
+            						<p>{{ entry.previewText }}</p>
+                      </div>
         						  {% endfor %}
                     </div>
                   </div>
@@ -127,7 +125,7 @@
                 <div>
                 <div class="flex1">
                   <div class="right-Top">
-                    <a class="text-link" href="{{ url('news') }}#undefined2">View all Events</a>
+                    <a class="text-link" href="{{ url('news') }}#undefined2">View All Events</a>
                   </div>
                   <div class="events">
                     {% for entry in craft.entries.section('events').limit(3) %}

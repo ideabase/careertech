@@ -103,11 +103,11 @@ main {
   border-radius: 10px;
 }
 .text-link{
-  margin-top: 10px;
+  //margin-top: 10px;
   color: gray;
-  font-size: 20px;
+  font-size: 18px;
   position: relative;
-  padding-right: 0.8em;
+  padding-right: 1.25em;
 }
 .text-link:hover{
   color: $red;
@@ -166,7 +166,7 @@ h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:
   }
 
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     .center-button{
       display: block;
       margin: auto;
@@ -184,9 +184,7 @@ h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:
 
     .text-link{
       text-align: center;
-      display: block;
-      padding-top: 10px;
-      padding-bottom: 20px;
-      display: block;
+      display: inline-block;
+      margin-bottom: 1em !important;
     }
 }
