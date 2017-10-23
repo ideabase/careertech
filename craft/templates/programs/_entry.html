@@ -67,7 +67,7 @@
 
                   {% elseif craft.entries.section('projects').relatedTo(entry) | length %}
                   {% set section = craft.entries.section('projects') %}
-                  <li>{{section.section}}</li>
+                  <li>{{section.section}} and photos</li>
 
                   {% elseif craft.entries.section('successStory').relatedTo(entry)| length %}
                   {% set section = craft.entries.section('successStory') %}
@@ -167,22 +167,46 @@
                   <!-- Tab 4 Content -->
                   {% if craft.entries.section('projects').relatedTo(entry) | length or craft.entries.section('successStory').relatedTo(entry)| length %}
 
-                  <div>
+
 
 
 
                     {% if craft.entries.section('projects').relatedTo(program) | length %}
                     <div>
-                      <h3>{{craft.entries.section('projects').relatedTo(program).section}}</h3>
-										{% for projects in craft.entries.section('projects').relatedTo(program) %}
-											<a href="{{projects.url}}"><p>{{ projects.title}}</p>
-											<p>{{ projects.previewText}}</p></a>
-											{% for asset in projects.featureImage %}
-												<img src="{{ asset.url('featureImage') }}" alt=""/>
-											{% endfor %}
-										{% endfor %}
+                      <div class="projects-gallery">
+                        <div class="isotope-wrap">
+                          <div class="row">
+                            <!-- Isotope Content-->
+
+                              <div data-isotope-layout="masonry" data-isotope-group="gallery" class="isotope">
+                                <div data-photo-swipe-gallery class="row">
+                                  {% for asset in entry.photoGallery %}
+                                  <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item"><a class="thumbnail-classic" data-photo-swipe-item="" data-size="500x500" href="{{ asset.url('featureImage') }}">
+                                      <figure><img src="{{ asset.url('gallery') }}" alt=""/>
+                                      </figure></a>
+                                  </div>
+                                  {% endfor %}
+
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <section class="project-content">
+                        <h3>{{craft.entries.section('projects').relatedTo(program).section}}</h3>
+  										  {% for projects in craft.entries.section('projects').relatedTo(program) %}
+  											    <a href="{{projects.url}}"><p>{{ projects.title}}</p>
+  											    <p>{{ projects.previewText}}</p></a>
+
+  										  {% endfor %}
+                      </section>
+
                     </div>
                     {% endif %}
+
+
+
                     {% if craft.entries.section('successStory').relatedTo(program) | length %}
                     <div>
 
@@ -196,7 +220,7 @@
 										{% endfor %}
                     </div>
                     {% endif %}
-                  </div>
+
                   {% endif %}
 
                 </div>
