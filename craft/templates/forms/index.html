@@ -9,7 +9,6 @@
     {% for forms in entry.singleForms %}
 			{% for asset in forms.formsLink%}
       <a href="{{asset.url}}"><h4>{{forms.formsTitle}}</h4></a>
-			<p>{{forms.previewText}}</p>
 			{% endfor %}
 
     {% endfor %}
