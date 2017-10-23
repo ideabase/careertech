@@ -14009,7 +14009,7 @@ button.list-group-item-danger {
   50% {
     opacity: 1; } }
 
-/** 2.33 Groups */
+/* 2.33 Groups */
 html .group {
   -webkit-transform: translateY(-15px);
   transform: translateY(-15px);
@@ -15526,8 +15526,7 @@ textarea.form-control {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     visibility: visible; }
-  @media (min-width: 480px) {
-    #form-output-global {
+  @media (min-width: 480px) {.form-output-global,#form-output-global {
       left: 30px; } }
 
 .form-output {

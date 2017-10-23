@@ -5499,7 +5499,7 @@ html.ie-11 .rev_slider .tp-static-layers .tp-caption {
   letter-spacing: 1px; }
 
 @media only screen and (max-width: 767px) {
-  #mc_embed_signup input#mce-EMAIL {
+  .mc-embed-signup, #mc_embed_signup input#mce-EMAIL {
     width: 200px; } }
 
 .Agency-SmallTitle, .tp-caption.Agency-SmallTitle {
@@ -5920,11 +5920,11 @@ html.ie-11 .rev_slider .tp-static-layers .tp-caption {
   background: #e03727; }
 
 @media only screen and (max-width: 767px) {
-  #mc_embed_signup input[type=email] {
+  .mc_embed_signup,#mc_embed_signup input[type=email] {
     width: 260px; } }
 
 @media only screen and (max-width: 480px) {
-  #mc_embed_signup input[type=email] {
+  .mc_embed_signup,#mc_embed_signup input[type=email] {
     width: 160px; } }
 
 #rev_slider_167_6 .uranus.tparrows {

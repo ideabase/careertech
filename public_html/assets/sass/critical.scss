@@ -1,10 +1,24 @@
+@import 'theme-normalize.scss';
+@import 'theme-glyphicon.scss';
 @import 'theme-scaffolding.scss';
 @import 'theme-type.scss';
+@import 'theme-tables.scss';
+@import 'theme-forms.scss';
+@import 'theme-buttons.scss';
 @import 'theme-grid.scss';
+@import 'theme-animation.scss';
+@import 'theme-dropdown.scss';
 @import 'theme-nav.scss';
 @import 'theme-images.scss';
+@import 'theme-alerts.scss';
+@import 'theme-progress.scss';
 @import 'theme-media.scss';
+@import 'theme-lists.scss';
+@import 'theme-panels.scss';
+@import 'theme-embeds-wells.scss';
+@import 'theme-modal.scss';
 @import 'theme-carousel.scss';
+@import 'theme-utilities.scss';
 
 @import 'theme-bootstrap-utilities.scss';
 
@@ -13,10 +27,20 @@
 @import 'theme-plugins-owl.scss';
 @import 'theme-plugins.scss';
 
-@import '_reset.scss';
-@import '_variables.scss';
-@import '_hero-image.scss';
-@import '_variables.scss';
-@import '_header.scss';
-@import '_body.scss';
-@import '_home.scss';
+@import 'theme-rev-slider.scss';
+
+
+@import 'variables.scss';
+@import 'reset.scss';
+@import 'accessibility.scss';
+@import 'home.scss';
+@import 'body.scss';
+@import 'header.scss';
+@import 'footer.scss';
+@import 'hero-image.scss';
+@import 'buttons.scss';
+@import 'programs.scss';
+@import 'admissions.scss';
+@import 'news.scss';
+@import 'tabs.scss';
+@import 'profiles.scss';
