@@ -1,6 +1,8 @@
-/**
- * Global variables
- */
+(function() {
+  var nTimer = setInterval(function() {
+    if (window.jQuery) {
+      // Do something with jQuery
+
 "use strict";
 
 var userAgent = navigator.userAgent.toLowerCase(),
@@ -2197,3 +2199,8 @@ if (plugins.d3Charts.length) {
     $window.trigger("resize");
   }
 });
+
+clearInterval(nTimer);
+}
+}, 100);
+})();
