@@ -12,16 +12,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="home" href="{{ siteUrl }}" />
+  {% cache globally %}
   <!-- Render SEO Metatags -->
     {% hook 'seomaticRender' %}
   <!-- Render Favicons -->
   	{% include '_includes/_favicons.html' %}
   <!--Begin Critical CSS -->
-
+    {% endcache %}
     <style type="text/css">
   	 {% include '_includes/critical.css' %}
     </style>
-
 
 </head>
 
@@ -62,11 +62,6 @@
   {% include '_includes/_footer.html' %}
 </div>
 {% cache globally %}
-<script async src="{{ siteUrl }}assets/js/min/loadcss-min.js"></script>
-<noscript>
-  <link rel="stylesheet" href="{{ siteUrl }}assets/css/theme-min.css">
-  <link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">
-</noscript>
 <!-- Google Analytics Code - don't forget to change the UA ID -->
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -79,6 +74,8 @@
   <script src="{{siteUrl}}assets/js/jquery.js" defer></script>
   <script src="{{siteUrl}}assets/js/core.min.js" defer></script>
   <script src="{{siteUrl}}assets/js/min/script-min.js" defer></script>
+  <link rel="stylesheet" href="{{ siteUrl }}assets/css/theme-min.css">
+  <link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">
 {% endcache %}
 {% if craft.config.devMode %}
 <!-- Live Reload - For local environment only -->
