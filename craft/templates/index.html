@@ -27,10 +27,13 @@
 
 
   <section class="section-relative">
-    <div data-loop="false" data-autoplay="false" data-slide-effect="fade" data-height="100vh" data-dragable="false" data-min-height="480px" data-dots="false" class="swiper-container swiper-slider">
+    <!-- data-loop="false" data-autoplay="false" data-slide-effect="fade" data-height="100vh" data-dragable="false" data-min-height="480px" data-dots="false"  -->
+    <!-- Removed swiper-slider from div -->
+    <div class="swiper-container ">
       <div class="swiper-wrapper">
         {% for asset in entry.featureImage %}
-        <div style="background-image: url({{asset.url('featureImage')}});" data-slide-bg="{{asset.url('featureImage')}}" class="swiper-slide swiper-slide-overlay-disable swiper-slide-center"></div>
+        <!-- Removed data-slide-bg="{{asset.url('featureImage')}}"  -->
+        <div style="background-image: url({{asset.url('featureImage')}}); background-size: cover;" class="swiper-slide swiper-slide-overlay-disable swiper-slide-center"></div>
         {% endfor %}
       </div>
       <!--<div class="swiper-pagination swiper-pagination-type-1"></div>-->
