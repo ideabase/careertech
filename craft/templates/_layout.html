@@ -60,9 +60,7 @@
   {% include '_includes/_footer.html' %}
 </div>
 {% cache globally %}
-<script async src="{{ siteUrl }}assets/js/loadcss.js"></script>
-<link rel="preload" href="{{ siteUrl }}assets/css/theme-min.css" as="style" onload="this.rel='stylesheet'">
-<link rel="preload" href="{{ siteUrl }}assets/css/style.css" as="style" onload="this.rel='stylesheet'">
+<script async src="{{ siteUrl }}assets/js/min/loadcss-min.js"></script>
 <noscript>
   <link rel="stylesheet" href="{{ siteUrl }}assets/css/theme-min.css">
   <link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">
