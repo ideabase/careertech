@@ -1,13 +1,17 @@
 @import 'theme-scaffolding.scss';
 @import 'theme-type.scss';
+@import 'theme-grid.scss';
 @import 'theme-nav.scss';
+@import 'theme-images.scss';
 @import 'theme-media.scss';
 @import 'theme-carousel.scss';
 
+@import 'theme-bootstrap-utilities.scss';
 
 @import 'theme-plugins-navbar.scss';
 @import 'theme-plugins-swiper.scss';
 @import 'theme-plugins-owl.scss';
+@import 'theme-plugins.scss';
 
 @import '_reset.scss';
 @import '_variables.scss';
