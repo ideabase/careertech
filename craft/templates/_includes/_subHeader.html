@@ -19,7 +19,8 @@
 
       </div>
       {% if entry.section.handle == 'admissions' or entry.section.handle == 'programsLandingPage' %}
-        <a class="apply-button-whiteheader btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.url}}">
+        <a class="apply-button-whiteheader btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="https://www.applitrack.com/sixdistrict/onlineapp/">
+        {% for entry in craft.entries.section('admissions') %}
         {% if entry.applicationLightSwitch %}
           {% for apply in apply.admissions %}
           <span class="btn-text">Apply Now</span></a>
@@ -27,6 +28,7 @@
         {% else %}
         <span class="btn-text">Applications closed for this period</span></a>
         {% endif %}
+        {% endfor %}
       {% endif %}
       {% endif %}
 
