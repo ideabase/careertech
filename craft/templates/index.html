@@ -129,19 +129,25 @@
                   </div>
                   <div class="events">
                     {% for entry in craft.entries.section('events').limit(3) %}
-                      <div class="events-box">
+                        <div class="events-box">
                         <div class="callendar-home-wraper">
+                          <a href="{{entry.url}}">
                           <div class="callendar-top">
-        										{% set day = entry.dateTime|date("m") %}
-        										<p>{{day[:3]}}</p>
+        										{% set day = entry.dateTime|date("j") %}
+                            {% set month = entry.dateTime|date("M") %}
+        										<p>{{month}}</p>
         									</div>
+
         									<div class="callendar-bottom">
-        										<p>{{entry.dateTime.day()}}</p>
+        										<p>{{day}}</p>
         									</div>
+                          </a>
         								</div>
-                        <a href="{{entry.url}}"><h3>{{entry.title}}</h3></a>
-                        <p>{{entry.location}}</p>
-                        <p>{{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</p>
+                        <a href="{{entry.url}}">
+                          <h3>{{entry.title}}</h3>
+                          <p>{{entry.location}}</p>
+                          <p>{{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</p>
+                        </a>
                       </div>
                     {% endfor %}
                   </div>

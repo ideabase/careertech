@@ -130,12 +130,34 @@ h1 .text-uppercase {
 }
 
 .events{
-  display: flex;
-  order: 2;
-  width:100%;
-  padding: 50px 0px 10px 0px;
-  justify-content: space-between;
+      order:1;
+      @media screen and (min-width: 700px) {
+        display: flex;
+        order: 2;
+        width:100%;
+        padding: 10px 0px 10px 0px;
+        justify-content: space-between;
+        align-items: stretch;
+      }
 }
+
+.events-box{
+        margin-top: 2em !important;
+        margin-bottom: 1em;
+        box-shadow: 1px 1px 15px rgba(0,0,0,.2);
+        padding:20px;
+        text-align: center;
+        h3 {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        @media screen and (min-width: 700px) {
+          width:30%;
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+}
+
 .border{
   border: 1px solid gray;
   padding: 20px;
@@ -145,17 +167,6 @@ h1 .text-uppercase {
 }
 .border .callendar-home-wraper a h3{
   width: 80%;
-}
-.events-box{
-
-  width:30%;
-  padding:20px;
-  box-shadow: 1px 1px 15px rgba(0,0,0,.2);
-  text-align: center;
-  h3 {
-    font-size: 20px;
-    font-weight: bold;
-  }
 }
 
 //top and bottom in body.scss
@@ -189,15 +200,7 @@ h1 .text-uppercase {
 //-----smalscreen css
 
 @media only screen and (max-width: 1000px) {
-  .events{
-      display: initial;
-      order:1;
-  }
-  .events-box{
-        width: 100%;
-        margin-top: 2em !important;
-        margin-bottom: 1em;
-  }
+
   .home-admissions-wrap{
     padding: 20px 15px 30px 15px;
     text-align: center;

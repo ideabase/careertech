@@ -62,6 +62,11 @@
     top: 5px;
   }
 }
+
+.rd-navbar-default.rd-navbar-static.rd-navbar--is-stuck .rd-navbar-inner {
+  padding-bottom: 0;
+}
+
 .rd-navbar-brand__link {
   display: block;
   width: 200px;
