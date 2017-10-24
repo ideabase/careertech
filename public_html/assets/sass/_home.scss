@@ -48,10 +48,35 @@
   align-items: center;
   justify-content: center;
   position:relative;
-
-  //height: 210px;
+    &:after {
+    transition: .3s background-color ease-in-out;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.1);
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    z-index: 1;
+    }
+  h4 {
+    transition: .3s background ease-in-out;
+    z-index: 100;
+  }
+  &:hover, &:active {
+    h4 {
+      background: rgba($red,0.8);
+    }
+    &:after {
+      background-color: rgba(0,0,0,.5);
+    }
+  }
+  img {
+    display: block;
+  }
   width:98%;
-
+  max-width: 100%;
 }
 .small-screen{
   display: none;
@@ -81,7 +106,6 @@
 
 .local-carousel-image h4{
   position: absolute;
-  margin-top: 0;
   color: white;
   text-align: center;
   max-width: 90%;

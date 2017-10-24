@@ -6,18 +6,15 @@
 
 
 <main class="page-content">
-    <div class="forms">
+    <ul class="forms">
         {% for forms in entry.singleForms %}
   			{% for asset in forms.formsLink%}
-        <ul>
           <li>
             <a href="{{asset.url}}"><h4>{{forms.formsTitle}}</h4></a>
           </li>
-        </ul>
   			{% endfor %}
-
       {% endfor %}
-    </div>
+    </ul>
 </main>
 
 {% endblock %}

@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+
+.adm-hr {
+  margin-bottom: 50px;
+}
+
 .rd-navbar-default.rd-navbar-fixed .rd-navbar-brand {
     display: inline-block;
     transform: none;
@@ -122,7 +127,7 @@ main {
   background-size: 100% auto;
   right: 0;
   position:absolute;
-  top:20%;
+  top:7px;
 }
 
 .callendar-top, .callendar-bottom p{
@@ -154,10 +159,15 @@ h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:
 }
 
 .forms {
-  width: 30%;
-}
-.forms ul{
   list-style-type: none;
+  @media screen and (min-width: 600px) {
+    columns: 2;
+    column-gap: 30px;
+  }
+  a {
+    margin-bottom: 1.5em;
+    display: inline-block;
+  }
 }
 
 //------small screen desygn

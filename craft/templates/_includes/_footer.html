@@ -34,12 +34,13 @@
 		<div class="range range-sm-center text-lg-left">
 			<div class="cell-sm-8 cell-md-12">
 				<div class="range range-xs">
-					<div class="cell-xs-7 text-xs-left cell-md-4 cell-lg-4 cell-lg-push-4">
-						<h6 class="text-uppercase text-spacing-60">{{ footer.footerText }}</h6>
-						{{ footer.districtPartners }}
+					<div class="cell-xs-6 text-xs-left cell-md-3 cell-lg-3">
+						<!-- Footer brand-->
+						{% for asset in footer.logo %}
+						<div class="footer-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='138' height='50' src='{{asset.url}}' alt=''/></a></div>
+						{% endfor %}
 					</div>
-
-					<div class="cell-xs-12 offset-top-41 cell-md-5 offset-md-top-0 text-md-left cell-lg-4 cell-lg-push-2">
+					<div class="cell-xs-6 cell-md-3 offset-md-top-0 text-md-left cell-lg-3 ">
 						<h6 class="text-uppercase text-spacing-60">{{ footer.footerTitle }}</h6>
 						<p>{{ footer.footerAddress }}</p>
 						<p>(P) {{ footer.phoneNumber }}
@@ -47,16 +48,13 @@
 							<br /> (F) {{ footer.faxNumber }}
 							{% endif %}
 						</p>
-						<div class="offset-top-30">
-
-						</div>
+					</div>
+					<div class="cell-xs-6 text-xs-left cell-md-3 cell-lg-3">
+						<h6 class="text-uppercase text-spacing-60">{{ footer.footerText }}</h6>
+						{{ footer.districtPartners }}
 					</div>
 
-					<div class="cell-xs-12 offset-top-66 cell-lg-4 cell-lg-push-1 offset-lg-top-0">
-						<!-- Footer brand-->
-						{% for asset in footer.logo %}
-						<div class="footer-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='138' height='50' src='{{asset.url}}' alt=''/></a></div>
-						{% endfor %}
+					<div class="cell-xs-6 cell-md-3 offset-xs-top-66 offset-md-top-0 cell-lg-3 cell-lg-push-1 offset-lg-top-0">
 						<h6 class="text-uppercase text-spacing-60">Connect With Us</h6>
 						<div class="social-media-icons">
 								{% for block in footer.socialMedia %}

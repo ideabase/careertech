@@ -1,12 +1,14 @@
 .admissions-program-listing {
-  columns: 3;
-  column-gap: 20px;
+  @media screen and (min-width: 700px) {
+    columns: 3;
+    column-gap: 20px;
+  }
 }
 .admissions-button{
   width:100%;
   margin-bottom: 15px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 h1{
@@ -24,11 +26,14 @@ h1{
 }
 .adm-hr{
   height: 1px;
-  background-color: black;
-  margin-bottom: 100px;
+  background-color: gray;
 }
 .adm-events-wrapper{
-  margin-top: 30px;
-  padding: 40px 30px 50px 30px;
+  margin-top: 50px;
+  padding: 60px 30px 70px 30px;
   background-color: #EAEAEA;
+}
+
+.btn {
+  white-space: normal !important;
 }

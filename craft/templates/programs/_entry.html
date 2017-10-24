@@ -12,12 +12,12 @@
                   {% for asset in entry.featureImage %}
                   <div class="swiper-slide" id="page-loader" data-slide-bg="{{ asset.url('featureImage') }}" data-preview-bg="{{ asset.url('featureImage') }}">
                     {% endfor %}
-                    <div class="swiper-caption swiper-parallax" data-speed="0.5" data-fade="true">
+                    <div class="swiper-caption swiper-parallax" data-speed="0.5">
                       <div class="swiper-slide-caption">
                         <div class="shell">
                           <div class="range range-lg-center">
                             <div class="cell-lg-12">
-                              <h1><span class="big text-uppercase" data-caption-animate="fadeInUp" data-caption-delay="700">{{ entry.title }}</span></h1>
+                              <h1><span class="text-uppercase" >{{ entry.title }}</span></h1>
                             </div>
                             <div class="cell-lg-10 offset-top-30">
                               {% for entry in craft.entries.section('admissions') %}
@@ -103,7 +103,7 @@
 
                           <hr class="divider bg-red">
                             {% for classes in craft.entries.section('classes').relatedTo(entry) %}
-                              <a class="course-button btn btn-primary " href="{{classes.courseAccessLink}}" data-caption-animate="fadeInUp" data-caption-delay="1200">
+                              <a class="course-button btn btn-primary " href="{{classes.courseAccessLink}}" >
                               <span class="btn-text">{{ classes.title }}</span></a>
                             {% endfor %}
                         </div>
