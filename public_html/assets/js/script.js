@@ -42,7 +42,6 @@ var userAgent = navigator.userAgent.toLowerCase(),
       swiper: $(".swiper-slider"),
       counter: $(".counter"),
       photoSwipeGallery: $("[data-photo-swipe-item]"),
-      flickrfeed: $(".flickr"),
       twitterfeed: $(".twitter"),
       progressBar: $(".progress-linear"),
       circleProgress: $(".progress-bar-circle"),
@@ -1084,7 +1083,7 @@ $document.ready(function () {
    * RD Flickr Feed
    * @description Enables RD Flickr Feed plugin
    */
-  if (plugins.flickrfeed.length > 0) {
+  /*if (plugins.flickrfeed.length > 0) {
     var i;
     for (i = 0; i < plugins.flickrfeed.length; i++) {
       var flickrfeedItem = $(plugins.flickrfeed[i]);
