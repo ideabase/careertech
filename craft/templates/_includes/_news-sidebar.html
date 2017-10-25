@@ -41,7 +41,9 @@
   <h1> Events by type: </h1>
   <div class="news-categories">
     {% for entry in craft.categories.group('eventType') %}
-      <a href="{{entry.url}}#undefined2"><h4>{{entry.title}}</h4></a>
+    {% if craft.entries.relatedTo(entry)|length() %}
+      <a href="{{entry.url}}#events"><h4>{{entry.title}}</h4></a>
+    {% endif %}
     {% endfor %}
   </div>
   <hr>
@@ -49,8 +51,14 @@
   <h1> News by type: </h1>
   <div class="news-categories">
     {% for entry in craft.categories.group('storyType') %}
+      {% if craft.entries.relatedTo(entry)|length() %}
       <a href="{{entry.url}}"><h4>{{entry.title}}</h4></a>
+      {% endif %}
     {% endfor %}
+  </div>
+  <hr>
+  <div class="news-categories">
+    <a class="text-link" href="{{siteUrl}}/news" >All News and Events</a>
   </div>
 </div>
 </div>

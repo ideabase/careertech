@@ -40,80 +40,21 @@
 		<div class="news-righttab">
 			<div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
 				<ul class="resp-tabs-list tabs-1 text-left tabs-group-default" data-group="tabs-group-default">
-					<li>News</li>
-					<li>Events</li>
+          <li><a href="#news">News</a></li>
+					<li><a href="#events">Events</li>
 				</ul>
 
 				<div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
-					<div>
-						{% paginate craft.entries.section('news').limit(3) as pageInfo, pageEntries %}
-
-							{% for entry in pageEntries %}
-							    <article>
-										<h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-										<span class="h6 text-light">{# }{{ entry.dateTime.format('F d, Y') }} #}</span>
-										<p>{{ entry.previewText }}</p>
-										<a class="btn btn-sm btn-primary offset-top-30" href="{{ entry.url }}">Read More</a>
-										<hr>
-							    </article>
-							{% endfor %}
-
-
-
-
-
-						<div class="offset-top-66">
-							<nav>
-								<ul class="pagination-classic">
-									{% if pageInfo.prevUrl %}<li><a href="{{ pageInfo.prevUrl }}">Previous Page</a></li>{% endif %}
-									{% for page, url in pageInfo.getPrevUrls(2) %}
-										<li><a href="{{ url }}">{{ page }}</a></li>
-									{% endfor %}
-										<li class="active"><a href="#">{{ pageInfo.currentPage }}</a></li>
-									{% for page, url in pageInfo.getNextUrls(2) %}
-										<li><a href="{{ url }}">{{ page }}</a></li>
-									{% endfor %}
-									{% if pageInfo.nextUrl %}<li><a href="{{ pageInfo.nextUrl }}">Next Page</a></li>{% endif %}
-									<li><a href="{{ pageInfo.lastUrl }}">Last Page</a></li>
-								</ul>
-							</nav>
-
-						</div>
-					</div>
-
+          <div>
+          {% paginate articles.limit(3) as pageInfo, pageEntries %}
+          <!-- tab 1 content -->
+          {% include '_includes/_news-news.html' %}
+          </div>
+          <div>
+            {% paginate craft.entries.section('events').limit(3) as pageInfo1, pageEntries1 %}
 					<!-- tab 2 contenct -->
-					<div>
-					{% paginate articles.limit(3) as pageInfo1, pageEntries1 %}
-						{% for entry in pageEntries1 %}
-						<div class="events-wrap">
-              {% include '_includes/_calendar.html' %}
-                <div class="events-content home-event-item">
-                  <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-                  <span class="home-news__date">{{ entry.dateTime.format('F d, Y') }} | {{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</span>
-                  <p>{{ entry.previewText }}</p>
-              </div>
-
-						</div>
-						{% endfor %}
-
-						<div class="offset-top-66">
-							<nav>
-								<ul class="pagination-classic">
-									{% if pageInfo1.prevUrl %}<li><a href="{{ pageInfo1.prevUrl }}#undefined2">Previous Page</a></li>{% endif %}
-									{% for page, url in pageInfo1.getPrevUrls(2) %}
-										<li><a href="{{ url }}#undefined2">{{ page }}</a></li>
-									{% endfor %}
-										<li class="active"><a href="#">{{ pageInfo1.currentPage }}</a></li>
-									{% for page, url in pageInfo1.getNextUrls(2) %}
-										<li><a href="{{ url }}#undefined2">{{ page }}</a></li>
-									{% endfor %}
-									{% if pageInfo1.nextUrl %}<li><a href="{{ pageInfo1.nextUrl }}#undefined2">Next Page</a></li>{% endif %}
-									<li><a href="{{ pageInfo1.lastUrl }}">Last Page</a></li>
-								</ul>
-							</nav>
-							</div>
-
-						</div>
+          {% include '_includes/_news-events.html' %}
+          </div>
 					</div>
 				</div>
 			</div>

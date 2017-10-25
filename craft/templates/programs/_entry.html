@@ -58,21 +58,22 @@
               <!-- Responsive-tabs-->
               <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
                 <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
-                  <li>About the program</li>
-                  <li>Program Overview</li>
-                  <li>Meet the instructor</li>
+                  <li><a href="#About the program">About the program</a></li>
+                  <li><a href="#Program Overview">Program Overview</a></li>
+                  <li><a href="#Meet the instructor">Meet the instructor</a></li>
                   {% if craft.entries.section('projects').relatedTo(entry) | length and craft.entries.section('successStory').relatedTo(entry)| length %}
 
-                  <li>{{craft.entries.section('projects').section}} and {{craft.entries.section('successStory').section}}</li>
+                  <li><a href="#{{craft.entries.section('projects').section}} and {{craft.entries.section('successStory').section}}">{{craft.entries.section('projects').section}} and {{craft.entries.section('successStory').section}}</a></li>
 
                   {% elseif craft.entries.section('projects').relatedTo(entry) | length %}
                   {% set section = craft.entries.section('projects') %}
-                  <li>{{section.section}} and photos</li>
+                  <li><a href="#{{section.section}}">{{section.section}}</a></li>
 
                   {% elseif craft.entries.section('successStory').relatedTo(entry)| length %}
                   {% set section = craft.entries.section('successStory') %}
-                  <li>{{section.section}}</li>
+                  <li><a href="#{{section.section}}">{{section.section}}</a></li>
                   {% endif %}
+                  <li><a href="#Photo Gallery">Photo Gallery</a></li>
 
                 </ul>
 
@@ -166,63 +167,53 @@
 
                   <!-- Tab 4 Content -->
                   {% if craft.entries.section('projects').relatedTo(entry) | length or craft.entries.section('successStory').relatedTo(entry)| length %}
-
-
-
-
-
-                    {% if craft.entries.section('projects').relatedTo(program) | length %}
-                    <div>
-                      <div class="projects-gallery">
-                        <div class="isotope-wrap">
-                          <div class="row">
-                            <!-- Isotope Content-->
-
-                              <div data-isotope-layout="masonry" data-isotope-group="gallery" class="isotope">
-                                <div data-photo-swipe-gallery class="row">
-                                  {% for asset in entry.photoGallery %}
-                                  <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item"><a class="thumbnail-classic" data-photo-swipe-item="" data-size="500x500" href="{{ asset.url('featureImage') }}">
-                                      <figure><img src="{{ asset.url('gallery') }}" alt=""/>
-                                      </figure></a>
-                                  </div>
-                                  {% endfor %}
-
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                      <section class="project-content">
+                  <div>
+                    <section>
+                      {% if craft.entries.section('projects').relatedTo(program) | length %}
                         <h3>{{craft.entries.section('projects').relatedTo(program).section}}</h3>
   										  {% for projects in craft.entries.section('projects').relatedTo(program) %}
   											    <a href="{{projects.url}}"><p>{{ projects.title}}</p>
   											    <p>{{ projects.previewText}}</p></a>
-
   										  {% endfor %}
-                      </section>
-
-                    </div>
-                    {% endif %}
-
-
-
-                    {% if craft.entries.section('successStory').relatedTo(program) | length %}
-                    <div>
-
-                      <h3>{{craft.entries.section('successStory').section}}</h3>
-                    {% for stories in craft.entries.section('successStory').relatedTo(program)%}
-											<a href="{{stories.url}}"><p>{{ stories.title}}</p>
-											<p>{{ stories.previewText}}</p></a>
-											{% for asset in stories.featureImage %}
-												<img src="{{ asset.url('featureImage') }}" alt=""/>
-											{% endfor %}
-										{% endfor %}
-                    </div>
-                    {% endif %}
-
+                      {% endif %}
+                      {% if craft.entries.section('sucessStory').relatedTo(program) | length %}
+                        <h3>{{craft.entries.section('successStory').section}}</h3>
+                        {% for stories in craft.entries.section('successStory').relatedTo(program)%}
+                          <a href="{{stories.url}}"><p>{{ stories.title}}</p>
+                            <p>{{ stories.previewText}}</p></a>
+                            {% for asset in stories.featureImage %}
+                            <img src="{{ asset.url('featureImage') }}" alt=""/>
+                            {% endfor %}
+                        {% endfor %}
+                      {% endif %}
+                    </section>
+                  </div>
                   {% endif %}
 
+
+                  <div>
+                    <div class="shell-fluid section-top-66 section-bottom-34 projects-gallery">
+                      <div class="isotope-wrap">
+                        <div class="row">
+                          <!-- Isotope Content-->
+                          <div class="col-xs-12">
+                            <div data-isotope-layout="masonry" data-isotope-group="gallery" class="isotope">
+                              <div data-photo-swipe-gallery class="row">
+                                {% for asset in entry.photoGallery %}
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4  isotope-item"><a class="thumbnail-classic" data-photo-swipe-item="" data-size="500x500" href="{{ asset.url('featureImage') }}">
+                                    <figure><img src="{{ asset.url('gallery') }}" alt=""/>
+                                    </figure></a>
+                                </div>
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
                 </div>
               </div>
             </div>
