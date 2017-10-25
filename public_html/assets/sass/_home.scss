@@ -150,6 +150,14 @@ h1 .text-uppercase {
 }
 .home-admissionbox-right{
   margin-left: auto;
+  .btn-lg {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  @media screen and (min-width: 1000px) {
+    width:40%;
+    text-align:right;
+  }
 }
 
 .home-wrap{

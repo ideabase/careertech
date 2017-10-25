@@ -1,0 +1,13 @@
+<div class="callendar-home-wraper">
+  <a href="{{entry.url}}">
+  <div class="callendar-top">
+    {% set day = entry.dateTime|date("j") %}
+    {% set month = entry.dateTime|date("M") %}
+    <p>{{month}}</p>
+  </div>
+
+  <div class="callendar-bottom">
+    <p>{{day}}</p>
+  </div>
+  </a>
+</div>

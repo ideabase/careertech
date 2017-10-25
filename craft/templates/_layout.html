@@ -17,11 +17,13 @@
     {% hook 'seomaticRender' %}
   <!-- Render Favicons -->
   	{% include '_includes/_favicons.html' %}
+  {% if not craft.config.devMode %}
   <!--Begin Critical CSS -->
 
     <style type="text/css">
   	 {% include '_includes/critical.css' %}
     </style>
+  {% endif %}
 {% endcache %}
 </head>
 
@@ -74,9 +76,9 @@
   <script src="{{siteUrl}}assets/js/jquery.js" defer></script>
   <script src="{{siteUrl}}assets/js/min/core.min.js" defer></script>
   <script src="{{siteUrl}}assets/js/min/script-min.js" defer></script>
-  <link rel="stylesheet" href="{{ siteUrl }}assets/css/theme-min.css">
-  <link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">
 {% endcache %}
+<link rel="stylesheet" href="{{ siteUrl }}assets/css/theme-min.css">
+<link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">
 {% if craft.config.devMode %}
 <!-- Live Reload - For local environment only -->
 <script src="//localhost:35729/livereload.js"></script>

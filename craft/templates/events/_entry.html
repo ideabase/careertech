@@ -18,7 +18,7 @@
 {% block content %}
 	<article>
 		<h1>{{ entry.title }}</h1>
-    <span class="home-news__date">{{ entry.postDate | date('F d, Y') }}</span>
+    <span class="home-news__date">{{ entry.dateTime | date('F d, Y') }}</span>
 		{{ entry.body }}
 	</article>
 {% endblock %}
