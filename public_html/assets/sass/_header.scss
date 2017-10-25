@@ -36,15 +36,13 @@
   page-break-inside: avoid;
 }
 .breadcrumb-classic {
-  background: none;
-  background-image: url("../img/ui/background-14-1920x651.jpg");
   background-size: cover;
+  background-position:center center;
+  h2 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+  }
 }
 
-.breadcrumb-classic::before {
-  background: none;
-  background-image: url("../img/ui/background-14-1920x651.jpg");
-}
 .breadcrumb-classic::after{
 
   position: absolute;
