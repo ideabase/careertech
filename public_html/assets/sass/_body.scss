@@ -135,6 +135,26 @@ main {
   top:7px;
 }
 
+.text-link--previous {
+  padding-left: 1em;
+  margin-top: 3em !important;
+  display: block;
+  &:after {
+    content: none;
+  }
+  &:before {
+    content: "";
+    background-image: url("/assets/img/ui/arrow-left.svg");
+    background-repeat: no-repeat;
+    width: 9px;
+    height: 15px;
+    background-size: 100% auto;
+    left: 0;
+    position:absolute;
+    top:7px;
+  }
+}
+
 .callendar-top, .callendar-bottom p{
   font-size: 16.5px;
   padding-top: 10px;

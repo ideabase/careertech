@@ -1,3 +1,10 @@
 .reveal-block {
-  padding-top: 1em; 
+  padding-top: 1em;
+}
+
+.page .text-picton-blue {
+  color: $red;
+  &:hover, &:focus {
+    color: darken($red,10%);
+  }
 }

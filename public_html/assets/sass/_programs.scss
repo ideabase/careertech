@@ -1,13 +1,26 @@
-.program-listing {
-  columns: 2;
-  column-gap: 50px;
-  //height:800px;
-}
+
 .faculty-listing{
-  page-break-inside: avoid;
-  background-color: #EAEAEA;
   margin:20px;
   padding: 30px;
+}
+
+.faculty-listing h4 {
+  margin-bottom: 1em;
+}
+
+.faculty-list__item {
+  @media screen and (min-width: 900px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  >div {
+    margin: 2em auto !important;
+    text-align: center !important;
+  }
+}
+
+.program-courses {
+padding-bottom: 3em;
 }
 
 .project-content{
@@ -60,9 +73,9 @@ iframe{
   width:82%;
 }
 .program-requirements{
-  background-color:#EAEAEA;
+  background-color: lighten(#EAEAEA,3%);
   margin: 15px 50px 50px 50px;
-  padding:20px 40px 20px 40px;
+  padding:30px 40px 30px 40px;
   text-align:left;
 }
 .program-requirements h3{
@@ -72,19 +85,19 @@ iframe{
   font-size: 15px;
 }
 .program-requirements hr{
-  background-color:black;
-  height:2px;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  background-color:gray;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 1px;
 }
 .program-overview{
 
-  background-color: #EAEAEA;
-  margin-bottom: 20px;
-  padding: 25px;
+  background-color: lighten(#EAEAEA,3%);
   page-break-inside: avoid;
   width: 100%;
   display: inline-block;
+  margin-bottom: 50px;
+  padding: 45px;
 }
 .program-overview h3{
   color: $red;
@@ -112,9 +125,7 @@ address ul li{
     overflow-x: auto;
 }
 @media only screen and (max-width: 1220px) {
-  .program-listing {
-    columns: 1;
-  }
+
   .program-box-left{
     float:none;
     width:100%;

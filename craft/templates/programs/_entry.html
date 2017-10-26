@@ -58,9 +58,9 @@
               <!-- Responsive-tabs-->
               <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
                 <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
-                  <li><a href="#About the program">About the program</a></li>
+                  <li><a href="#About the program">About the Program</a></li>
                   <li><a href="#Program Overview">Program Overview</a></li>
-                  <li><a href="#Meet the instructor">Meet the instructor</a></li>
+                  <li><a href="#Meet the instructor">Meet the Instructor</a></li>
                   {% if craft.entries.section('projects').relatedTo(entry) | length and craft.entries.section('successStory').relatedTo(entry)| length %}
 
                   <li><a href="#{{craft.entries.section('projects').section}} and {{craft.entries.section('successStory').section}}">{{craft.entries.section('projects').section}} and {{craft.entries.section('successStory').section}}</a></li>
@@ -99,7 +99,7 @@
     													{% endfor %}
     											{%  endif %}
                         </div>
-                        <div>
+                        <div class="program-courses">
                           <h1>Courses</h1>
 
                           <hr class="divider bg-red">
@@ -128,6 +128,7 @@
 
                   <!-- Tab 2 Content -->
                   <div>
+                    <h1>Program Overview</h1>
                     <hr class="divider bg-red">
                     <section class="program-listing">
 
@@ -149,8 +150,9 @@
 
                   <!-- Tab 3 Content -->
                   <div class="faculty-listing cell-sm-12 cell-md-12">
-
-                    <div class="range range-sm-center section-34">
+                    <h1>Instructors</h1>
+                    <hr class="divider bg-red">
+                    <div class="range range-sm-center">
 
 										{% set repeat="\n" %}
 										{% for classes in craft.entries.section('classes').relatedTo(program) %}
