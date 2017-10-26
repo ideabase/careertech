@@ -61,20 +61,13 @@
                   <li><a href="#About the program">About the Program</a></li>
                   <li><a href="#Program Overview">Program Overview</a></li>
                   <li><a href="#Meet the instructor">Meet the Instructor</a></li>
-                  {% if craft.entries.section('projects').relatedTo(entry) | length and craft.entries.section('successStory').relatedTo(entry)| length %}
-
-                  <li><a href="#{{craft.entries.section('projects').section}} and {{craft.entries.section('successStory').section}}">{{craft.entries.section('projects').section}} and {{craft.entries.section('successStory').section}}</a></li>
-
-                  {% elseif craft.entries.section('projects').relatedTo(entry) | length %}
-                  {% set section = craft.entries.section('projects') %}
-                  <li><a href="#{{section.section}}">{{section.section}}</a></li>
-
-                  {% elseif craft.entries.section('successStory').relatedTo(entry)| length %}
-                  {% set section = craft.entries.section('successStory') %}
-                  <li><a href="#{{section.section}}">{{section.section}}</a></li>
+                  {% if craft.entries.section('successStory').relatedTo(entry)| length %}
+                    {% set section = craft.entries.section('successStory') %}
+                    <li><a href="#{{section.section}}">Stories &amp; Projects</a></li>
                   {% endif %}
-                  <li><a href="#Photo Gallery">Photo Gallery</a></li>
-
+                  {% if entry.photoGallery | length %}
+                    <li><a href="#Photo Gallery">Photo Gallery</a></li>
+                  {% endif %}
                 </ul>
 
                 <!-- Tab 1 Content -->
@@ -168,32 +161,32 @@
                   </div>
 
                   <!-- Tab 4 Content -->
-                  {% if craft.entries.section('projects').relatedTo(entry) | length or craft.entries.section('successStory').relatedTo(entry)| length %}
+                  {% if craft.entries.section('successStory').relatedTo(entry)| length %}
                   <div>
                     <section>
-                      {% if craft.entries.section('projects').relatedTo(program) | length %}
-                        <h3>{{craft.entries.section('projects').relatedTo(program).section}}</h3>
-  										  {% for projects in craft.entries.section('projects').relatedTo(program) %}
-  											    <a href="{{projects.url}}"><p>{{ projects.title}}</p>
-  											    <p>{{ projects.previewText}}</p></a>
-  										  {% endfor %}
-                      {% endif %}
-                      {% if craft.entries.section('sucessStory').relatedTo(program) | length %}
-                        <h3>{{craft.entries.section('successStory').section}}</h3>
-                        {% for stories in craft.entries.section('successStory').relatedTo(program)%}
-                          <a href="{{stories.url}}"><p>{{ stories.title}}</p>
-                            <p>{{ stories.previewText}}</p></a>
-                            {% for asset in stories.featureImage %}
-                            <img src="{{ asset.url('featureImage') }}" alt=""/>
+                      <h1>Stories &amp; Projects from {{entry.title}}</h1>
+                      <hr class="divider bg-red">
+                        {% for entry in craft.entries.section('successStory').relatedTo(program)%}
+                          <div class="program-story">
+                            {% for asset in entry.featureImage %}
+                              <img class="program-story__image" src="{{ asset.url('carouselImage') }}" alt="{{asset.title}}"/>
                             {% endfor %}
+                            <article class="news-listing home-news-item">
+                                <h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+                                <span class="home-news__date">{{ entry.postDate | date('F d, Y') }}</span>
+                                <p>{{ entry.previewText }}</p>
+                            </article>
+                          </div>
                         {% endfor %}
-                      {% endif %}
                     </section>
                   </div>
                   {% endif %}
 
-
+                  <!-- Start Photo Gallery -->
+                  {% if entry.photoGallery.first | length %}
                   <div>
+                    <h1>Photos from {{entry.title}}</h1>
+                    <hr class="divider bg-red">
                     <div class="shell-fluid section-top-66 section-bottom-34 projects-gallery">
                       <div class="isotope-wrap">
                         <div class="row">
@@ -202,9 +195,12 @@
                             <div data-isotope-layout="masonry" data-isotope-group="gallery" class="isotope">
                               <div data-photo-swipe-gallery class="row">
                                 {% for asset in entry.photoGallery %}
-                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4  isotope-item"><a class="thumbnail-classic" data-photo-swipe-item="" data-size="500x500" href="{{ asset.url('featureImage') }}">
-                                    <figure><img src="{{ asset.url('gallery') }}" alt=""/>
-                                    </figure></a>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4  isotope-item">
+                                  <a class="thumbnail-classic" data-photo-swipe-item="" data-resize="true" data-size="500x500" href="{{ asset.url('featureImage') }}">
+                                    <figure>
+                                      <img src="{{ asset.url('gallery') }}" alt="{{asset.title}}"/>
+                                    </figure>
+                                  </a>
                                 </div>
                                 {% endfor %}
                               </div>
@@ -213,7 +209,7 @@
                         </div>
                       </div>
                     </div>
-
+                    {% endif %}
 
                   </div>
                 </div>

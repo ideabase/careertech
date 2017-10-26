@@ -1,0 +1,29 @@
+{% for entry in pageEntries2 %}
+<div class="program-story">
+  {% for asset in entry.featureImage %}
+    <img class="program-story__image" src="{{ asset.url('carouselImage') }}" alt="{{asset.title}}"/>
+  {% endfor %}
+  <article class="news-listing home-news-item">
+      <h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+      <span class="home-news__date">{{ entry.postDate | date('F d, Y') }}</span>
+      <p>{{ entry.previewText }}</p>
+  </article>
+</div>
+{% endfor %}
+
+<div class="offset-top-66">
+  <nav>
+    <ul class="pagination-classic">
+      {% if pageInfo1.prevUrl %}<li><a href="{{ pageInfo1.prevUrl }}#events">Previous Page</a></li>{% endif %}
+      {% for page, url in pageInfo1.getPrevUrls(2) %}
+        <li><a href="{{ url }}#events">{{ page }}</a></li>
+      {% endfor %}
+        <li class="active"><a href="#">{{ pageInfo1.currentPage }}</a></li>
+      {% for page, url in pageInfo1.getNextUrls(2) %}
+        <li><a href="{{ url }}#events">{{ page }}</a></li>
+      {% endfor %}
+      {% if pageInfo1.nextUrl %}<li><a href="{{ pageInfo1.nextUrl }}#events">Next Page</a></li>{% endif %}
+      <li><a href="{{ pageInfo1.lastUrl }}#events">Last Page</a></li>
+    </ul>
+  </nav>
+  </div>

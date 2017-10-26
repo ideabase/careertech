@@ -13,7 +13,8 @@
 			<div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
 				<ul class="resp-tabs-list tabs-1 text-left tabs-group-default" data-group="tabs-group-default">
 					<li><a href="#news">News</a></li>
-					<li><a href="#events">Events</li>
+					<li><a href="#events">Events</a></li>
+					<li><a href="#program">Program Success Stories</a></li>
 				</ul>
 
 				<div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
@@ -27,6 +28,12 @@
 					{% paginate craft.entries.section('events').limit(10) as pageInfo1, pageEntries1 %}
 
 						{% include '_includes/_news-events.html' %}
+					</div>
+					<!-- tab 3 contenct -->
+					<div>
+					{% paginate craft.entries.section('successStory').limit(10) as pageInfo2, pageEntries2 %}
+
+							{% include '_includes/_success-listing.html' %}
 					</div>
 					</div>
 				</div>
