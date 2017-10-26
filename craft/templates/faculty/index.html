@@ -18,9 +18,9 @@
 													<div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
 														<ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
 															{% for category in craft.categories.group('facultyType') %}
-															<li>{{ category.title }}</li>
+															<li><a href="#{{ category.title }}">{{ category.title }}</a></li>
 															{% endfor %}
-															<li>By Program</li>
+															<li><a href="#By Program">By Program<a></li>
 														</ul>
 
 <!-- FACULTY and staff TAB -->

@@ -1,0 +1,26 @@
+
+    {% for entry in pageEntries %}
+      <article class="news-listing home-news-item">
+          <h3 class="offset-top-10"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+          <span class="home-news__date">{{ entry.postDate | date('F d, Y') }}</span>
+          <p>{{ entry.previewText }}</p>
+      </article>
+    {% endfor %}
+
+  <div class="offset-top-66">
+    <nav>
+      <ul class="pagination-classic">
+        {% if pageInfo.prevUrl %}<li><a href="{{ pageInfo.prevUrl }}#news">Previous Page</a></li>{% endif %}
+        {% for page, url in pageInfo.getPrevUrls(2) %}
+          <li><a href="{{ url }}#news">{{ page }}</a></li>
+        {% endfor %}
+          <li class="active"><a href="#">{{ pageInfo.currentPage }}</a></li>
+        {% for page, url in pageInfo.getNextUrls(2) %}
+          <li><a href="{{ url }}#news">{{ page }}</a></li>
+        {% endfor %}
+        {% if pageInfo.nextUrl %}<li><a href="{{ pageInfo.nextUrl }}#news">Next Page</a></li>{% endif %}
+        <li><a href="{{ pageInfo.lastUrl }}#news">Last Page</a></li>
+      </ul>
+    </nav>
+
+  </div>
