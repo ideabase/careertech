@@ -1,7 +1,9 @@
 .admissions-program-listing {
   @media screen and (min-width: 700px) {
-    columns: 3;
-    column-gap: 20px;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+     justify-content: space-between;
+     align-items: stretch;
   }
 }
 .admissions-button{
@@ -9,6 +11,18 @@
   margin-bottom: 15px;
   font-size: 12px;
   line-height: 1.4;
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+  border-color: gray;
+  &:hover {
+    background-color: darken(gray,5%);
+    border-color: darken(gray,5%);
+  }
+  span {
+    display: inline-block;
+    margin: auto;
+  }
 }
 
 h1{
@@ -32,8 +46,4 @@ h1{
   margin-top: 50px;
   padding: 60px 30px 70px 30px;
   background-color: #EAEAEA;
-}
-
-.btn {
-  white-space: normal !important;
 }

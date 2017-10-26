@@ -20,7 +20,8 @@
 		<div class="admissions-program-listing">
 			{% for entry in craft.entries.section('programs').order('title asc') %}
 			<a class="admissions-button btn btn-primary" data-caption-animate="fadeInUp"  data-caption-delay="1200" href="{{entry.url}}">
-			<span class="btn-text">{{entry.title}}</span></a>
+				<span>{{entry.title}}</span>
+		</a>
 			{% endfor %}
 		</div>
 
@@ -64,10 +65,10 @@
 
 
 	<div class="adm-events-wrapper">
-	<h1>Important Admissions Dates & Events</h1>
-		<div>
+
+		<div class="text-callout">
+			<h1>Important Admissions Dates & Events</h1>
 			<hr class="divider bg-red">
-		</div>
 		{{ entry.admissionsDates }}
 		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ 'news' }}">
 			<span class="btn-text">Admissions Calendar</span></a>
