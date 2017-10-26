@@ -4,6 +4,14 @@
   padding: 30px;
 }
 
+.program-listing {
+  @media screen and (min-width: 900px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
 .faculty-listing h4 {
   margin-bottom: 1em;
 }
@@ -98,6 +106,10 @@ iframe{
   display: inline-block;
   margin-bottom: 50px;
   padding: 45px;
+  @media screen and (min-width:900px) {
+    width: 45%;
+
+  }
 }
 .program-overview h3{
   color: $red;
