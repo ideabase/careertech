@@ -61,4 +61,9 @@ margin-right: 5px;
 
 }
 
-.small {font-size: 85%}
+.small {
+  font-size: 85%;
+  p {
+    margin-top: 0;
+  }
+}
