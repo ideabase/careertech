@@ -40,12 +40,9 @@
                       {% endif %}
                       <div class="listing-categories">
                       <h4>Additional Programs</h4>
-                      {% for additional in craft.entries.section('programsLandingPage') %}
                       <ul class="list list-marked">
-                        <li><a href="{{ additional.additionalProgramLink }}">6 District Educational Compact programs</a></li>
+                        <li><a href="{{ entry.additionalProgramLink }}">6 District Educational Compact programs</a></li>
                       </ul>
-
-                      {% endfor %}
                     </div>
 
                   </section>
