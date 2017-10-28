@@ -18,10 +18,12 @@
 }
 
 .rd-navbar-panel {
+  @media screen and (max-width: 1199px) {
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  }
   @media only screen and (min-width: 1200px) {
     display:block;
   }
@@ -51,20 +53,6 @@
 .video{
   color:white;
 }
-::-webkit-scrollbar {
-      height: 7px;
-}
-
-::-webkit-scrollbar-track {
-      background-color: #868383;
-      border-radius: 50px;
-} /* the new scrollbar will have a flat appearance with the set background color */
-
-::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.52);
-      border-radius: 50px;
-} /* this will style the thumb, ignoring the track */
-
 
 h4 {
   text-transform: uppercase;
@@ -91,7 +79,7 @@ h4 {
   padding: 0;
 }
 
-main {
+.page-content {
   margin-top: 2.5em !important;
   margin-bottom: 2.5em !important;
 }
@@ -121,6 +109,24 @@ main {
 }
 .text-link:hover{
   color: $red;
+}
+
+.page-404 {
+  position: relative;
+  &:after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.3);
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    z-index: 0;
+  }
+  .one-page {
+    z-index: 1;
+  }
 }
 
 .text-link:after {

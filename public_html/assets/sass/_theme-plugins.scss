@@ -2527,7 +2527,7 @@ html:not(.lt-ie10) .not-animated {
 
 
 /** 3.12 Isotope */
-/*[data-isotope-layout] {
+[data-isotope-layout] {
   display: block;
   transition: .4s all ease;
   min-height: 160px;
@@ -2969,7 +2969,7 @@ html:not(.lt-ie10) .not-animated {
 
  */
 /* <button> css reset */
-.pswp__button {
+/*.pswp__button {
   width: 44px;
   height: 44px;
   position: relative;
@@ -3001,7 +3001,7 @@ html:not(.lt-ie10) .not-animated {
   border: 0; }
 
 /* pswp__ui--over-close class it added when mouse is over element that should close gallery */
-.pswp__ui--over-close .pswp__button--close {
+/*.pswp__ui--over-close .pswp__button--close {
   opacity: 1; }
 
 .pswp__button,
@@ -3014,7 +3014,7 @@ html:not(.lt-ie10) .not-animated {
 
 @media (-webkit-min-device-pixel-ratio: 1.1), (-webkit-min-device-pixel-ratio: 1.09375), (min-resolution: 105dpi), (min-resolution: 1.1dppx) {
   /* Serve SVG sprite if browser supports SVG and resolution is more than 105dpi */
-  .pswp--svg .pswp__button,
+  /*.pswp--svg .pswp__button,
   .pswp--svg .pswp__button--arrow--left:before,
   .pswp--svg .pswp__button--arrow--right:before {
     background-image: url(../images/photoswipe-controls.svg); }
@@ -3048,7 +3048,7 @@ html:not(.lt-ie10) .not-animated {
   background-position: -132px 0; }
 
 /* no arrows on touch screens */
-.pswp--touch .pswp__button--arrow--left,
+/*.pswp--touch .pswp__button--arrow--left,
 .pswp--touch .pswp__button--arrow--right {
   visibility: hidden; }
 
@@ -3056,7 +3056,7 @@ html:not(.lt-ie10) .not-animated {
 	Arrow buttons hit area
 	(icon is added to :before pseudo-element)
 */
-.pswp__button--arrow--left,
+/*.pswp__button--arrow--left,
 .pswp__button--arrow--right {
   background: none;
   top: 50%;

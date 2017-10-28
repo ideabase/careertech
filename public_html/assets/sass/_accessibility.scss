@@ -1,8 +1,5 @@
 // Flag images without alt text //
 
-img:not([alt]) {
-    outline: 1em red solid;
-}
 
 #skip-to-content {
   padding: 1em;

@@ -9,6 +9,10 @@
   padding-bottom: 15px;
 }
 
+.rd-navbar-default.rd-navbar-static .rd-navbar-dropdown li>a {
+  padding: 1em 30px 1em 20px;
+}
+
 .rd-navbar-wrap {
   height: auto !important;
 }
@@ -36,9 +40,8 @@
   page-break-inside: avoid;
 }
 .breadcrumb-classic {
-  background-size: cover;
+  background-size: 100% auto;
   background-position:center center;
-  background:gray;
   h2 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
   }
@@ -86,7 +89,7 @@
 
 
 .rd-navbar--is-stuck .rd-navbar-brand__link {
-  margin-top: 0 !important;
+  margin-top: -5px !important;
   width: 200px;
 }
 

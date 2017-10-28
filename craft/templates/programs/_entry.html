@@ -2,6 +2,7 @@
 
 {% block header %}
 {% include '_includes/_header.html' %}
+
 <!-- RD Navbar Transparent-->
         <div id="home" data-type="anchor">
           <!--Swiper-->
@@ -187,30 +188,21 @@
                   <div>
                     <h1>Photos from {{entry.title}}</h1>
                     <hr class="divider bg-red">
-                    <div class="shell-fluid section-top-66 section-bottom-34 projects-gallery">
-                      <div class="isotope-wrap">
-                        <div class="row">
-                          <!-- Isotope Content-->
-                          <div class="col-xs-12">
-                            <div data-isotope-layout="masonry" data-isotope-group="gallery" class="isotope">
-                              <div data-photo-swipe-gallery class="row">
-                                {% for asset in entry.photoGallery %}
-                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4  isotope-item">
-                                  <a class="thumbnail-classic" data-photo-swipe-item="" data-resize="true" data-size="500x500" href="{{ asset.url('featureImage') }}">
-                                    <figure>
-                                      <img src="{{ asset.url('gallery') }}" alt="{{asset.title}}"/>
-                                    </figure>
-                                  </a>
-                                </div>
-                                {% endfor %}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endif %}
-
+                    <!-- Photo Swipe Gallery -->
+                  <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                  {% for asset in entry.photoGallery %}
+                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                      <a href="{{asset.url('featureImage')}}" itemprop="contentUrl" data-size="2000x1000">
+                          <img src="{{asset.url('gallery')}}" itemprop="thumbnail" alt="{{asset.title}}" />
+                      </a>
+                      <figcaption itemprop="caption description">Image caption </figcaption>
+                    </figure>
+                  {% endfor %}
+                  </div>
+                  <!-- End Photo Swipe -->
+                  {% endif %}
+                  </div>
+                  <!-- End Photo Gallery Tab-->
                   </div>
                 </div>
               </div>
@@ -220,13 +212,5 @@
 
 
       </main>
-
-
-      <!-- Page Footer-->
-      <!-- Default footer-->
-
-</body>
-
-
-
+{% include '_includes/_photoswipe.html' %}
 {% endblock %}
