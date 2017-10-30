@@ -1,15 +1,37 @@
 .my-gallery {
   width: 100%;
+  margin-bottom: 3em;
+  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  @media screen and (min-width: 700px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 .my-gallery img {
   width: 100%;
   height: auto;
 }
+
+.pswp__caption__center {
+  text-align: center;
+}
+
 .my-gallery figure {
   display: block;
-  float: left;
   margin: 0 5px 5px 0;
-  width: 150px;
+  width: 100%;
+  padding: .75em;
+  img {
+    border: 3px solid transparent;
+    transition: .3s border ease-in-out;
+  }
+  &:hover, &:focus {
+    img {
+      border-color: $red;
+    }
+  }
 }
 .my-gallery figcaption {
   display: none;

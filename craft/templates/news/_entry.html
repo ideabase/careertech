@@ -15,10 +15,42 @@
 
 {% extends "_layout" %}
 
+{% block subheader %}
+{% endblock %}
 {% block content %}
-	<article>
-		<h1>{{ entry.title }}</h1>
-    <span class="home-news__date">{{ entry.postDate | date('F d, Y') }}</span>
-		{{ entry.body }}
+	<article class="article-single">
+    <!-- Layout for images -->
+    {% if entry.section.handle == 'events' %}
+    {% include '_includes/_calendar.html' %}
+    {% endif %}
+    {% if entry.featureImage | length %}
+		<h1 class="news-headline">{{ entry.title }}</h1>
+    <h2 class="news-subhead">{{ entry.previewText}}</h2>
+    <div class="news-meta-container">
+
+        {% for asset in entry.featureImage %}
+          <div class="news-image">
+            <img src="{{asset.url('galleryFull')}}" alt="{{asset.title}}" />
+          </div>
+        {% endfor %}
+      {% include '_includes/_newsmeta.html' %}
+    </div>
+    <!-- End Layout for Images -->
+    {% else %}
+    <!-- Layout for no images -->
+      <div class="no-image-container">
+        <div class="no-image-container__headlines">
+          <h1 class="news-headline">{{ entry.title }}</h1>
+          <h2 class="news-subhead">{{ entry.previewText}}</h2>
+        </div>
+      {% include '_includes/_newsmeta.html' %}
+      </div>
+      <!-- End Layout for no images -->
+    {% endif %}
+    <div class="news-body">
+      {{ entry.body }}
+    </div>
+    <a class="text-link text-link--previous" href="{{siteUrl}}news">Return to News & Events</a>
 	</article>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59f6859343bc5da3"></script>
 {% endblock %}

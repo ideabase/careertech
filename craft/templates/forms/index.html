@@ -3,9 +3,8 @@
 
 {% block content %}
 
-
-
 <main class="page-content">
+    {{ entry.body}}
     <ul class="forms">
         {% for forms in entry.singleForms %}
   			{% for asset in forms.formsLink%}

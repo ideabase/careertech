@@ -7,7 +7,7 @@
       <main class="page-content">
         <section>
           <div class="shell">
-
+              {{ entry.body}}
             <div class="offset-sm-top-66 text-left">
               <!-- Responsive-tabs-->
               <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
@@ -49,7 +49,7 @@
                   </div>
 
                   <div>
-                    <section class="program-listing">
+                    <section class="program-list">
 												{% for entry in craft.entries.section('programs').order('title asc') %}
 												<ul class="list list-marked">
 													<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>

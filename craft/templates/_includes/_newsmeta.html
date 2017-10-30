@@ -1,0 +1,35 @@
+<section class="news-meta">
+  <dl>
+    <dt>
+      Posted
+    </dt>
+    <dd>
+      {{ entry.postDate | date('F d, Y') }}
+    </dd>
+    {% if entry.postAuthor | length %}
+    <dt>
+      Author
+    </dt>
+    <dd>
+      {{ entry.postAuthor }}
+    </dd>
+    {% endif %}
+    {% if entry.newsType | length %}
+    <dt>
+      Category
+    </dt>
+    <dd>
+      {% for category in entry.newsType %}
+        {{ category.title}}
+      {% endfor %}
+    </dd>
+    {% endif %}
+    <dt>
+      Share
+    </dt>
+    <dd>
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox"></div>
+    </dd>
+  </dl>
+</section>

@@ -28,8 +28,15 @@
   //height:800px;
 }
 .rd-navbar-default.rd-navbar-static .rd-navbar-nav>li>a{
+  font-size: 11px;
+  @media screen and (min-width: 1300px){
+    font-size: 12px;
+  }
+  @media screen and (min-width: 1400px){
+    font-size: 13px;
+  }
   @media screen and (min-width: 1600px){
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -66,7 +73,7 @@
   }
 }
 
-.rd-navbar-default.rd-navbar-static.rd-navbar--is-stuck .rd-navbar-inner {
+.rd-navbar-default.rd-navbar-static.rd-navbar--is-stuck .rd-navbar-inner, .rd-navbar-default.rd-navbar-light.rd-navbar-static.rd-navbar--is-stuck .rd-navbar-inner {
   padding-bottom: 0;
 }
 

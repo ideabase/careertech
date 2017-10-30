@@ -1,4 +1,3 @@
-{% cache %}
 {% if entry is defined %}
   {% if entry.featureImage | length %}
     {% set image = entry.featureImage.first %}
@@ -35,4 +34,3 @@
     </div>
   </div>
 </section>
-{% endcache %}
