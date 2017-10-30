@@ -127,7 +127,9 @@
                     <a class="text-link" href="{{ url('news') }}#undefined2">View All Events</a>
                   </div>
                   <div class="events">
-                    {% for entry in craft.entries.section('events').limit(3).order('dateTime asc') %}
+                    {% set events = craft.entries.section('events').order('dateTime asc') %}
+                    {% for entry in events|slice(4,3) %}
+                      {% if entry.dateTime >= now %}
                         <div class="events-box">
                         {% include '_includes/_calendar.html' %}
                         <a href="{{entry.url}}">
@@ -136,6 +138,7 @@
                           <p>{{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</p>
                         </a>
                       </div>
+                      {% endif %}
                     {% endfor %}
                   </div>
                 </div>
