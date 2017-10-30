@@ -22,7 +22,7 @@
 {% block header %}
 {% include '_includes/_header.html' %}
 
-{% cache %}
+{% cache unless currentUser %}
 <div id="home" data-type="anchor">
 
 
@@ -54,7 +54,6 @@
   {% endblock %}
 
 {% block content %}
-      {% cache %}
       <div class="home-wrap">
         <h3 class="home-box-left">{{ entry.pathwayTitle }}</h3>
         <a class="text-link" id="full-listprogram" href="{{'programs'}}" >View Full Program List</a>
@@ -145,9 +144,6 @@
 
           </div>
         </div>
-
-        {% endcache %}
-
   	<!-- {% include '_includes/_admissions.html' %}-->
 
 
