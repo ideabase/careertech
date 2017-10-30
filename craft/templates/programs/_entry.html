@@ -67,7 +67,7 @@
                     <li><a href="#{{section.section}}">Stories &amp; Projects</a></li>
                   {% endif %}
                   {% if entry.photoGallery | length %}
-                    <li><a href="#Photo Gallery">Photo Gallery</a></li>
+                    <li><a href="#PhotoGallery">Photo Gallery</a></li>
                   {% endif %}
                 </ul>
 
@@ -191,7 +191,7 @@
                   <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
                   {% for asset in entry.photoGallery %}
                     <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                      <a href="{{asset.url('galleryFull')}}" itemprop="contentUrl" data-size="1000x800">
+                      <a href="{{asset.url('galleryFull')}}" itemprop="contentUrl" data-size="{{ asset.getWidth('galleryFull') }}x{{ asset.getHeight('galleryFull') }}">
                           <img src="{{asset.url('gallery')}}" itemprop="thumbnail" alt="{{asset.title}}" />
                       </a>
                       <figcaption itemprop="caption description">{{ asset.title }}</figcaption>
@@ -211,5 +211,5 @@
 
 
       </main>
-{% include '_includes/_photoswipe.html' %}
+
 {% endblock %}
