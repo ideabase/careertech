@@ -11,6 +11,22 @@
   margin: 0 auto;
 }
 
+.intro-text-video {
+  @media screen and (min-width: 700px) {
+    display: flex;
+    justify-content: space-between;
+    .video {
+      width: 40%;
+    }
+  }
+}
+
+.intro-text {
+  @media screen and (min-width: 700px) {
+    width: 50%;
+  }
+}
+
 .rd-navbar-default.rd-navbar-fixed .rd-navbar-brand {
     display: inline-block;
     transform: none;

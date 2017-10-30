@@ -7,7 +7,16 @@
       <main class="page-content">
         <section>
           <div class="shell">
-              {{ entry.body}}
+              <div class="intro-text-video">
+                <div class="intro-text">
+                  {{ entry.body}}
+                </div>
+                {% if entry.youtubeVideoLink | length %}
+                  <div class="video">
+                    {{entry.youtubeVideoLink|videoEmbed}}
+                  </div>
+                {% endif %}
+              </div>
             <div class="offset-sm-top-66 text-left">
               <!-- Responsive-tabs-->
               <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">

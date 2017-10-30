@@ -87,16 +87,14 @@ padding-bottom: 3em;
   margin-bottom: 30px;
 }
 .video{
-  margin: auto;
-  width: 100%;
   margin-bottom: 2em !important;
   display: block;
-  margin-top: 1.5 !important;
-}
-
-iframe{
-  height: 350px;
-  width: 700px;
+  margin-top: 1em !important;
+  max-width: 100%;
+  iframe {
+    width: 100%;
+    min-height: 275px;
+  }
 }
 
 

@@ -75,7 +75,15 @@
                 <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                   <div class="program-wrap">
                     <div class="program-box-left">
+                      <div class="program-courses">
+                        <h1>Courses</h1>
 
+                        <hr class="divider bg-red">
+                          {% for classes in craft.entries.section('classes').relatedTo(entry) %}
+                            <a class="course-button btn btn-primary " href="{{classes.courseAccessLink}}" >
+                            <span class="btn-text">{{ classes.title }}</span></a>
+                          {% endfor %}
+                      </div>
                         <h1>Program Requirements</h1>
                         <hr class="divider bg-red">
                         <div class="program-requirements">
@@ -92,15 +100,6 @@
     														<p>{{ row.criteria}}</p>
     													{% endfor %}
     											{%  endif %}
-                        </div>
-                        <div class="program-courses">
-                          <h1>Courses</h1>
-
-                          <hr class="divider bg-red">
-                            {% for classes in craft.entries.section('classes').relatedTo(entry) %}
-                              <a class="course-button btn btn-primary " href="{{classes.courseAccessLink}}" >
-                              <span class="btn-text">{{ classes.title }}</span></a>
-                            {% endfor %}
                         </div>
                     </div>
                     <div class="program-box-right">
