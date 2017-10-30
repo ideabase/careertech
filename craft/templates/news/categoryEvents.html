@@ -46,12 +46,12 @@
 
 				<div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
           <div>
-          {% paginate articles.limit(3) as pageInfo, pageEntries %}
+          {% paginate articles.limit(10) as pageInfo, pageEntries %}
           <!-- tab 1 content -->
           {% include '_includes/_news-news.html' %}
           </div>
           <div>
-            {% paginate craft.entries.section('events').limit(3) as pageInfo1, pageEntries1 %}
+            {% paginate craft.entries.section('events').limit(10).order('dateTime asc') as pageInfo1, pageEntries1 %}
 					<!-- tab 2 contenct -->
           {% include '_includes/_news-events.html' %}
           </div>
