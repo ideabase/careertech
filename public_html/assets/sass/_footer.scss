@@ -9,6 +9,10 @@ footer{
   clear: both;
 }
 
+.footer-copyright {
+  margin-top: 3em;
+}
+
 @media (min-width: 1200px) {
   footer .range > .cell-lg-push-1 {
     order: 5;
