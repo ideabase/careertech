@@ -88,10 +88,10 @@ padding-bottom: 3em;
 }
 .video{
   margin: auto;
-  height: 350px;
-  width: 90%;
-  max-width: 700px;
-
+  width: 100%;
+  margin-bottom: 2em !important;
+  display: block;
+  margin-top: 1.5 !important;
 }
 
 iframe{

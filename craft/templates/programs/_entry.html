@@ -192,7 +192,7 @@
                   <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
                   {% for asset in entry.photoGallery %}
                     <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                      <a href="{{asset.url('galleryFull')}}" itemprop="contentUrl" data-size="2000x1000">
+                      <a href="{{asset.url('galleryFull')}}" itemprop="contentUrl" data-size="1000x800">
                           <img src="{{asset.url('gallery')}}" itemprop="thumbnail" alt="{{asset.title}}" />
                       </a>
                       <figcaption itemprop="caption description">{{ asset.title }}</figcaption>
