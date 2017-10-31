@@ -89,17 +89,17 @@
                   </div>
                   <div class="events">
                     {% set events = craft.entries.section('events').order('dateTime asc') %}
-                    {% for entry in events|slice(4,3) %}
-                      {% if entry.dateTime >= now %}
-                        <div class="events-box">
-                        {% include '_includes/_calendar.html' %}
-                        <a href="{{entry.url}}">
-                          <h3>{{entry.title}}</h3>
-                          <p>{{entry.location}}</p>
-                          <p>{{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</p>
-                        </a>
-                      </div>
-                      {% endif %}
+                    {% for entry in events if entry.dateTime > now %}
+                        {% if loop.index <= 3 %}
+                          <div class="events-box">
+                          {% include '_includes/_calendar.html' %}
+                          <a href="{{entry.url}}">
+                            <h3>{{entry.title}}</h3>
+                            <p>{{entry.location}}</p>
+                            <p class="events-time">{{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</p>
+                          </a>
+                        </div>
+                        {% endif %}
                     {% endfor %}
                   </div>
                 </div>
