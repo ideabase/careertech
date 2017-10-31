@@ -52,6 +52,17 @@
     {% endif %}
     <div class="news-body">
       {{ entry.body }}
+      {% if entry.youtubeVideoLink | length %}
+
+        <div class="video">
+          {{entry.youtubeVideoLink|videoEmbed}}
+        </div>
+
+      {% endif %}
+      {% if entry.photoGallery.first | length %}
+        {% include '_includes/_gallery.html' %}
+      {% endif %}
+
     </div>
     <a class="text-link text-link--previous" href="{{siteUrl}}news">Return to News & Events</a>
 	</article>
