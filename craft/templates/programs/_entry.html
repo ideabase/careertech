@@ -24,11 +24,11 @@
                               {% for entry in craft.entries.section('admissions') %}
                               {% if entry.applicationLightSwitch %}
 																{% for apply in apply.admissions %}
-																<a class="apply-button-blackheader btn btn-primary btn-lg" href="{{ apply.url }}">
+																<a class="apply-button-blackheader btn btn-primary btn-med" href="{{ apply.url }}">
 																<span class="btn-text">Apply Now</span></a>
 																{% endfor %}
 															{% else %}
-																<a class="apply-button-blackheader btn btn-primary btn-lg">
+																<a class="apply-button-blackheader btn btn-primary btn-med">
 																<span class="btn-text">Applications closed for this period</span></a>
 															{% endif %}
                               {% endfor %}
