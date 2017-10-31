@@ -1,20 +1,6 @@
 {#
  # Homepage template
  # ---------------
- #
- # When this template gets loaded, it will be because someone has accessed
- # http://yoursite.com/ (without any URI). Craft checks to see if you have
- # a Single section set to be the Homepage (as you do, by default), and
- # loads the section’s Template (this file). A special ‘entry’ variable
- # will already be set for you, assigned to the Homepage entry.
- #
- # It's worth noting that even if you didn't have a Homepage Single section,
- # as long as this template remains at craft/templates/index.html, it
- # would still be the one to get loaded when accessing http://yoursite.com/,
- # albeit without an ‘entry’ variable already set for you.
- #
- # See this page for more details on how Craft routes requests:
- # http://craftcms.com/docs/routing
  #}
 
 {% extends "_layout" %}
@@ -24,19 +10,13 @@
 
 {% cache unless currentUser %}
 <div id="home" data-type="anchor">
-
-
   <section class="section-relative">
-    <!-- data-loop="false" data-autoplay="false" data-slide-effect="fade" data-height="100vh" data-dragable="false" data-min-height="480px" data-dots="false"  -->
-    <!-- Removed swiper-slider from div -->
     <div class="swiper-container ">
       <div class="swiper-wrapper">
         {% for asset in entry.featureImage %}
-        <!-- Removed data-slide-bg="{{asset.url('featureImage')}}"  -->
         <div style="background-image: url({{asset.url('featureImage')}}); background-size: cover;" class="swiper-slide swiper-slide-overlay-disable swiper-slide-center"></div>
         {% endfor %}
       </div>
-      <!--<div class="swiper-pagination swiper-pagination-type-1"></div>-->
     </div>
     <div class="section-center-absolute">
       <h1><span data-caption-animate="fadeInUp" data-caption-delay="700">{{ entry.welcomeTitle }}</span></h1>
@@ -44,23 +24,20 @@
       <div class="reveal-sm-block text-light" data-caption-animate="fadeInUp" data-caption-delay="900">{{ entry.body }}</div>
     </div>
   </section>
-
-
   </div>
   {% endcache %}
   <!-- after welcome picture -->
   {% endblock %}
-    {% block subheader %}
-  {% endblock %}
+{% block subheader %}
+{% endblock %}
 
 {% block content %}
       <div class="home-wrap">
         <h3 class="home-box-left">{{ entry.pathwayTitle }}</h3>
-        <a class="text-link" id="full-listprogram" href="{{'programs'}}" >View Full Program List</a>
+        <a class="text-link" id="full-listprogram" href="{{'programs'}}" >See All Programs</a>
       </div>
-
         <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="2" data-dots="true" data-md-items="4" data-nav="false">
-          {% for category in craft.entries.section('programs') %}
+          {% for category in craft.entries.section('programs').order('title') %}
             <a href="{{ category.url }}"><div class="local-carousel-image">
               {% for asset in category.featureImage %}
                 <img src="{{asset.url('carouselImage')}}" alt=""/>
@@ -68,45 +45,30 @@
               <h4>{{ category.title }}</h4>
             </div></a>
           {% endfor %}
-
-          <!--template <a href="clients.html"><img class="img-semi-transparent" src="images/clients/client-02-126x68.png" width="126" height="68" alt=""></a>-->
-
         </div>
-
-
-
-
-          <div class="home-admissions-wrap">
-
+        <div class="home-admissions-wrap">
             <div class="home-admissionbox-left">
               <h3>{{ entry.admissionsTitle }}</h3>
               <p>{{entry.admissionsText}}</p>
             </div>
-
             <div class="home-admissionbox-right">
               <div class="group group-xl">
                 <a class="btn btn-primary btn-lg" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ url('admissions') }}">
                 <span class="btn-text">View Admissions Criteria</span></a>
               </div>
             </div>
-
           </div>
-
           <div class="home-wrap">
             <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
-
-
                   <ul class="home-box-left resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#events">Important Dates &amp; Events</a></li>
+                    <li><a>News</a></li>
+                    <li><a>Important Dates &amp; Events</a></li>
                   </ul>
-
-
               <div class="news-container resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                 <div>
                   <div class="flex1">
                     <div class="right-Top">
-                      <a class="text-link" href="{{ url('news') }}">View All News</a>
+                      <a class="text-link" href="{{ url('news') }}">See All News</a>
                     </div>
                     <div class="home-news">
                       {% for entry in craft.entries.section('news').limit(2) %}
@@ -119,12 +81,11 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- tab 2 contenct -->
+                <!-- tab 2 content -->
                 <div>
                 <div class="flex1">
                   <div class="right-Top">
-                    <a class="text-link" href="{{ url('news') }}#undefined2">View All Events</a>
+                    <a class="text-link" href="{{ url('news') }}#undefined2">See All Events</a>
                   </div>
                   <div class="events">
                     {% set events = craft.entries.section('events').order('dateTime asc') %}
@@ -144,10 +105,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-  	<!-- {% include '_includes/_admissions.html' %}-->
-
-
 {% endblock %}

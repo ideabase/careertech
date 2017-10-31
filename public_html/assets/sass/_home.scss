@@ -27,7 +27,7 @@
   margin-top: -100px !important;
   @media only screen and (max-width: 1000px) {
       order: 2;
-      margin-top: 10px !important;
+      margin-top: 0 !important;
       text-align: center;
   }
 }
@@ -117,7 +117,7 @@
 
 .page .section-center-absolute .text-light {
   font-size: 1.2em;
-  padding-top: 2em;
+  padding-top: 1.5em;
   @media screen and (min-width: 1200px){
     font-size: 1.3em;
   }
@@ -125,6 +125,19 @@
 
 h1 .text-uppercase {
   font-weight: bold;
+  position: relative;
+  &:after {
+    content: "";
+      height: 7px;
+      display: flex;
+      margin: 0 auto;
+      width: 7%;
+      background-color: rgba($red,.9);
+      display: flex;
+      margin-top: 1em;
+      align-items: center;
+      justify-content: center;
+  }
 }
 
 .home-admissions-wrap{
@@ -174,8 +187,12 @@ h1 .text-uppercase {
 
 .events{
       order:1;
+      margin-bottom: 2em !important;
+      margin-left: auto;
+      margin-right: auto;
       @media screen and (min-width: 700px) {
         display: flex;
+        margin-bottom: 0 !important;
         order: 2;
         width:100%;
         padding: 10px 0px 10px 0px;
