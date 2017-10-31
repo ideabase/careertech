@@ -11,6 +11,46 @@
   margin: 0 auto;
 }
 
+.search-results {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-width: 650px;
+  margin-bottom: 2em !important;
+}
+
+.search-results__url {
+  color: $red;
+  font-size: .95em;
+  line-height: 1.4;
+  display:block;
+}
+
+.search-results__entry {
+  margin-bottom: 2.5em;
+}
+
+.search-results__number {
+  font-style: italic;
+  color: rgba(0,0,0,.7);
+  margin-bottom: 2em;
+  text-transform: lowercase;
+}
+
+.search-results__description p {
+  font-size: .95em;
+  margin-top: .5em;
+}
+
+.search-results__title {
+  font-size: 1.1em;
+  display: block;
+  font-weight: bold;
+  margin-bottom: .15em;
+  color: rgba(0,0,0,.9);
+  line-height: 1.2;
+}
+
 .intro-text-video {
   @media screen and (min-width: 700px) {
     display: flex;
