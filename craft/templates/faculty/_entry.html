@@ -58,9 +58,11 @@
 						{% endfor %}
             <hr class="divider bg-red hr-sm-center-0">
             <div class="text-left">{{entry.body}}</div>
+            {% if craft.entries.section('classes').relatedTo(entry) | length %}
             <div class="offset-top-30">
               <h3 class="text-center">Courses</h3>
             </div>
+            {% endif %}
             <div class="offset-top-30 text-center">
               {% for class in craft.entries.section('classes').relatedTo(entry) %}
 							<a class="course-button btn btn-primary" href="{{class.courseAccessLink}}" data-caption-animate="fadeInUp" data-caption-delay="1200">
