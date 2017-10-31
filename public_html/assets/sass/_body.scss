@@ -9,6 +9,10 @@
 .text-callout {
   max-width: 800px;
   margin: 0 auto;
+  margin-bottom: 3em !important;
+  @media screen and (min-width: 800px) {
+    font-size: 105%;
+  }
 }
 
 .search-results {
@@ -64,6 +68,9 @@
 }
 
 .intro-text {
+  p a {
+    color: $red;
+  }
   @media screen and (min-width: 700px) {
     width: 50%;
   }
@@ -140,6 +147,7 @@ h4 {
 .page-content {
   margin-top: 2.5em !important;
   margin-bottom: 2.5em !important;
+  min-height: 300px;
 }
 .apply-button-whiteheader{
   position: absolute;
@@ -251,12 +259,15 @@ h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:
 
 .forms {
   list-style-type: none;
+  h4 {
+    font-size: 1em;
+  }
   @media screen and (min-width: 600px) {
     columns: 2;
     column-gap: 30px;
   }
   a {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.75em;
     display: inline-block;
   }
 }

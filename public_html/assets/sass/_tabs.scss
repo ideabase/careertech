@@ -1,6 +1,11 @@
 .responsive-tabs .resp-tabs-list {
   margin-bottom: 3em;
 }
+
+.responsive-tabs .resp-tab-content {
+  padding: 15px 5px 50px 2px;
+}
+
 @media (min-width: 992px){
 .responsive-tabs-classic[data-type="horizontal"] .resp-tab-content {
   padding-top: 0;

@@ -6,7 +6,7 @@
   border-top: 2px solid $red;
   position: relative;
   text-align: left;
-  margin-top: -2.5em !important;
+  margin-top: -1.5em !important;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -23,9 +23,6 @@
     width: 20%;
     content: "";
     background-color: $red;
-  }
-  @media screen and (min-width: 700px) {
-    margin-top: -1.5em !important;
   }
 }
 
@@ -198,7 +195,7 @@
   background-color: #EAEAEA;
   width:30%;
   height:inherit;
-  padding: 80px 40px 40px 40px;
+  padding: 60px 40px 40px 40px;
   margin-bottom: 2em !important;
   h1 {
     font-size: 1em;
@@ -258,19 +255,19 @@
     background-color: #EAEAEA;
     width:100%;
     height:inherit;
-    padding: 10px;
+    padding: 10px 10px;
     margin-bottom: 20px;
   }
 }
 //small screen
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1100px) {
   .news-lefttab{
     float:none;
     background-color: #EAEAEA;
     width:100%;
     height:inherit;
-    padding: 10px;
+    padding: 20px 10px;
     margin-bottom: 20px;
     margin: auto;
     max-width: 400px;

@@ -8,3 +8,21 @@
     color: darken($red,10%);
   }
 }
+
+.faculty-profile {
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.faculty-info {
+  order: 2;
+  margin-top: 2em !important;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    order: inherit;
+    margin-top: inherit !important;
+    width: inherit;
+  }
+}
