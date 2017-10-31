@@ -24,7 +24,7 @@
                               {% for entry in craft.entries.section('admissions') %}
                               {% if entry.applicationLightSwitch %}
 																{% for apply in apply.admissions %}
-																<a class="apply-button-blackheader btn btn-primary btn-lg" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{ apply.url }}">
+																<a class="apply-button-blackheader btn btn-primary btn-lg" href="{{ apply.url }}">
 																<span class="btn-text">Apply Now</span></a>
 																{% endfor %}
 															{% else %}
