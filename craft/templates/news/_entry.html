@@ -52,6 +52,9 @@
     {% endif %}
     <div class="news-body">
       {{ entry.body }}
+      {% if entry.section.handle == 'events' %}
+        {{ entry.eventDescription}}
+      {% endif %}
       {% if entry.youtubeVideoLink | length %}
 
         <div class="video">
