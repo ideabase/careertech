@@ -42,7 +42,7 @@
   <div class="news-categories">
     {% for entry in craft.categories.group('eventType') %}
     {% if craft.entries.relatedTo(entry)|length() %}
-      <a href="{{entry.url}}#events"><h4>{{entry.title}}</h4></a>
+      <a href="{{entry.url}}#events|undefined2"><h4>{{entry.title}}</h4></a>
     {% endif %}
     {% endfor %}
   </div>

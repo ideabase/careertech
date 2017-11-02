@@ -65,6 +65,46 @@ margin-right: 5px;
 
 }
 
+.social-media-icon-blue{
+width: 50px;
+}
+
+.social-media-icon-blue {
+background-image: url('/assets/img/social/web-white.svg');
+background-size: 100% auto;
+width: 50px;
+height: 50px;
+text-indent: -10000px;
+overflow: hidden;
+margin-right: 5px;
+// Repeat the following as many times as needed for each social network. No commas needed//
+  &.facebook {
+  background-image: url('/assets/img/social/facebook.svg');
+  }
+  &.instagram {
+  background-image: url('/assets/img/social/instagram.svg');
+  }
+  &.twitter {
+  background-image: url('/assets/img/social/twitter.svg');
+  }
+  &.linkedin {
+  background-image: url('/assets/img/social/linkedin.svg');
+  }
+  &.flickr {
+  background-image: url('/assets/img/social/flickr.svg');
+  }
+  &.youtube {
+  background-image: url('/assets/img/social/youtube.svg');
+  }
+  &.snapchat {
+  background-image: url('/assets/img/social/snapchat.svg');
+  }
+  &.tumblr {
+  background-image: url('/assets/img/social/tumblr.svg');
+  }
+
+}
+
 .small {
   font-size: 85%;
   p {

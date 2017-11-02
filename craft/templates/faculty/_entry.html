@@ -27,13 +27,14 @@
                         {% endfor %}
                       {% endif %}
                       <div class="member-block-body"><a class="btn btn-block btn-primary" href="mailto:{{entry.emailAddress}}">get in touch</a>
-                        <div class="offset-top-34">
-                          <ul class="list-inline list-inline-xs">
-                            <li><a class="icon icon-xxs icon-circle icon-darker-filled fa-facebook" href="#{icon.link}"></a></li>
-                            <li><a class="icon icon-xxs icon-circle icon-darker-filled fa-twitter" href="#{icon.link}"></a></li>
-                            <li><a class="icon icon-xxs icon-circle icon-darker-filled fa-google-plus" href="#{icon.link}"></a></li>
-                            <li><a class="icon icon-xxs icon-circle icon-darker-filled fa-linkedin" href="#{icon.link}"></a></li>
-                          </ul>
+                        <div class="social-media-icons">
+
+                            {% for block in entry.socialMedia %}
+            									{% if block.type == "socialMediaBlock" %}
+            									<a class="social-media-icon-blue {{ block.socialName }}" href= "{{block.address}}">{{ block.socialName }}</a>
+            									{% endif %}
+            								{% endfor %}
+
                         </div>
                         <address class="contact-info offset-top-20 offset-sm-top-34">
                           <ul class="list-unstyled p">

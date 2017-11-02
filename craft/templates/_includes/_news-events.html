@@ -17,16 +17,16 @@
   <div class="offset-top-66">
     <nav>
       <ul class="pagination-classic">
-        {% if pageInfo1.prevUrl %}<li><a href="{{ pageInfo1.prevUrl }}#events">Previous Page</a></li>{% endif %}
+        {% if pageInfo1.prevUrl %}<li><a href="{{ pageInfo1.prevUrl }}#events|undefined2">Previous Page</a></li>{% endif %}
         {% for page, url in pageInfo1.getPrevUrls(2) %}
-          <li><a href="{{ url }}#events">{{ page }}</a></li>
+          <li><a href="{{ url }}#events|undefined2">{{ page }}</a></li>
         {% endfor %}
           <li class="active"><a href="#">{{ pageInfo1.currentPage }}</a></li>
         {% for page, url in pageInfo1.getNextUrls(2) %}
-          <li><a href="{{ url }}#events">{{ page }}</a></li>
+          <li><a href="{{ url }}#events|undefined2">{{ page }}</a></li>
         {% endfor %}
         {% if pageInfo1.nextUrl %}<li><a href="{{ pageInfo1.nextUrl }}#events">Next Page</a></li>{% endif %}
-        <li><a href="{{ pageInfo1.lastUrl }}#events">Last Page</a></li>
+        <li><a href="{{ pageInfo1.lastUrl }}#events|undefined2">Last Page</a></li>
       </ul>
     </nav>
     </div>

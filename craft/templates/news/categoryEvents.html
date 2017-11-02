@@ -48,17 +48,17 @@
           <div>
           {% paginate articles.limit(10) as pageInfo, pageEntries %}
           <!-- tab 1 content -->
-          {% include '_includes/_news-news.html' %}
+                {% include '_includes/_news-news.html' %}
           </div>
           <div>
-            {% paginate craft.entries.section('events').limit(10).order('dateTime asc') as pageInfo1, pageEntries1 %}
+          {% paginate craft.entries.section('events').limit(10).order('dateTime asc') as pageInfo1, pageEntries1 %}
 					<!-- tab 2 contenct -->
-          {% include '_includes/_news-events.html' %}
+              {% include '_includes/_news-events.html' %}
           </div>
-					</div>
 				</div>
 			</div>
-
+		</div>
+</div>
 
 		{% include '_includes/_news-sidebar.html' %}
 </main>
