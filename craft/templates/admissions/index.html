@@ -17,7 +17,7 @@
 
 		<hr class="divider bg-red">
 
-		<ul class="admissions-program-listing">
+		<ul class="list-marked admissions-program-listing">
 			{% for entry in craft.entries.section('programs').order('title asc') %}
 			<li>
 				<a href="{{entry.url}}">{{entry.title}}</span></a>

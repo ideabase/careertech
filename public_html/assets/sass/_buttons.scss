@@ -17,6 +17,14 @@ a .btn .btn-block .btn-primary {
   border-color: $red;
 }
 
+@media only screen and (max-width: 1000px) {
+  .center-button {
+    width: 90%;
+    display: block;
+  }
+}
+
+
 .apply-button-whiteheader {
   margin-top: 2em !important;
   @media screen and (min-width: 1000px) {
