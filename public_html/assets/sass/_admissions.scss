@@ -1,11 +1,36 @@
 .admissions-program-listing {
   @media screen and (min-width: 700px) {
-    display: grid;
-    grid-template-columns: 32% 32% 32%;
-     justify-content: space-between;
-     align-items: stretch;
+    columns: 3 50px;
+    li {
+      display: inline-block;
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 1em !important;
+    }
   }
 }
+
+.events--admissions {
+  margin-bottom: 2em !important;
+  .events-box {
+    width: 100%;
+    margin-top: inherit !important;
+    margin-bottom: inherit !important;
+    height: 100%;
+    box-shadow: none;
+  }
+}
+
+.events--admissions.owl-carousel {
+	.owl-stage {
+		display: flex;
+	}
+	.owl-item {
+		display: flex;
+		flex: 1 0 auto;
+	}
+}
+
 .admissions-button{
   width:100%;
   margin-bottom: 15px;
@@ -31,6 +56,11 @@ h1{
 
 .table {
   margin-bottom: 40px;
+  @media screen and (min-width: 800px) {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .table-striped{
@@ -39,7 +69,7 @@ h1{
 .table-striped th{
   background-color:$red;
   color:white;
-  font-size: 17px;
+  font-size: 15px;
   text-transform: uppercase;
 }
 .adm-hr{

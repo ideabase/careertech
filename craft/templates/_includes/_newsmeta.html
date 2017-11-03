@@ -24,6 +24,16 @@
       {% endfor %}
     </dd>
     {% endif %}
+    {% if entry.eventType | length %}
+    <dt>
+      Category
+    </dt>
+    <dd>
+      {% for category in entry.eventType %}
+        {{ category.title}}
+      {% endfor %}
+    </dd>
+    {% endif %}
     <dt>
       Share
     </dt>
