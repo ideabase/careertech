@@ -5,6 +5,7 @@
 
 <main class="page-content">
     {{ entry.body}}
+    <section>
     <ul class="forms">
         {% for forms in entry.singleForms %}
   			{% for asset in forms.formsLink%}
@@ -14,6 +15,19 @@
   			{% endfor %}
       {% endfor %}
     </ul>
+  </section>
+  <section>
+    <h3>Career Exploration Resources</h3>
+    <ul class="forms">
+      {% for block in entry.careerExplorationResources %}
+        {% if block.type == "externalLink" %}
+        <li>
+          <a href= "{{block.externalUrl}}"><h4>{{ block.externalTitle }}</h4></a>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
 </main>
 
 {% endblock %}

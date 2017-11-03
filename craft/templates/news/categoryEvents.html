@@ -2,7 +2,7 @@
 {% extends "_layout" %}
 
 
-{% set articles = craft.entries.relatedTo(category) %}
+{% set articles = craft.entries.section('events').relatedTo(category) %}
 
 {% block subheader %}
 
@@ -41,19 +41,26 @@
 			<div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
 				<ul class="resp-tabs-list tabs-1 text-left tabs-group-default" data-group="tabs-group-default">
           <li><a href="#news">News</a></li>
-					<li><a href="#events">Events</li>
+					<li><a href="#events">Events</a></li>
+          <li><a href="#program">Program Success Stories</a></li>
 				</ul>
 
 				<div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
           <div>
-          {% paginate articles.limit(10) as pageInfo, pageEntries %}
+          {% paginate craft.entries.section('news').limit(5) as pageInfo, pageEntries %}
           <!-- tab 1 content -->
                 {% include '_includes/_news-news.html' %}
           </div>
           <div>
-          {% paginate craft.entries.section('events').limit(10).order('dateTime asc') as pageInfo1, pageEntries1 %}
+
+          {% paginate articles.limit(5).order('dateTime asc') as pageInfo1, pageEntries1 %}
 					<!-- tab 2 contenct -->
               {% include '_includes/_news-events.html' %}
+          </div>
+          <div>
+          {% paginate craft.entries.section('successStory').limit(5) as pageInfo2, pageEntries2 %}
+
+              {% include '_includes/_success-listing.html' %}
           </div>
 				</div>
 			</div>
