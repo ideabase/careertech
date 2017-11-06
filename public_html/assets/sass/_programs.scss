@@ -1,10 +1,11 @@
 
 .faculty-listing{
-  margin:20px;
+  margin:10px;
   padding: 30px;
 }
 
 .program-list {
+  margin-bottom: 3em !important;
   @media screen and (min-width: 700px) {
     columns: 2;
     column-gap: 50px;

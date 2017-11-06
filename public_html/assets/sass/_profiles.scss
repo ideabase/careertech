@@ -9,6 +9,10 @@
   }
 }
 
+.page a.text-picton-blue:hover, .page a.text-picton-blue:focus {
+  color: darken($red,15%);
+}
+
 .faculty-profile {
   @media screen and (max-width: 480px) {
     display: flex;
