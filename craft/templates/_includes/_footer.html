@@ -30,17 +30,13 @@
 {% cache globally unless currentUser %}
 <footer class="section-relative section-top-66 section-bottom-34 page-footer bg-gray-base context-dark">
 	<div class="shell">
-
-		<div class="range range-sm-center text-lg-left">
-			<div class="cell-sm-8 cell-md-12">
-				<div class="range range-xs">
-					<div class="cell-xs-6 text-xs-left cell-md-3 cell-lg-3">
+					<div class="footer-brand">
 						<!-- Footer brand-->
 						{% for asset in footer.logo %}
-						<div class="footer-brand"><a href="{{siteUrl}}"><img src='{{asset.url}}' alt=''/></a></div>
+						<a href="{{siteUrl}}"><img src='{{asset.url}}' alt="{{asset.title}}"/></a>
 						{% endfor %}
 					</div>
-					<div class="cell-xs-6 cell-md-3 offset-md-top-0 text-md-left cell-lg-3 ">
+					<div class="footer-contact">
 						<h6 class="text-uppercase text-spacing-60">{{ footer.footerTitle }}</h6>
 						<p>{{ footer.footerAddress }}</p>
 						<p>(P) {{ footer.phoneNumber }}
@@ -49,12 +45,11 @@
 							{% endif %}
 						</p>
 					</div>
-					<div class="cell-xs-6 text-xs-left cell-md-3 cell-lg-3">
+					<div class="footer-partners">
 						<h6 class="text-uppercase text-spacing-60">{{ footer.footerText }}</h6>
 						{{ footer.districtPartners }}
 					</div>
-
-					<div class="cell-xs-6 cell-md-3 offset-xs-top-66 offset-md-top-0 cell-lg-3 cell-lg-push-1 offset-lg-top-0">
+					<div class="footer-social">
 						<h6 class="text-uppercase text-spacing-60">Connect With Us</h6>
 						<div class="social-media-icons">
 								{% for block in footer.socialMedia %}
@@ -63,17 +58,11 @@
 									{% endif %}
 								{% endfor %}
 						</div>
-
+					</div>
+					<div class="small footer-copyright text-lighter">
+							<span id="copyright-year"></span> Kent City Schools
+							{{footer.copyrightText}}
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-	<div class="shell offset-top-50">
-		<div class="small copyright-text text-lighter">
-			<span id="copyright-year"></span> Kent City Schools
-			{{footer.copyrightText}}
-		</div>
-	</div>
 </footer>
 {% endcache %}
