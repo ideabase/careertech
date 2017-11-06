@@ -19,19 +19,19 @@
 
 				<div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
 					<div>
-					{% paginate craft.entries.section('news').limit(5) as pageInfo, pageEntries %}
+					{% paginate craft.entries.section('news').limit(10) as pageInfo, pageEntries %}
 						{% include '_includes/_news-news.html' %}
 					</div>
 
 					<!-- tab 2 contenct -->
 					<div>
-					{% paginate craft.entries.section('events').limit(5).order('dateTime asc') as pageInfo1, pageEntries1 %}
-
+					{# Removing pagination on events for now until we find a fix - chris h #}
+					{% paginate craft.entries.section('events').order('dateTime asc') as pageInfo1, pageEntries1 %}
 						{% include '_includes/_news-events.html' %}
 					</div>
 					<!-- tab 3 contenct -->
 					<div>
-					{% paginate craft.entries.section('successStory').limit(5) as pageInfo2, pageEntries2 %}
+					{% paginate craft.entries.section('successStory').limit(10) as pageInfo2, pageEntries2 %}
 
 							{% include '_includes/_success-listing.html' %}
 					</div>
