@@ -53,7 +53,7 @@
           </div>
           <div>
 
-          {% paginate articles.limit(5).order('dateTime asc') as pageInfo1, pageEntries1 %}
+          {% paginate articles.order('dateTime asc') as pageInfo1, pageEntries1 %}
 					<!-- tab 2 contenct -->
               {% include '_includes/_news-events.html' %}
           </div>
