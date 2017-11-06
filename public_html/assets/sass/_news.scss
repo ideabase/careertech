@@ -118,8 +118,20 @@
     padding-bottom: 1.25em;
     margin-bottom: 1.25em;
     border-bottom: 1px solid $red;
-    display: inline-block;
+    display: block;
+    width: 100%;
     font-size: .9em;
+    span:after {
+      content: ",";
+      margin-right: .25em;
+      display: inline-block;
+    }
+    span:last-child {
+      &:after {
+        content: none;
+        margin: 0;
+      }
+    }
     &:last-child {
       border-bottom: none;
     }

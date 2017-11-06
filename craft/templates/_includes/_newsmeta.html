@@ -18,9 +18,11 @@
     <dt>
       Category
     </dt>
+      <dd>
       {% for category in entry.newsType %}
-        <dd>{{ category.title}}</dd>
+        <span>{{ category.title}}</span>
       {% endfor %}
+      </dd>
     {% endif %}
     {% if entry.eventType | length %}
     <dt>
@@ -28,9 +30,9 @@
     </dt>
     <dd>
       {% for category in entry.eventType %}
-        {{ category.title}}
+        <span>{{ category.title}}</span>
       {% endfor %}
-    </dd>
+      </dd>
     {% endif %}
     <dt>
       Share
