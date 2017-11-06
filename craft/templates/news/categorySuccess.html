@@ -29,7 +29,7 @@
           </div>
           <div>
 
-          {% paginate craft.entries.section('events').limit(5) as pageInfo1, pageEntries1 %}
+          {% paginate craft.entries.section('events') as pageInfo1, pageEntries1 %}
 					<!-- tab 2 contenct -->
               {% include '_includes/_news-events.html' %}
           </div>

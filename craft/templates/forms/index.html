@@ -6,27 +6,33 @@
 <main class="page-content">
     {{ entry.body}}
     <section>
-    <ul class="forms">
+    	<h1>Building &amp; District Resources</h1>
+      <hr class="divider bg-red">
+    <div class="program-list program-list--forms">
+    <ul class="list list-marked">
         {% for forms in entry.singleForms %}
   			{% for asset in forms.formsLink%}
           <li>
-            <a href="{{asset.url}}"><h4>{{forms.formsTitle}}</h4></a>
+            <a href="{{asset.url}}">{{forms.formsTitle}}</a>
           </li>
   			{% endfor %}
       {% endfor %}
     </ul>
+    </div>
   </section>
   <section>
-    <h3>Career Exploration Resources</h3>
-    <ul class="forms">
+    <h1>Career Exploration Resources</h1>
+    <hr class="divider bg-red">
+    <div class="program-list program-list--forms">
+    <ul class="list list-marked">
       {% for block in entry.careerExplorationResources %}
         {% if block.type == "externalLink" %}
         <li>
-          <a href= "{{block.externalUrl}}"><h4>{{ block.externalTitle }}</h4></a>
+          <a href= "{{block.externalUrl}}">{{ block.externalTitle }}</a>
         </li>
         {% endif %}
       {% endfor %}
-    </ul>
+    </ul></div>
   </section>
 </main>
 

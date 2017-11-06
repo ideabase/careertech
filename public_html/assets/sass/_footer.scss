@@ -1,21 +1,49 @@
+footer {
+  clear:both;
+}
 .footer-brand{
-  width:100%;
-  margin-left: -20px;
-  img {
+  a {
     max-width: 200px;
+    display: block;
+    margin-left: -20px;
+  }
+  img {
+    max-width: 100%;
+    width: 100%;
+    display: block;
   }
 }
-footer{
-  clear: both;
+
+footer .shell {
+  @media screen and (min-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.footer-brand, .footer-contact, .footer-partners, .footer-social {
+  margin-bottom: 2.5em !important;
+  @media screen and (min-width: 600px) {
+    width: 45%;
+  }
+  @media screen and (min-width: 900px) {
+    width: 21%;
+  }
+}
+
+footer h6 {
+  font-size: .9em;
 }
 
 .footer-copyright {
   margin-top: 3em;
-}
-
-@media (min-width: 1200px) {
-  footer .range > .cell-lg-push-1 {
-    order: 5;
+  font-size: 75%;
+  p {
+    margin-top: 0;
+  }
+  @media screen and (min-width: 600px) {
+    width: 100%;
   }
 }
 
@@ -30,7 +58,7 @@ width: 50px;
 }
 
 .social-media-icon {
-background-image: url('/assets/img/social/web-white.svg');
+background-image: url('/assets/img/social/web-black.svg');
 background-size: 100% auto;
 width: 50px;
 height: 50px;
@@ -39,30 +67,32 @@ overflow: hidden;
 margin-right: 5px;
 // Repeat the following as many times as needed for each social network. No commas needed//
   &.facebook {
-  background-image: url('/assets/img/social/facebook-white.svg');
+  background-image: url('/assets/img/social/facebook-black.svg');
   }
   &.instagram {
-  background-image: url('/assets/img/social/instagram-white.svg');
+  background-image: url('/assets/img/social/instagram-black.svg');
   }
   &.twitter {
-  background-image: url('/assets/img/social/twitter-white.svg');
+  background-image: url('/assets/img/social/twitter-black.svg');
   }
   &.linkedin {
-  background-image: url('/assets/img/social/linkedin-white.svg');
+  background-image: url('/assets/img/social/linkedin-black.svg');
   }
   &.flickr {
-  background-image: url('/assets/img/social/flickr-white.svg');
+  background-image: url('/assets/img/social/flickr-black.svg');
   }
   &.youtube {
-  background-image: url('/assets/img/social/youtube-white.svg');
+  background-image: url('/assets/img/social/youtube-black.svg');
   }
   &.snapchat {
-  background-image: url('/assets/img/social/snapchat-white.svg');
+  background-image: url('/assets/img/social/snapchat-black.svg');
   }
   &.tumblr {
-  background-image: url('/assets/img/social/tumblr-white.svg');
+  background-image: url('/assets/img/social/tumblr-black.svg');
   }
-
+  &.vimeo{
+  background-image: url('/assets/img/social/vimeo-black.svg');
+  }
 }
 
 .social-media-icon-blue{
@@ -103,11 +133,4 @@ margin-right: 5px;
   background-image: url('/assets/img/social/tumblr.svg');
   }
 
-}
-
-.small {
-  font-size: 85%;
-  p {
-    margin-top: 0;
-  }
 }

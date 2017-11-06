@@ -1,10 +1,11 @@
 
 .faculty-listing{
-  margin:20px;
+  margin:10px;
   padding: 30px;
 }
 
 .program-list {
+  margin-bottom: 3em !important;
   @media screen and (min-width: 700px) {
     columns: 2;
     column-gap: 50px;
@@ -36,6 +37,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+}
+
+.list-marked li {
+  margin-top: 0 !important;
+  margin-bottom: 15px;
+  display: inline-block;
+  width: 100%;
 }
 
 .faculty-listing h4 {
