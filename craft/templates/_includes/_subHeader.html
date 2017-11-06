@@ -1,12 +1,12 @@
 {% if entry is defined %}
-  {% if entry.featureImage | length %}
+    {% if entry.featureImage | length %}
     {% set image = entry.featureImage.first %}
         <section class="breadcrumb-classic" style="background-image: url({{ image.getUrl('breadcrumbs') }});">
     {% else %}
-        <section class="breadcrumb-classic">
+        <section class="breadcrumb-classic" style="background-image: url({{ fourohfour.featureImage.first.getUrl('breadcrumbs') }});">
     {% endif %}
 {% else %}
-  <section class="breadcrumb-classic">
+  <section class="breadcrumb-classic" style="background-image: url({{ fourohfour.featureImage.first.getUrl('breadcrumbs') }});">
 {% endif %}
 
   <div class="shell section-34 section-sm-50">
