@@ -3,7 +3,23 @@
 
 
 {% set articles = craft.entries.section('successStory').relatedTo(category) %}
+{% block subheader %}
+<section class="breadcrumb-classic" style="background-image: url({{ fourohfour.featureImage.first.getUrl('breadcrumbs') }});">
 
+
+<div class="shell section-34 section-sm-50">
+	<div class="range range-lg-middle">
+
+		<div class="cell-lg-5 reveal-lg-block text-lg-left">
+
+			<h2><span>Success Stories by {{category.title}}</span></h2>
+
+		</div>
+	</div>
+</div>
+</section>
+
+{% endblock %}
 
 
 {% block content %}

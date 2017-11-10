@@ -63,7 +63,8 @@
   h4 {
     transition: .3s background ease-in-out;
     z-index: 100;
-    left: 15px !important;
+    left: 5%;
+    right: 5%;
   }
   @media screen and (min-width: 800px) {
     &:hover, &:active {
@@ -250,6 +251,7 @@
   margin-bottom: 20px;
   width: 120px;
   height: 100px;
+  min-width: 120px;
   text-align: center;
   text-transform: uppercase;
 
