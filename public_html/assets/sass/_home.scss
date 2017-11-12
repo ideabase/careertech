@@ -101,10 +101,13 @@
 .section-center-absolute{
     font-size: 85%;
     width: 85%;
-    max-width: 775px;
+    max-width: 750px;
     margin-top: 1em;
     @media screen and (min-width: 1600px){
       font-size: 102%;
+    }
+    @media screen and (max-width: 400px) {
+      font-size: 70%;
     }
 }
 
