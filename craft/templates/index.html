@@ -13,7 +13,7 @@
   <section class="section-relative">
     <div class="swiper-container ">
       <div class="swiper-wrapper">
-        {% for asset in entry.featureImage %}
+        {% for asset in entry.featureImage.order('RAND()').limit(1) %}
         <div style="background-image: url({{asset.url('featureImage')}}); background-size: cover;" class="swiper-slide swiper-slide-overlay-disable swiper-slide-center"></div>
         {% endfor %}
       </div>
