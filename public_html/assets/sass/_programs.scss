@@ -109,9 +109,10 @@ padding-bottom: 2em;
 
 //individual program page
 .course-button{
-  border-radius:0;
+  border-radius:5px;
   margin:10px;
   width:82%;
+  line-height: 1.3;
 }
 .program-requirements{
   background-color: lighten(#EAEAEA,3%);
@@ -183,7 +184,6 @@ address ul li{
     margin-bottom: 30px;
   }
   .course-button {
-    border-radius: 0;
     margin: auto;
     margin-bottom: 10px;
     width: 100%;
