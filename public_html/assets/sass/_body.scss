@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 1.75em;
+  @media screen and (min-width: 800px) {
+    font-size: 1.95em;
+  }
+}
+
 .adm-hr {
   margin-bottom: 50px;
 }
