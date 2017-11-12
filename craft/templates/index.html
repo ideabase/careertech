@@ -33,6 +33,7 @@
 {% endblock %}
 
 {% block content %}
+    {% cache unless currentUser %}
       <div class="home-wrap">
         <h3 class="home-box-left">{{ entry.pathwayTitle }}</h3>
         <a class="text-link" id="full-listprogram" href="{{'programs'}}" >See All Programs</a>
@@ -107,4 +108,5 @@
             </div>
           </div>
         </div>
+        {% endcache %}
 {% endblock %}
