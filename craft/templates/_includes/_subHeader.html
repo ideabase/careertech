@@ -1,7 +1,11 @@
 {% if entry is defined %}
     {% if entry.featureImage | length %}
     {% set image = entry.featureImage.first %}
-        <section class="breadcrumb-classic" style="background-image: url({{ image.getUrl('breadcrumbs') }});">
+        {% if image.imageCropDirection == "centerCenter" %}
+          <section class="breadcrumb-classic" style="background-image: url({{ image.getUrl('breadcrumbs') }});">
+          {% else %}
+          <section class="breadcrumb-classic" style="background-image: url({{ image.getUrl('breadcrumbsTop') }});">
+        {% endif %}
     {% else %}
         <section class="breadcrumb-classic" style="background-image: url({{ fourohfour.featureImage.first.getUrl('breadcrumbs') }});">
     {% endif %}
