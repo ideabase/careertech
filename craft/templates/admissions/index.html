@@ -56,10 +56,10 @@
 		{% endif %}
 	</table>
 	{% if entry.applicationLightSwitch %}
-		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="https://www.applitrack.com/sixdistrict/onlineapp/">
+		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.applicationUrl}}">
 			<span class="btn-text">Apply now</span></a>
 	{% else %}
-		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" >
+		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.applicationUrl}}">
 			<span class="btn-text">Applications closed for this period</span></a>
 	{% endif %}
 
