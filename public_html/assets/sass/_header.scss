@@ -56,6 +56,13 @@
   }
 }
 
+.breadcrumb-classic .shell {
+  @media screen and (min-width: 700px) {
+    padding-top: 75px;
+    padding-bottom: 75px
+  }
+}
+
 .breadcrumb-classic::after{
 
   position: absolute;

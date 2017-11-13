@@ -4,6 +4,10 @@
   padding: 30px;
 }
 
+.program-container {
+  position: relative;
+}
+
 .program-list {
   margin-bottom: 3em !important;
   @media screen and (min-width: 700px) {
