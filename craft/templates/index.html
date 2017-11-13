@@ -37,11 +37,11 @@
         <h3 class="home-box-left">{{ entry.pathwayTitle }}</h3>
         <a class="text-link" id="full-listprogram" href="{{'programs'}}" >See All Programs</a>
       </div>
-        <div class="local-carousel owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="2" data-dots="true" data-md-items="4" data-nav="false">
+        <div class="local-carousel owl-theme owl-carousel owl-carousel-testimonials-2" data-mouse-drag="true" data-lazyLoad="true" data-items="1" data-xs-items="1" data-sm-items="2" data-dots="true" data-md-items="4" data-nav="false">
           {% for category in craft.entries.section('programs').order('title') %}
             <a href="{{ category.url }}"><div class="local-carousel-image">
               {% for asset in category.featureImage %}
-                <img src="{{asset.url('carouselImage')}}" alt=""/>
+                <img class="owl-lazy" data-src-retina="{{asset.url('carouselImage2x')}}" data-src="{{asset.url('carouselImage')}}" alt="{{asset.title}}"/>
               {% endfor %}
               <h4>{{ category.title }}</h4>
             </div></a>

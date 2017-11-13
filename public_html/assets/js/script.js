@@ -1320,6 +1320,7 @@ $document.ready(function () {
         autoplay: c.attr("data-autoplay") === "true",
         loop: c.attr("data-loop") === "true",
         items: 1,
+        lazyLoad: c.attr("data-lazyLoad") === "true",
         autoplaySpeed: 600,
         autoplayTimeout: 3000,
         dotsContainer: c.attr("data-pagination-class") || false,
