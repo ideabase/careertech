@@ -31,7 +31,7 @@
 				{% endmacro %}
 
 				{% cache globally unless currentUser %}
-				<header class="pos-top page-head slider-menu-position">
+				<header class="pos-top page-head slider-menu-position" role="banner">
 					<!-- RD Navbar Transparent-->
 					<div class="rd-navbar-wrap">
 						<nav class="rd-navbar rd-navbar-default rd-navbar-transparent" data-md-device-layout="rd-navbar-fixed" data-anchor-offset="20" data-lg-device-layout="rd-navbar-static" data-lg-auto-height="true" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
@@ -62,12 +62,14 @@
 												</form>
 											</div>
 											<!-- RD Navbar Nav-->
+											<nav role="navigation">
 											<ul class="rd-navbar-nav">
 												{% for node in nav %}
 				                	{{ _self.addNodeToNavigation(node, loop.index) }}
 				                {% endfor %}
 
 											</ul>
+											</nav>
 										</div>
 									</div>
 									<!-- RD Navbar Search-->
