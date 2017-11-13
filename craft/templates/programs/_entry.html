@@ -9,7 +9,8 @@
               <div class="swiper-container">
                 <div class="swiper-wrapper text-center">
                   {% for asset in entry.featureImage %}
-                    <div style="background-image: url({{asset.url('featureImage')}}); background-size: cover; background-position: center center;" class="swiper-slide swiper-slide-overlay-disable swiper-slide-center"></div>
+                    {% include '_includes/_featureimage.html' %}
+                    
                   {% endfor %}
                 </div>
               </div>

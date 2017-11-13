@@ -1,0 +1,13 @@
+<style type="text/css">
+.swiper-slide {
+  background-image: url({{asset.url('featureImageSmall')}});
+  background-size: cover !important;
+  background-position: center center !important;
+}
+@media screen and (min-width: 700px) {
+  .swiper-slide {
+    background-image: url({{asset.url('featureImage')}});
+  }
+}
+</style>
+<div class="swiper-slide swiper-slide-overlay-disable swiper-slide-center"></div>
