@@ -30,7 +30,7 @@
 				    </li>
 				{% endmacro %}
 
-
+				{% cache globally unless currentUser %}
 				<header class="pos-top page-head slider-menu-position">
 					<!-- RD Navbar Transparent-->
 					<div class="rd-navbar-wrap">
@@ -120,3 +120,4 @@
 	          </div>
 	        </div>
 	      </div>
+{% endcache %}

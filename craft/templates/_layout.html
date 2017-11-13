@@ -64,7 +64,6 @@
   {% include '_includes/_footer.html' %}
 </div>
 {% cache globally unless currentUser %}
-<!-- Google Analytics Code - don't forget to change the UA ID -->
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -77,9 +76,10 @@
   <script src="{{siteUrl}}assets/js/min/core.min.js" defer></script>
   <script src="{{siteUrl}}assets/js/min/script-min.js" defer></script>
   <script type="text/javascript" src="{{ siteUrl }}assets/js/min/scripts-min.js" defer></script>
-{% endcache %}
+
 <link rel="stylesheet" href="{{ siteUrl }}assets/css/theme-min.css">
 <link rel="stylesheet" href="{{ siteUrl }}assets/css/style.css">
+{% endcache %}
 {% if craft.config.devMode %}
 <!-- Live Reload - For local environment only -->
 <script src="//localhost:35729/livereload.js"></script>
