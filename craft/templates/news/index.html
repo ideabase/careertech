@@ -26,7 +26,7 @@
 					<!-- tab 2 contenct -->
 					<div>
 					{# Removing pagination on events for now until we find a fix - chris h #}
-					{% paginate craft.entries.section('events').order('dateTime asc').limit(5) as pageInfo1, pageEntries1 %}
+					{% paginate craft.entries.section('events').order('dateTime asc') as pageInfo1, pageEntries1 %}
 						{% include '_includes/_news-events.html' %}
 					</div>
 					<!-- tab 3 contenct -->
