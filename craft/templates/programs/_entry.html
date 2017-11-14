@@ -79,7 +79,9 @@
                           <h3>Grade level: <span style="color:black; text-transform: none;">{{entry.gradeLevel}}</span></h3>
                           <h3>School: <span style="color:black; text-transform: none;">{{entry.school}}</span></h3>
                           <h3>Program Length: <span style="color:black; text-transform: none;">{{entry.length}}</span></h3>
-
+                          {% if entry.creditAtKent | length %}
+                          <h3>Credit at Kent: <br/><br/><span style="color:black; text-transform: none;">{{entry.creditAtKent}}</span></h3>
+                          {% endif %}
     											{% if entry.admissionsCriteria | length %}
                             <hr>
     												  <h3>Admissions criteria: </h3>
