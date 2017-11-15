@@ -71,10 +71,10 @@
 			<hr class="divider bg-red">
 		{{ entry.admissionsDates }}
 		{% set category = craft.categories.slug('admissions') %}
-		<div class="events events--admissions owl-theme owl-carousel" data-margin="20px" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="2" data-dots="true" data-md-items="3" data-nav="false">
+		<div class="events events--admissions owl-theme owl-carousel" data-margin="20px" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="2" data-dots="true" data-md-items="4" data-nav="false">
 			{% set events = craft.entries.section('events').order('dateTime asc').relatedTo(category) %}
 			{% for entry in events if entry.dateTime > now %}
-					{% if loop.index <= 6 %}
+					{% if loop.index <= 12 %}
 						<div class="events-box">
 						{% include '_includes/_calendar.html' %}
 						<a href="{{entry.url}}">
