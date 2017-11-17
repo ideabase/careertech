@@ -49,7 +49,7 @@
                 <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
                   <li><a href="#About the program">About the Program</a></li>
                   <li><a href="#Program Overview">Program Overview</a></li>
-                  <li><a href="#Meet the instructor">Meet the Instructor</a></li>
+                  <li><a href="#Meet the instructor">Meet the Instructors</a></li>
                   {% if craft.entries.section('successStory').relatedTo(entry)| length %}
                     {% set section = craft.entries.section('successStory') %}
                     <li><a href="#{{section.section}}">News &amp; Videos</a></li>
@@ -136,9 +136,9 @@
                     <hr class="divider bg-red">
                     <div class="range range-sm-center">
 
-										{% set repeat="\n" %}
+									
 										{% for classes in craft.entries.section('classes').relatedTo(program) %}
-												{% for entry in classes.instructor %}
+                      {% for entry in classes.instructor %}
 													{% if repeat != entry.title %}
                             {% include "_includes/_headShot.html" %}
 													{% set repeat = entry.title %}

@@ -26,7 +26,7 @@
 																<div class="range range-xs-center section-15">
 
 
-																	{% for entry in craft.entries.section('faculty').relatedTo(category).order('title asc') %}
+																	{% for entry in craft.entries.section('faculty').relatedTo(category).order('lastName asc') %}
 																		{% if not entry.temporaryStaff %}
 																			{% include "_includes/_headShot.html" %}
 																		{% endif %}
@@ -51,7 +51,7 @@
 																	{% for class in craft.entries.section('classes').relatedTo(program).order('title asc') %}
 																	<h4>{{class.title}}</h4>
 																	<div class="faculty-list__item">
-																				{% for entry in craft.entries.section('faculty').relatedTo(class).order('title asc') %}
+																				{% for entry in craft.entries.section('faculty').relatedTo(class).order('lastName asc') %}
 
 																				<div class="margin-bottom-40px  cell-sm-6 cell-md-6">
 																					<a href="{{ entry.url }}">

@@ -1,6 +1,6 @@
 
-  {% for entry in pageEntries1 %}
-  {% if entry.dateTime >= now %}
+  {% for entry in pageEntries1 if entry.dateTime >= now %}
+
   <div class="events-wrap">
 
     {% include '_includes/_calendar.html' %}
@@ -11,7 +11,7 @@
     </div>
 
   </div>
-  {% endif %}
+
   {% endfor %}
 
   <div class="offset-top-66">
