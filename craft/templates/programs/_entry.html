@@ -131,20 +131,23 @@
                   </div>
 
                   <!-- Tab 3 Content -->
+
+
                   <div class="faculty-listing cell-sm-12 cell-md-12">
                     <h1>Instructors</h1>
                     <hr class="divider bg-red">
                     <div class="range range-sm-center">
 
-									
-										{% for classes in craft.entries.section('classes').relatedTo(program) %}
-                      {% for entry in classes.instructor %}
-													{% if repeat != entry.title %}
-                            {% include "_includes/_headShot.html" %}
-													{% set repeat = entry.title %}
-                          {% endif %}
-												{% endfor %}
-										{% endfor %}
+                    {% set break = 0 %}
+                    {% for faculty in craft.entries.section('faculty').order('lastName asc') %}
+                      {% for classes in craft.entries.section('classes').relatedTo(program) if break == 0%}
+                        {% for entry in classes.instructor if entry.title==faculty.title %}
+                          {% include "_includes/_headShot.html" %}
+                          {% set break = 1 %}
+                        {% endfor %}
+                      {% endfor %}
+                      {% set break = 0 %}
+                    {% endfor %}
                   </div>
 
                   </div>
