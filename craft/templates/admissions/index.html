@@ -6,27 +6,37 @@
 <main class="page-content">
 
 	<div class="text-callout">
-		<h1>Visit & Admissions Steps</h1>
+		<h1>Admissions Steps</h1>
 		<hr class="divider bg-red">
-		{{ entry.generalText }}
+		{{ entry.body }}
 	</div>
+	<ol class="steps">
+	{% for block in entry.admissionsSteps %}
+				{% if block.type == "step" %}
+					<li>{{ block.step }}</li>
+				{% endif %}
+	{% endfor %}
+	</ol>
 
-	<hr class="adm-hr hr">
-
-	<h1>Individual Program Criteria</h1>
-
-		<hr class="divider bg-red">
-
-		<ul class="list-marked admissions-program-listing">
-			{% for entry in craft.entries.section('programs').order('title asc') %}
-			<li>
-				<a href="{{entry.url}}">{{entry.title}}</span></a>
-			</li>
+		<div class="admissions-dates">
+			<h1>Admissions Dates & Events</h1>
+			<hr class="divider bg-red">
+		{% set category = craft.categories.slug('admissions') %}
+		<div class="events events--admissions owl-theme owl-carousel" data-margin="20px" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="3" data-dots="true" data-md-items="5" data-nav="false">
+			{% set events = craft.entries.section('events').order('dateTime asc').relatedTo(category) %}
+			{% for entry in events if entry.dateTime > now %}
+					{% if loop.index <= 12 %}
+						<div class="events-box">
+						{% include '_includes/_calendar.html' %}
+						<a href="{{entry.url}}">
+							<h3>{{entry.title}}</h3>
+							<p class="events-time">{{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</p>
+						</a>
+					</div>
+					{% endif %}
 			{% endfor %}
-		</ul>
-
-
-	<hr class="adm-hr hr" >
+	</div>
+</div>
 
 
 	<h1>Admissions Deadlines</h1>
@@ -60,34 +70,15 @@
 			<span class="btn-text">Apply now</span></a>
 	{% else %}
 		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.applicationUrl}}">
-			<span class="btn-text">Applications closed for this period</span></a>
+			<span class="btn-text">Not Currently Accepting Applications</span></a>
 	{% endif %}
 
+<div class="text-callout admissions-criteria">
+	<h1>Admissions Criteria</h1>
+	<hr class="divider bg-red">
+	{{ entry.admissionsCriteria }}
+</div>
 
-	<div class="adm-events-wrapper">
-
-		<div class="text-callout">
-			<h1>Important Admissions Dates & Events</h1>
-			<hr class="divider bg-red">
-		{{ entry.admissionsDates }}
-		{% set category = craft.categories.slug('admissions') %}
-		<div class="events events--admissions owl-theme owl-carousel" data-margin="20px" data-mouse-drag="true" data-items="1" data-xs-items="1" data-sm-items="2" data-dots="true" data-md-items="4" data-nav="false">
-			{% set events = craft.entries.section('events').order('dateTime asc').relatedTo(category) %}
-			{% for entry in events if entry.dateTime > now %}
-					{% if loop.index <= 12 %}
-						<div class="events-box">
-						{% include '_includes/_calendar.html' %}
-						<a href="{{entry.url}}">
-							<h3>{{entry.title}}</h3>
-							<p class="events-time">{{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</p>
-						</a>
-					</div>
-					{% endif %}
-			{% endfor %}
-		</div>
-		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{siteUrl}}event-type/admissions#news|undefined2">
-			<span class="btn-text">View Full Admissions Calendar</span></a>
-	</div>
 </main>
 
 
