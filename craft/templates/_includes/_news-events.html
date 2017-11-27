@@ -6,7 +6,7 @@
     {% include '_includes/_calendar.html' %}
     <div class="events-content home-event-item">
       <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-      <span class="home-news__date">{{ entry.dateTime.format('F d, Y') }} | {{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</span>
+      <span class="home-news__date">{{ entry.dateTime.format('F d, Y') }} {% if entry.startEndTime | length %} | {{entry.startEndTime | date('g:i a')}}{%endif%} {% if entry.endTime | length %} - {{entry.endTime | date('g:i a')}} {% endif %}</span>
       <p>{{ entry.previewText }}</p>
     </div>
 

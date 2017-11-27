@@ -96,7 +96,7 @@
                           {% include '_includes/_calendar.html' %}
                           <a href="{{entry.url}}">
                             <h3>{{entry.title}}</h3>
-                            <p class="events-time">{{entry.startEndTime | date('g a')}} - {{entry.endTime | date('g a')}}</p>
+                            <p class="events-time">{% if entry.startEndTime | length %}{{entry.startEndTime | date('g:i a')}}{%endif%} {% if entry.endTime | length %} - {{entry.endTime | date('g:i a')}} {% endif %}</p>
                           </a>
                         </div>
                         {% endif %}
