@@ -1,12 +1,16 @@
-@import 'theme-normalize.scss';
-@import 'theme-scaffolding.scss';
-@import 'theme-type.scss';
+@import 'theme-scaffolding.scss'; /* Crticial */
+
+@import 'theme-bootstrap-utilities.scss'; /* Crticial - causing bloated CSS issue */
+
 @import 'theme-grid.scss';
+
 @import 'theme-dropdown.scss';
-@import 'theme-nav.scss';
 
-@import 'theme-plugins-navbar.scss';
+@import 'theme-alignment.scss'; /* Critical */
 
+@import 'theme-plugins-navbar.scss'; /* Crticial */
+
+@import 'theme-plugins-swiper.scss'; /* Critical */
 
 @import 'variables.scss';
 @import 'reset.scss';
@@ -14,11 +18,9 @@
 @import 'home.scss';
 @import 'body.scss';
 @import 'header.scss';
-@import 'footer.scss';
 @import 'hero-image.scss';
 @import 'buttons.scss';
 @import 'programs.scss';
-@import 'admissions.scss';
 @import 'news.scss';
 @import 'tabs.scss';
 @import 'profiles.scss';
