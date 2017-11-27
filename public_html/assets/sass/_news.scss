@@ -50,7 +50,7 @@
   display: block;
   border-top: 5px solid lighten(lightgray,10%);
   margin-top: 1em !important;
-  
+
   overflow:hidden;
   @media screen and (min-width: 700px) {
     width: 60%;
@@ -225,6 +225,10 @@
 
 .events-wrap{
   margin-bottom: 3em;
+}
+
+.events-time {
+  font-size:.9em;
 }
 
 .events-day{
