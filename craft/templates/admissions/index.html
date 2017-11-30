@@ -66,10 +66,10 @@
 		{% endif %}
 	</table>
 	{% if entry.applicationLightSwitch %}
-		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.applicationUrl}}">
+		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.applicationUrl}}" onclick="trackOutboundLink('{{apply.applicationUrl}}'); return false;">
 			<span class="btn-text">Apply now</span></a>
 	{% else %}
-		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.applicationUrl}}">
+		<a class="center-button btn btn-primary" data-caption-animate="fadeInUp" data-caption-delay="1200" href="{{apply.applicationUrl}}" onclick="trackOutboundLink('{{apply.applicationUrl}}'); return false;">
 			<span class="btn-text">Not Currently Accepting Applications</span></a>
 	{% endif %}
 

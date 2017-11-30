@@ -24,10 +24,10 @@
       {% if entry.section.handle == 'admissions' %}
         {% for entry in craft.entries.section('admissions') %}
         {% if entry.applicationLightSwitch %}
-          <a class="apply-button-whiteheader btn btn-primary" href="{{apply.applicationUrl}}">
+          <a class="apply-button-whiteheader btn btn-primary" href="{{apply.applicationUrl}}" onclick="trackOutboundLink('{{apply.applicationUrl}}'); return false;">
             <span class="btn-text">Apply Now</span></a>
         {% else %}
-        <a class="apply-button-whiteheader btn btn-primary" href="{{apply.applicationUrl}}">
+        <a class="apply-button-whiteheader btn btn-primary" href="{{apply.applicationUrl}}" onclick="trackOutboundLink('{{apply.applicationUrl}}'); return false;">
         <span class="btn-text">Applications Closed</span></a>
         {% endif %}
         {% endfor %}
